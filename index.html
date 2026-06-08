@@ -104,11 +104,12 @@
     .float-badge {
       position: absolute; z-index: 1;
       padding: 0.6rem 1rem; border-radius: var(--radius-lg);
-      background: #ffffff; border: 1.5px solid rgba(0, 255, 102, 0.2);
-      box-shadow: 0 8px 30px rgba(0, 255, 102, 0.06); font-size: 0.82rem; font-weight: 600;
+      background: var(--bg-card); border: 1.5px solid var(--border-color);
+      box-shadow: var(--shadow-md); font-size: 0.82rem; font-weight: 600;
       display: flex; align-items: center; gap: 8px; color: var(--text-primary);
+      transition: all var(--transition-fast);
     }
-    .float-1 { top: 22%; left: 4%; animation: float 6s ease-in-out infinite; }
+    .float-1 { top: 15%; left: 6%; animation: float 6s ease-in-out infinite; }
     .float-2 { top: 35%; right: 4%; animation: float 7s 1s ease-in-out infinite; }
     .float-3 { bottom: 28%; left: 6%; animation: float 5.5s 0.5s ease-in-out infinite; }
 
