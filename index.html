@@ -33,8 +33,10 @@
     .hero-overlay {
       position: absolute;
       inset: 0;
-      background: radial-gradient(ellipse at 50% 40%, rgba(124,58,237,0.3) 0%, transparent 65%),
-                  linear-gradient(to bottom, transparent 60%, var(--bg-primary) 100%);
+      background: radial-gradient(ellipse at 30% 50%, rgba(139,92,246,0.35) 0%, transparent 55%),
+                  radial-gradient(ellipse at 70% 30%, rgba(244,114,182,0.25) 0%, transparent 50%),
+                  radial-gradient(ellipse at 50% 80%, rgba(6,182,212,0.2) 0%, transparent 50%),
+                  linear-gradient(to bottom, transparent 55%, var(--bg-primary) 100%);
     }
 
     .hero-content {
@@ -73,7 +75,7 @@
     }
 
     .hero-title .line2 {
-      background: linear-gradient(135deg, #a78bfa 0%, #06b6d4 60%, #ec4899 100%);
+      background: linear-gradient(135deg, #f472b6 0%, #fb923c 35%, #fbbf24 60%, #34d399 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
@@ -242,10 +244,12 @@
       margin-bottom: 1.25rem;
     }
 
-    .feature-icon.purple { background: rgba(124,58,237,0.15); }
-    .feature-icon.cyan   { background: rgba(6,182,212,0.15); }
-    .feature-icon.pink   { background: rgba(236,72,153,0.15); }
-    .feature-icon.green  { background: rgba(74,222,128,0.12); }
+    .feature-icon.purple { background: rgba(139,92,246,0.18); box-shadow: 0 0 20px rgba(139,92,246,0.25); }
+    .feature-icon.cyan   { background: rgba(6,182,212,0.18);  box-shadow: 0 0 20px rgba(6,182,212,0.25); }
+    .feature-icon.pink   { background: rgba(244,114,182,0.18); box-shadow: 0 0 20px rgba(244,114,182,0.25); }
+    .feature-icon.green  { background: rgba(52,211,153,0.18);  box-shadow: 0 0 20px rgba(52,211,153,0.2); }
+    .feature-icon.orange { background: rgba(251,146,60,0.18);  box-shadow: 0 0 20px rgba(251,146,60,0.2); }
+    .feature-icon.yellow { background: rgba(251,191,36,0.18);  box-shadow: 0 0 20px rgba(251,191,36,0.2); }
 
     .feature-title {
       font-family: 'Space Grotesk', sans-serif;
@@ -366,8 +370,8 @@
       overflow: hidden;
       margin: 0 2rem;
       border-radius: var(--radius-xl);
-      background: linear-gradient(135deg, rgba(124,58,237,0.2) 0%, rgba(6,182,212,0.12) 100%);
-      border: 1px solid rgba(124,58,237,0.25);
+      background: linear-gradient(135deg, rgba(139,92,246,0.22) 0%, rgba(244,114,182,0.15) 50%, rgba(6,182,212,0.15) 100%);
+      border: 1px solid rgba(139,92,246,0.3);
       padding: 5rem 3rem;
       text-align: center;
     }
@@ -413,8 +417,9 @@
     }
 
     .pricing-card.popular {
-      border-color: var(--accent-purple);
-      background: linear-gradient(135deg, rgba(124,58,237,0.12) 0%, rgba(6,182,212,0.06) 100%);
+      border-color: #f472b6;
+      background: linear-gradient(135deg, rgba(139,92,246,0.15) 0%, rgba(244,114,182,0.12) 50%, rgba(6,182,212,0.08) 100%);
+      box-shadow: 0 0 40px rgba(244,114,182,0.15), var(--shadow-card);
     }
 
     .popular-badge {
@@ -504,19 +509,19 @@
 
   <div class="hero-stats">
     <div class="hero-stat">
-      <div class="stat-number">10x</div>
+      <div class="stat-number" style="background:linear-gradient(135deg,#f472b6,#fb923c);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">10x</div>
       <div class="stat-label">Faster Workflows</div>
     </div>
     <div class="hero-stat">
-      <div class="stat-number">50K+</div>
+      <div class="stat-number" style="background:linear-gradient(135deg,#8b5cf6,#06b6d4);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">50K+</div>
       <div class="stat-label">Teams Waitlisted</div>
     </div>
     <div class="hero-stat">
-      <div class="stat-number">99.9%</div>
+      <div class="stat-number" style="background:linear-gradient(135deg,#34d399,#06b6d4);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">99.9%</div>
       <div class="stat-label">Uptime SLA</div>
     </div>
     <div class="hero-stat">
-      <div class="stat-number">$0</div>
+      <div class="stat-number" style="background:linear-gradient(135deg,#fbbf24,#fb923c);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">₹0</div>
       <div class="stat-label">Free to Start</div>
     </div>
   </div>
@@ -545,34 +550,34 @@
       <p class="section-subtitle" style="margin:0 auto;">From automation to deep analytics, NexaAI delivers a unified intelligence layer across your entire organization.</p>
     </div>
     <div class="grid-3">
-      <div class="card feature-card anim-fade-up">
+      <div class="card feature-card anim-fade-up" style="border-top: 2px solid #8b5cf6;">
         <div class="feature-icon purple">🧠</div>
-        <h3 class="feature-title">Contextual AI Engine</h3>
+        <h3 class="feature-title" style="background:linear-gradient(135deg,#a78bfa,#c4b5fd);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Contextual AI Engine</h3>
         <p class="feature-desc">Our proprietary model understands your business context, learning from every interaction to make smarter decisions over time.</p>
       </div>
-      <div class="card feature-card anim-fade-up anim-delay-1">
+      <div class="card feature-card anim-fade-up anim-delay-1" style="border-top: 2px solid #06b6d4;">
         <div class="feature-icon cyan">⚡</div>
-        <h3 class="feature-title">No-Code Automation</h3>
+        <h3 class="feature-title" style="background:linear-gradient(135deg,#06b6d4,#67e8f9);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">No-Code Automation</h3>
         <p class="feature-desc">Build powerful multi-step workflows with a drag-and-drop canvas. No engineering required — launch in minutes, not months.</p>
       </div>
-      <div class="card feature-card anim-fade-up anim-delay-2">
+      <div class="card feature-card anim-fade-up anim-delay-2" style="border-top: 2px solid #f472b6;">
         <div class="feature-icon pink">🔗</div>
-        <h3 class="feature-title">1,000+ Integrations</h3>
+        <h3 class="feature-title" style="background:linear-gradient(135deg,#f472b6,#fb7185);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">1,000+ Integrations</h3>
         <p class="feature-desc">Connect every tool in your stack — from Salesforce to Slack, GitHub to Stripe — with zero-config, bi-directional sync.</p>
       </div>
-      <div class="card feature-card anim-fade-up anim-delay-1">
+      <div class="card feature-card anim-fade-up anim-delay-1" style="border-top: 2px solid #34d399;">
         <div class="feature-icon green">📊</div>
-        <h3 class="feature-title">Predictive Analytics</h3>
+        <h3 class="feature-title" style="background:linear-gradient(135deg,#34d399,#6ee7b7);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Predictive Analytics</h3>
         <p class="feature-desc">Surface what matters before it matters. Our AI forecasts bottlenecks and opportunities, giving your team a decisive edge.</p>
       </div>
-      <div class="card feature-card anim-fade-up anim-delay-2">
-        <div class="feature-icon purple">🛡️</div>
-        <h3 class="feature-title">Enterprise-Grade Security</h3>
+      <div class="card feature-card anim-fade-up anim-delay-2" style="border-top: 2px solid #fb923c;">
+        <div class="feature-icon orange">🛡️</div>
+        <h3 class="feature-title" style="background:linear-gradient(135deg,#fb923c,#fbbf24);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Enterprise-Grade Security</h3>
         <p class="feature-desc">SOC 2 Type II certified. End-to-end encryption, role-based access, and full audit logs — security without compromise.</p>
       </div>
-      <div class="card feature-card anim-fade-up anim-delay-3">
-        <div class="feature-icon cyan">🌍</div>
-        <h3 class="feature-title">Global Edge Infrastructure</h3>
+      <div class="card feature-card anim-fade-up anim-delay-3" style="border-top: 2px solid #fbbf24;">
+        <div class="feature-icon yellow">🌍</div>
+        <h3 class="feature-title" style="background:linear-gradient(135deg,#fbbf24,#fde68a);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Global Edge Infrastructure</h3>
         <p class="feature-desc">Deployed across 40+ regions with 99.9% uptime SLA. Your workflows run blazing fast, wherever your team is located.</p>
       </div>
     </div>
@@ -659,45 +664,51 @@
       <h2 class="section-title">Simple, transparent <span class="gradient-text">pricing</span></h2>
       <p class="section-subtitle" style="margin: 0 auto;">No hidden fees. Cancel anytime. Scale as you grow.</p>
     </div>
-    <div class="grid-3" style="max-width:900px; margin:0 auto;">
-      <div class="card pricing-card">
-        <div class="pricing-name">Starter</div>
-        <div class="pricing-price">$0</div>
-        <div class="pricing-period">Free forever</div>
+    <div class="grid-3" style="max-width:960px; margin:0 auto;">
+      <!-- Starter -->
+      <div class="card pricing-card" style="border-top:3px solid #34d399;">
+        <div class="pricing-name" style="color:#34d399;">🌱 Starter</div>
+        <div class="pricing-price" style="background:linear-gradient(135deg,#34d399,#06b6d4);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">₹0</div>
+        <div class="pricing-period">Free forever — no credit card needed</div>
         <ul class="pricing-features">
           <li>Up to 5 workflows</li>
-          <li>100 tasks/month</li>
+          <li>100 tasks / month</li>
           <li>10 integrations</li>
           <li>Community support</li>
+          <li>Basic analytics dashboard</li>
         </ul>
-        <a href="waitlist.html" class="btn btn-secondary" style="width:100%;justify-content:center;">Get Started</a>
+        <a href="waitlist.html" class="btn btn-secondary" style="width:100%;justify-content:center;border-color:#34d399;color:#34d399;">Get Started Free</a>
       </div>
-      <div class="card pricing-card popular">
-        <div class="popular-badge">Most Popular</div>
-        <div class="pricing-name">Pro</div>
-        <div class="pricing-price gradient-text">$49</div>
-        <div class="pricing-period">per seat / month</div>
+      <!-- Pro -->
+      <div class="card pricing-card popular" style="border-top:3px solid #f472b6;">
+        <div class="popular-badge" style="background:linear-gradient(135deg,#f472b6,#fb923c);">⭐ Most Popular</div>
+        <div class="pricing-name" style="color:#f472b6;">🚀 Pro</div>
+        <div class="pricing-price" style="background:linear-gradient(135deg,#8b5cf6,#f472b6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">₹3,999</div>
+        <div class="pricing-period">per seat / month &nbsp;·&nbsp; <span style="color:#34d399;font-weight:600;">Save 20% annually</span></div>
         <ul class="pricing-features">
           <li>Unlimited workflows</li>
-          <li>50,000 tasks/month</li>
-          <li>All integrations</li>
-          <li>Priority support</li>
-          <li>Advanced analytics</li>
+          <li>50,000 tasks / month</li>
+          <li>All 1,000+ integrations</li>
+          <li>Priority support (24/7)</li>
+          <li>Advanced AI analytics</li>
+          <li>Team collaboration tools</li>
         </ul>
-        <a href="waitlist.html" class="btn btn-primary" style="width:100%;justify-content:center;">Join Waitlist</a>
+        <a href="waitlist.html" class="btn btn-primary" style="width:100%;justify-content:center;background:linear-gradient(135deg,#8b5cf6,#f472b6);">Join Waitlist 🚀</a>
       </div>
-      <div class="card pricing-card">
-        <div class="pricing-name">Enterprise</div>
-        <div class="pricing-price">Custom</div>
-        <div class="pricing-period">Contact sales</div>
+      <!-- Enterprise -->
+      <div class="card pricing-card" style="border-top:3px solid #fbbf24;">
+        <div class="pricing-name" style="color:#fbbf24;">🏢 Enterprise</div>
+        <div class="pricing-price" style="background:linear-gradient(135deg,#fb923c,#fbbf24);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Custom</div>
+        <div class="pricing-period">Tailored to your organisation</div>
         <ul class="pricing-features">
           <li>Unlimited everything</li>
           <li>Dedicated AI model</li>
-          <li>SSO & SAML</li>
-          <li>SLA guarantee</li>
-          <li>Onboarding manager</li>
+          <li>SSO &amp; SAML</li>
+          <li>99.99% SLA guarantee</li>
+          <li>Dedicated onboarding manager</li>
+          <li>Custom contracts &amp; billing</li>
         </ul>
-        <a href="contact.html" class="btn btn-outline" style="width:100%;justify-content:center;">Contact Sales</a>
+        <a href="contact.html" class="btn" style="width:100%;justify-content:center;background:linear-gradient(135deg,#fb923c,#fbbf24);color:#000;font-weight:700;">Contact Sales →</a>
       </div>
     </div>
   </div>
