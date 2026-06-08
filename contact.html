@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contact Us — Prismo</title>
-  <meta name="description" content="Get in touch with the Prismo team. We'd love to hear from you." />
+  <meta name="description" content="Get in touch with the Prismo shopping optimizer team. We'd love to hear from you." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
@@ -23,7 +23,7 @@
       box-shadow: var(--shadow-sm);
       transition: transform var(--transition-fast), box-shadow var(--transition-fast), border-color var(--transition-fast);
     }
-    .info-card:hover { transform: translateX(6px); box-shadow: var(--shadow-md); border-color: rgba(124,58,237,0.2); }
+    .info-card:hover { transform: translateX(6px); box-shadow: var(--shadow-md); border-color: rgba(16,185,129,0.2); }
 
     .info-icon {
       width: 48px; height: 48px; border-radius: 14px;
@@ -41,7 +41,7 @@
       text-decoration: none; border: 1.5px solid; transition: all var(--transition-fast);
     }
     .social-pill:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
-    .sp-twitter  { color: #7c3aed; border-color: rgba(124,58,237,0.2); background: rgba(124,58,237,0.05); }
+    .sp-twitter  { color: #10b981; border-color: rgba(16,185,129,0.2); background: rgba(16,185,129,0.05); }
     .sp-linkedin { color: #3b82f6; border-color: rgba(59,130,246,0.2); background: rgba(59,130,246,0.05); }
     .sp-insta    { color: #ec4899; border-color: rgba(236,72,153,0.2); background: rgba(236,72,153,0.05); }
 
@@ -76,12 +76,15 @@
 
 <!-- NAVBAR -->
 <nav class="navbar scrolled" id="navbar">
-  <a href="index.html" class="nav-logo"><div class="nav-logo-icon">✦</div><span class="nav-logo-text">Prismo</span></a>
+  <a href="index.html" class="nav-logo">
+    <div class="nav-logo-icon" style="background:linear-gradient(135deg,#10b981,#7c3aed)">✦</div>
+    <span class="nav-logo-text" style="background:linear-gradient(135deg,#10b981,#7c3aed);-webkit-background-clip:text;background-clip:text;">Prismo</span>
+  </a>
   <ul class="nav-links" id="navLinks">
     <li><a href="index.html">Home</a></li>
     <li><a href="tech-news.html">Tech News</a></li>
     <li><a href="contact.html" class="active">Contact</a></li>
-    <li><a href="waitlist.html" class="nav-cta">Join Waitlist 🚀</a></li>
+    <li><a href="waitlist.html" class="nav-cta" style="background:linear-gradient(135deg,#10b981,#7c3aed) !important;box-shadow:0 4px 14px rgba(16,185,129,0.3)">Join Waitlist 🚀</a></li>
   </ul>
   <div class="hamburger" onclick="document.getElementById('navLinks').classList.toggle('open')"><span></span><span></span><span></span></div>
 </nav>
@@ -93,19 +96,19 @@
 
       <!-- Left Info -->
       <div class="contact-info">
-        <div class="section-badge">✉️ Get In Touch</div>
-        <h1 class="section-title">Let's build the <span class="gradient-text">future together</span></h1>
+        <div class="section-badge" style="background:rgba(16,185,129,0.08);color:var(--green);border-color:rgba(16,185,129,0.2)">✉️ Get In Touch</div>
+        <h1 class="section-title">Let's optimize the <span class="gradient-text">shopping journey</span></h1>
         <p style="color:var(--text-secondary);font-size:1rem;line-height:1.75;margin-top:0.5rem;">
-          Whether you want to transform your workflows, have a question, or explore a partnership — we'd love to hear from you. Our team typically responds within a few hours.
+          Are you a retail channel partner (Blinkit, Zepto, Myntra, etc.) looking to list your inventory? Or an active developer requesting API endpoints? Fill out the form and we'll reply within a few business hours.
         </p>
 
         <div class="info-cards">
           <div class="info-card">
-            <div class="info-icon" style="background:rgba(124,58,237,0.08);">📧</div>
-            <div><div class="info-label">Email</div><div class="info-value">hello@prismo.in</div></div>
+            <div class="info-icon" style="background:rgba(16,185,129,0.08);">📧</div>
+            <div><div class="info-label">Partnerships Email</div><div class="info-value">partnerships@prismo.in</div></div>
           </div>
           <div class="info-card">
-            <div class="info-icon" style="background:rgba(236,72,153,0.08);">📞</div>
+            <div class="info-icon" style="background:rgba(124,58,237,0.08);">📞</div>
             <div><div class="info-label">Phone</div><div class="info-value">+91 98200 47381</div></div>
           </div>
           <div class="info-card">
@@ -113,19 +116,19 @@
             <div><div class="info-label">Headquarters</div><div class="info-value">WeWork BKC, Unit 4B, Bandra Kurla Complex, Mumbai 400051</div></div>
           </div>
           <div class="info-card">
-            <div class="info-icon" style="background:rgba(16,185,129,0.08);">🕒</div>
+            <div class="info-icon" style="background:rgba(59,130,246,0.08);">🕒</div>
             <div><div class="info-label">Business Hours</div><div class="info-value">Mon – Sat · 9:00 AM – 7:00 PM IST</div></div>
           </div>
           <div class="info-card">
-            <div class="info-icon" style="background:rgba(59,130,246,0.08);">💼</div>
+            <div class="info-icon" style="background:rgba(236,72,153,0.08);">💼</div>
             <div><div class="info-label">Company Registration</div><div class="info-value">CIN: U72900MH2024PTC000123 · GSTIN: 27AABCN1234C1Z5</div></div>
           </div>
         </div>
 
         <div class="social-row">
-          <a href="#" class="social-pill sp-twitter">𝕏 Twitter</a>
-          <a href="#" class="social-pill sp-linkedin">in LinkedIn</a>
-          <a href="#" class="social-pill sp-insta">📸 Instagram</a>
+          <a href="https://twitter.com" target="_blank" rel="noopener" class="social-pill sp-twitter">𝕏 Twitter</a>
+          <a href="https://linkedin.com" target="_blank" rel="noopener" class="social-pill sp-linkedin">in LinkedIn</a>
+          <a href="https://instagram.com" target="_blank" rel="noopener" class="social-pill sp-insta">📸 Instagram</a>
         </div>
       </div>
 
@@ -149,10 +152,10 @@
             </div>
             <div class="form-group">
               <label for="message">Message *</label>
-              <textarea id="message" class="form-control" placeholder="Tell us what's on your mind..."></textarea>
+              <textarea id="message" class="form-control" placeholder="Describe your inquiry (integration request, partnership proposal)..."></textarea>
               <span class="error-msg" id="messageErr">⚠ Message cannot be empty.</span>
             </div>
-            <button type="submit" id="submitBtn" class="btn btn-primary" style="width:100%;justify-content:center;padding:1rem;font-size:1rem;border-radius:var(--radius-md);">
+            <button type="submit" id="submitBtn" class="btn btn-primary" style="width:100%;justify-content:center;padding:1rem;font-size:1rem;border-radius:var(--radius-md);background:linear-gradient(135deg,#10b981,#7c3aed)">
               <span id="btnText">Send Message 🚀</span>
             </button>
           </form>
@@ -172,7 +175,10 @@
 <!-- FOOTER -->
 <footer class="footer">
   <div class="footer-inner">
-    <a href="index.html" class="nav-logo"><div class="nav-logo-icon" style="width:28px;height:28px;font-size:12px;border-radius:8px;">✦</div><span class="nav-logo-text" style="font-size:1.1rem;">Prismo</span></a>
+    <a href="index.html" class="nav-logo">
+      <div class="nav-logo-icon" style="width:28px;height:28px;font-size:12px;border-radius:8px;background:linear-gradient(135deg,#10b981,#7c3aed)">✦</div>
+      <span class="nav-logo-text" style="font-size:1.1rem;background:linear-gradient(135deg,#10b981,#7c3aed);-webkit-background-clip:text;background-clip:text;">Prismo</span>
+    </a>
     <span class="footer-copy">© 2026 Prismo Technologies Pvt. Ltd.</span>
     <div class="footer-links"><a href="index.html">Home</a><a href="tech-news.html">Tech News</a><a href="contact.html">Contact</a><a href="waitlist.html">Waitlist</a></div>
   </div>

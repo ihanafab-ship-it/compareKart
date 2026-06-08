@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Prismo — Your AI-Powered Creative Workspace</title>
-  <meta name="description" content="Prismo is the all-in-one AI workspace that helps teams brainstorm, build, and ship 10x faster. Design, code, and collaborate — all in one place." />
+  <title>Prismo — Smart Price Optimizer & Auto-Orderer</title>
+  <meta name="description" content="Prismo compares prices, taxes, and shipping charges across Blinkit, Zepto, Swiggy Instamart, Amazon, Myntra, and Nykaa, auto-ordering your items at the absolute best rate." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
@@ -18,7 +18,7 @@
       overflow: hidden;
       text-align: center;
       padding: 7rem 2rem 4rem;
-      background: linear-gradient(180deg, #f8f9ff 0%, #fff 100%);
+      background: linear-gradient(180deg, #f5fcf6 0%, #fff 100%);
     }
     .hero-bg {
       position: absolute;
@@ -26,24 +26,24 @@
       background-image: url('hero_bg.png');
       background-size: cover;
       background-position: center;
-      opacity: 0.4;
+      opacity: 0.35;
     }
     .hero-overlay {
       position: absolute;
       inset: 0;
-      background: radial-gradient(ellipse at 30% 40%, rgba(124,58,237,0.08) 0%, transparent 50%),
-                  radial-gradient(ellipse at 70% 60%, rgba(236,72,153,0.08) 0%, transparent 50%),
+      background: radial-gradient(ellipse at 30% 40%, rgba(16,185,129,0.06) 0%, transparent 50%),
+                  radial-gradient(ellipse at 70% 60%, rgba(236,72,153,0.06) 0%, transparent 50%),
                   linear-gradient(to bottom, transparent 70%, #fff 100%);
     }
-    .hero-content { position: relative; z-index: 2; max-width: 800px; margin: 0 auto; }
+    .hero-content { position: relative; z-index: 2; max-width: 850px; margin: 0 auto; }
 
     .hero-eyebrow {
       display: inline-flex; align-items: center; gap: 8px;
       padding: 0.45rem 1.1rem;
-      background: linear-gradient(135deg, rgba(124,58,237,0.1), rgba(236,72,153,0.1));
-      border: 1.5px solid rgba(124,58,237,0.2);
+      background: linear-gradient(135deg, rgba(16,185,129,0.1), rgba(124,58,237,0.1));
+      border: 1.5px solid rgba(16,185,129,0.25);
       border-radius: 100px;
-      font-size: 0.82rem; font-weight: 700; color: var(--purple);
+      font-size: 0.82rem; font-weight: 700; color: var(--emerald);
       margin-bottom: 1.75rem;
       animation: fadeUp 0.6s ease both;
     }
@@ -51,27 +51,49 @@
 
     .hero-title {
       font-family: 'Outfit', sans-serif;
-      font-size: clamp(3rem, 7vw, 5.5rem);
-      font-weight: 900; line-height: 1.05; letter-spacing: -3px;
+      font-size: clamp(2.8rem, 6.5vw, 5rem);
+      font-weight: 900; line-height: 1.1; letter-spacing: -2.5px;
       margin-bottom: 1.5rem;
       animation: fadeUp 0.7s 0.1s ease both;
       color: var(--text-primary);
     }
     .hero-title .highlight {
-      background: var(--gradient-main);
+      background: linear-gradient(135deg, #10b981, #7c3aed, #f97316);
       -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
     }
 
     .hero-subtitle {
-      font-size: clamp(1.05rem, 2vw, 1.25rem);
+      font-size: clamp(1.05rem, 2vw, 1.22rem);
       color: var(--text-secondary);
-      max-width: 560px; margin: 0 auto 2.5rem; line-height: 1.75;
+      max-width: 620px; margin: 0 auto 2rem; line-height: 1.7;
       animation: fadeUp 0.7s 0.2s ease both;
     }
-    .hero-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; animation: fadeUp 0.7s 0.3s ease both; }
+
+    /* Single-item search widget inside Hero */
+    .hero-search-container {
+      max-width: 580px; margin: 0 auto 3rem;
+      animation: fadeUp 0.7s 0.3s ease both;
+      position: relative; z-index: 10;
+    }
+    .hero-search-bar {
+      display: flex; gap: 8px; background: #fff; padding: 6px;
+      border-radius: 100px; border: 2.5px solid var(--border-color);
+      box-shadow: var(--shadow-md); transition: all var(--transition-fast);
+      align-items: center;
+    }
+    .hero-search-bar:focus-within {
+      border-color: var(--green);
+      box-shadow: 0 8px 30px rgba(16,185,129,0.15);
+    }
+    .hero-search-input {
+      flex: 1; border: none; outline: none; background: transparent;
+      padding: 0.5rem 1rem 0.5rem 0.75rem; font-family: 'DM Sans', sans-serif;
+      font-size: 1rem; font-weight: 500; color: var(--text-primary);
+    }
+    .hero-search-input::placeholder { color: var(--text-muted); }
 
     .hero-stats {
-      margin-top: 4.5rem; display: flex; justify-content: center; gap: 3.5rem;
+      margin-top: 3.5rem; display: flex; justify-content: center; gap: 3.5rem;
       flex-wrap: wrap; animation: fadeUp 0.7s 0.4s ease both; position: relative; z-index: 2;
     }
     .hero-stat { text-align: center; }
@@ -98,13 +120,13 @@
       background: var(--bg-secondary); border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color);
     }
     .logos-label { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted); margin-bottom: 1.5rem; font-weight: 700; }
-    .logos-row { display: flex; align-items: center; justify-content: center; gap: 2rem; flex-wrap: wrap; }
+    .logos-row { display: flex; align-items: center; justify-content: center; gap: 1.5rem; flex-wrap: wrap; }
     .logo-pill {
-      padding: 0.5rem 1.25rem; background: #fff; border: 1px solid var(--border-color);
-      border-radius: 100px; font-size: 0.88rem; font-weight: 700; color: var(--text-muted);
+      padding: 0.55rem 1.35rem; background: #fff; border: 1px solid var(--border-color);
+      border-radius: 100px; font-size: 0.88rem; font-weight: 800;
       transition: all var(--transition-fast); box-shadow: var(--shadow-sm);
     }
-    .logo-pill:hover { color: var(--purple); border-color: rgba(124,58,237,0.3); transform: translateY(-2px); box-shadow: var(--shadow-md); }
+    .logo-pill:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
 
     /* Feature cards */
     .feature-icon {
@@ -125,10 +147,10 @@
     .step { flex: 1; text-align: center; padding: 2rem 1rem; position: relative; z-index: 1; }
     .step-num {
       width: 60px; height: 60px; border-radius: 50%; background: #fff;
-      border: 3px solid var(--purple); display: flex; align-items: center; justify-content: center;
+      border: 3px solid var(--green); display: flex; align-items: center; justify-content: center;
       font-family: 'Outfit', sans-serif; font-size: 1.3rem; font-weight: 800;
-      color: var(--purple); margin: 0 auto 1.25rem;
-      box-shadow: 0 0 0 6px rgba(124,58,237,0.08);
+      color: var(--green); margin: 0 auto 1.25rem;
+      box-shadow: 0 0 0 6px rgba(16,185,129,0.08);
       transition: all var(--transition-smooth);
     }
     .step:hover .step-num { background: var(--gradient-main); color: #fff; border-color: transparent; box-shadow: 0 4px 20px rgba(124,58,237,0.3); }
@@ -186,14 +208,14 @@
 <!-- NAVBAR -->
 <nav class="navbar" id="navbar">
   <a href="index.html" class="nav-logo">
-    <div class="nav-logo-icon">✦</div>
-    <span class="nav-logo-text">Prismo</span>
+    <div class="nav-logo-icon" style="background:linear-gradient(135deg, #10b981, #7c3aed)">✦</div>
+    <span class="nav-logo-text" style="background:linear-gradient(135deg, #10b981, #7c3aed);-webkit-background-clip:text;background-clip:text;">Prismo</span>
   </a>
   <ul class="nav-links" id="navLinks">
     <li><a href="index.html" class="active">Home</a></li>
     <li><a href="tech-news.html">Tech News</a></li>
     <li><a href="contact.html">Contact</a></li>
-    <li><a href="waitlist.html" class="nav-cta">Join Waitlist 🚀</a></li>
+    <li><a href="waitlist.html" class="nav-cta" style="background:linear-gradient(135deg, #10b981, #7c3aed) !important;box-shadow:0 4px 14px rgba(16,185,129,0.3);">Join Waitlist 🚀</a></li>
   </ul>
   <div class="hamburger" onclick="document.getElementById('navLinks').classList.toggle('open')" aria-label="Toggle navigation">
     <span></span><span></span><span></span>
@@ -205,42 +227,68 @@
   <div class="hero-bg"></div>
   <div class="hero-overlay"></div>
 
-  <div class="float-badge float-1" aria-hidden="true">🤖 AI Engine — <span style="color:var(--green)">Online</span></div>
-  <div class="float-badge float-2" aria-hidden="true">⚡ 12,847 tasks today</div>
-  <div class="float-badge float-3" aria-hidden="true">📈 98.7% accuracy</div>
+  <div class="float-badge float-1" aria-hidden="true" style="border-color:rgba(117,37,134,0.3)">🟣 Zepto: ₹140 <span style="color:var(--text-muted);font-weight:400">vs</span> Blinkit: ₹160</div>
+  <div class="float-badge float-2" aria-hidden="true" style="border-color:rgba(255,63,108,0.3)">🔴 Myntra: ₹1,299 <span style="color:var(--text-muted);font-weight:400">vs</span> Ajio: ₹1,399</div>
+  <div class="float-badge float-3" aria-hidden="true" style="border-color:rgba(16,185,129,0.3)">🌱 Saved ₹534 on this list</div>
 
   <div class="hero-content">
-    <div class="hero-eyebrow"><span class="live-dot"></span> Now in Early Access</div>
+    <div class="hero-eyebrow"><span class="live-dot"></span> Smart Shopping Assistant</div>
     <h1 class="hero-title">
-      Create. Build.<br/><span class="highlight">Ship 10x Faster.</span>
+      Stop Overpaying.<br/><span class="highlight">Compare & Auto-Order.</span>
     </h1>
     <p class="hero-subtitle">
-      Prismo is the AI-powered creative workspace where teams brainstorm, design, code, and collaborate — all in one beautiful place.
+      Upload your list and check live prices across Blinkit, Zepto, Swiggy Instamart, BigBasket, Amazon, Myntra, and Nykaa. Find the best split deal and checkout in one click.
     </p>
+
+    <!-- Interactive Search Bar -->
+    <div class="hero-search-container">
+      <div class="hero-search-bar">
+        <span style="font-size:1.2rem;margin-left:0.8rem;">🔍</span>
+        <input type="text" id="quickSearchInput" class="hero-search-input" placeholder="Search any product (e.g. Lipstick, Eggs, Sneakers, Milk)..." />
+        <button class="btn btn-primary" onclick="triggerQuickSearch()" style="padding: 0.6rem 1.5rem;font-size:0.9rem;border-radius:100px;">Compare</button>
+      </div>
+
+      <!-- Quick Search Results Box -->
+      <div id="quickSearchResults" class="search-widget-results" style="display:none;text-align:left;">
+        <div class="search-widget-header">
+          <span id="searchResultTitle">Matched Item</span>
+          <span class="brand-pill" id="searchResultCategory" style="font-size:0.7rem;">Grocery</span>
+        </div>
+        <div style="padding:1rem;background:#fff;display:flex;flex-direction:column;gap:0.75rem;" id="searchResultPrices">
+          <!-- Dynamically filled -->
+        </div>
+        <div style="padding:0.75rem 1rem;background:var(--bg-secondary);border-top:1.5px solid var(--border-color);display:flex;justify-content:space-between;align-items:center;">
+          <span style="font-size:0.82rem;font-weight:700;color:var(--text-secondary);" id="searchResultSavings">Savings: --</span>
+          <button class="btn btn-secondary" id="addToCartBtn" style="padding:0.35rem 0.85rem;font-size:0.8rem;border-radius:100px;">➕ Add to Checklist</button>
+        </div>
+      </div>
+    </div>
+
     <div class="hero-actions">
-      <a href="waitlist.html" class="btn btn-primary btn-lg">🚀 Get Early Access</a>
-      <a href="#features" class="btn btn-secondary btn-lg">Explore Features →</a>
+      <a href="#optimizer" class="btn btn-primary btn-lg" style="background:linear-gradient(135deg, #10b981, #7c3aed)">📋 Open List Optimizer</a>
+      <a href="#features" class="btn btn-secondary btn-lg">Explore Specs →</a>
     </div>
   </div>
 
   <div class="hero-stats">
-    <div class="hero-stat"><div class="stat-number" style="background:var(--gradient-warm);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">10x</div><div class="stat-label">Faster Shipping</div></div>
-    <div class="hero-stat"><div class="stat-number" style="background:var(--gradient-fun);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">50K+</div><div class="stat-label">Teams Waitlisted</div></div>
-    <div class="hero-stat"><div class="stat-number" style="background:var(--gradient-cool);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">99.9%</div><div class="stat-label">Uptime SLA</div></div>
-    <div class="hero-stat"><div class="stat-number" style="background:var(--gradient-sunset);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">₹0</div><div class="stat-label">Free to Start</div></div>
+    <div class="hero-stat"><div class="stat-number" style="background:var(--gradient-cool);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">18%</div><div class="stat-label">Average Savings</div></div>
+    <div class="hero-stat"><div class="stat-number" style="background:var(--gradient-fun);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">9 Apps</div><div class="stat-label">Compared Live</div></div>
+    <div class="hero-stat"><div class="stat-number" style="background:var(--gradient-warm);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">1-Click</div><div class="stat-label">Auto-Checkout</div></div>
+    <div class="hero-stat"><div class="stat-number" style="background:var(--gradient-sunset);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">₹0</div><div class="stat-label">Free Comparison</div></div>
   </div>
 </section>
 
-<!-- LOGOS -->
+<!-- LOGOS STRIP -->
 <div class="logos-strip">
-  <p class="logos-label">Trusted by teams at top companies</p>
+  <p class="logos-label">Optimizing deliveries across your favorite channels</p>
   <div class="logos-row">
-    <span class="logo-pill">🟣 Stripe</span>
-    <span class="logo-pill">🔵 Notion</span>
-    <span class="logo-pill">🟢 Vercel</span>
-    <span class="logo-pill">🟠 Linear</span>
-    <span class="logo-pill">🔴 Figma</span>
-    <span class="logo-pill">🟡 Slack</span>
+    <span class="logo-pill" style="border-color:rgba(251,209,36,0.3);color:#FBD124;">⚡ Blinkit</span>
+    <span class="logo-pill" style="border-color:rgba(117,37,134,0.3);color:#752586;">🟣 Zepto</span>
+    <span class="logo-pill" style="border-color:rgba(236,90,36,0.3);color:#EC5A24;"> Swiggy Instamart</span>
+    <span class="logo-pill" style="border-color:rgba(132,194,37,0.3);color:#84C225;">🌿 BigBasket</span>
+    <span class="logo-pill" style="border-color:rgba(255,153,0,0.3);color:#FF9900;">🟡 Amazon</span>
+    <span class="logo-pill" style="border-color:rgba(255,63,108,0.3);color:#FF3F6C;">🔴 Myntra</span>
+    <span class="logo-pill" style="border-color:rgba(252,39,121,0.3);color:#FC2779;">💖 Nykaa</span>
   </div>
 </div>
 
@@ -249,73 +297,217 @@
   <div class="container">
     <div style="text-align:center;margin-bottom:3.5rem;">
       <div class="section-badge">✦ Who We Are</div>
-      <h2 class="section-title">Built with a bold <span class="gradient-text">mission & vision</span></h2>
-      <p class="section-subtitle" style="margin:0 auto;">We believe the future of work isn't about doing more — it's about letting AI handle the mundane so humans can create what truly matters.</p>
+      <h2 class="section-title">A bold mission for <span class="gradient-text">every Indian shopper</span></h2>
+      <p class="section-subtitle" style="margin:0 auto;">We believe consumer tech should fight inflation. Prismo automatically scans and computes fees to keep money in your wallet.</p>
     </div>
 
-    <div class="card" style="border-left:4px solid var(--purple);margin-bottom:2rem;padding:2rem 2.5rem;">
+    <div class="card" style="border-left:4px solid var(--green);margin-bottom:2rem;padding:2rem 2.5rem;">
       <h3 style="font-family:'Outfit',sans-serif;font-size:1.3rem;font-weight:800;margin-bottom:0.75rem;">🏢 About <span class="gradient-text">Prismo</span></h3>
-      <p style="color:var(--text-secondary);line-height:1.8;font-size:0.95rem;">Founded in 2024 in Mumbai, India, Prismo is an AI-powered creative workspace startup. We are a passionate team of engineers, designers, and dreamers on a mission to eliminate repetitive busywork from every team on the planet. Our platform connects 1,000+ tools, learns from your unique workflows, and automates decisions with contextual intelligence — so your team can ship faster, think bigger, and work smarter.</p>
+      <p style="color:var(--text-secondary);line-height:1.8;font-size:0.95rem;">Founded in 2024 in Mumbai, India, Prismo is a shopping automation platform. Our team builds intelligent APIs that interface with grocery, fashion, and cosmetics apps. By analyzing items client-side, Prismo finds price disparities, calculates shipping costs, platforms fees, surge prices, and executes immediate backend checkout checkouts — saving you time and money on every single order.</p>
     </div>
 
     <div class="grid-3">
-      <div class="card" style="text-align:center;border-top:4px solid var(--pink);">
-        <div class="mission-icon" style="background:rgba(236,72,153,0.1);">🎯</div>
-        <h3 style="font-family:'Outfit',sans-serif;font-size:1.15rem;font-weight:700;margin-bottom:0.6rem;color:var(--pink);">Our Mission</h3>
-        <p style="color:var(--text-secondary);font-size:0.9rem;line-height:1.7;">To empower every team on Earth with intelligent tools — eliminating repetitive work and unlocking human creative potential at unprecedented scale.</p>
+      <div class="card" style="text-align:center;border-top:4px solid var(--green);">
+        <div class="mission-icon" style="background:rgba(16,185,129,0.1);color:var(--green)">🎯</div>
+        <h3 style="font-family:'Outfit',sans-serif;font-size:1.15rem;font-weight:700;margin-bottom:0.6rem;color:var(--green)">Our Mission</h3>
+        <p style="color:var(--text-secondary);font-size:0.9rem;line-height:1.7;">To save Indian consumers billions of rupees by identifying the lowest price on every single grocery, fashion, and beauty item — instantly and automatically.</p>
       </div>
-      <div class="card" style="text-align:center;border-top:4px solid var(--blue);">
-        <div class="mission-icon" style="background:rgba(59,130,246,0.1);">🔭</div>
-        <h3 style="font-family:'Outfit',sans-serif;font-size:1.15rem;font-weight:700;margin-bottom:0.6rem;color:var(--blue);">Our Vision</h3>
-        <p style="color:var(--text-secondary);font-size:0.9rem;line-height:1.7;">A world where workflows run themselves — where every professional has an AI co-pilot that anticipates needs and amplifies creativity.</p>
+      <div class="card" style="text-align:center;border-top:4px solid var(--purple);">
+        <div class="mission-icon" style="background:rgba(124,58,237,0.1);color:var(--purple)">🔭</div>
+        <h3 style="font-family:'Outfit',sans-serif;font-size:1.15rem;font-weight:700;margin-bottom:0.6rem;color:var(--purple)">Our Vision</h3>
+        <p style="color:var(--text-secondary);font-size:0.9rem;line-height:1.7;">A world where purchasing items is frictionless and optimized — where lists are automatically routed, coupon codes applied, and auto-ordered without manual effort.</p>
       </div>
       <div class="card" style="text-align:center;border-top:4px solid var(--orange);">
-        <div class="mission-icon" style="background:rgba(249,115,22,0.1);">💎</div>
-        <h3 style="font-family:'Outfit',sans-serif;font-size:1.15rem;font-weight:700;margin-bottom:0.6rem;color:var(--orange);">Our Values</h3>
-        <p style="color:var(--text-secondary);font-size:0.9rem;line-height:1.7;"><strong>Innovation First</strong> · <strong>User Obsession</strong> · <strong>Radical Transparency</strong> · <strong>Global by Default</strong></p>
+        <div class="mission-icon" style="background:rgba(249,115,22,0.1);color:var(--orange)">💎</div>
+        <h3 style="font-family:'Outfit',sans-serif;font-size:1.15rem;font-weight:700;margin-bottom:0.6rem;color:var(--orange)">Our Values</h3>
+        <p style="color:var(--text-secondary);font-size:0.9rem;line-height:1.7;"><strong>Ultimate Transparency</strong> · <strong>Consumer First</strong> · <strong>Instant Automation</strong> · <strong>Algorithmic Integrity</strong></p>
       </div>
     </div>
   </div>
 </section>
 
+<!-- THE CORE COMPARISON DASHBOARD -->
+<section class="section" id="optimizer">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:2.5rem;">
+      <div class="section-badge" style="background:rgba(16,185,129,0.1);color:var(--green);border-color:rgba(16,185,129,0.2)">📋 Multi-App Optimizer</div>
+      <h2 class="section-title">Build Your Shopping <span class="gradient-text">List & Compare</span></h2>
+      <p class="section-subtitle" style="margin:0 auto;">Add items to your checklist. Prismo will analyze category routing, compare prices, and auto-place the order.</p>
+    </div>
+
+    <div class="optimizer-container">
+      
+      <!-- Left side: List builder -->
+      <div class="card list-builder">
+        <h3 style="font-family:'Outfit',sans-serif;font-size:1.2rem;font-weight:800;margin-bottom:0.25rem;">📝 Shopping Checklist</h3>
+        <p style="color:var(--text-secondary);font-size:0.85rem;margin-bottom:0.75rem;">Type an item or select a preset bundle to get started:</p>
+        
+        <div style="display:flex;gap:8px;">
+          <input type="text" id="itemInput" class="form-control" placeholder="Add (e.g. Milk, Jeans, Lipstick)..." onkeypress="handleItemKeyPress(event)" />
+          <button class="btn btn-primary" onclick="addItemFromInput()" style="padding:0.75rem 1.25rem;border-radius:var(--radius-md);background:var(--green)">Add</button>
+        </div>
+
+        <div>
+          <div style="font-size:0.8rem;font-weight:700;color:var(--text-muted);margin-bottom:0.5rem;text-transform:uppercase;">Quick presets:</div>
+          <div style="display:flex;flex-wrap:wrap;gap:6px;">
+            <button class="preset-btn" onclick="loadPreset('grocery')">🥦 Weekly Veggies</button>
+            <button class="preset-btn" onclick="loadPreset('beauty')">💄 Self-Care Bundle</button>
+            <button class="preset-btn" onclick="loadPreset('fashion')">👟 College Outfit</button>
+            <button class="preset-btn" onclick="loadPreset('mixed')">🔀 Mixed Cart</button>
+          </div>
+        </div>
+
+        <div style="border-top:1.5px solid var(--border-color);padding-top:1rem;margin-top:0.5rem;">
+          <div style="display:flex;justify-content:between;align-items:center;margin-bottom:0.75rem;">
+            <span style="font-size:0.88rem;font-weight:700;color:var(--text-primary);">Added Items (<span id="cartCount">0</span>)</span>
+            <button onclick="clearCart()" style="font-size:0.8rem;background:none;border:none;color:var(--rose);cursor:pointer;font-weight:700;">Clear All 🗑️</button>
+          </div>
+          <div class="item-tag-list" id="itemTagList">
+            <!-- Filled dynamically -->
+            <p id="emptyCartMessage" style="font-size:0.88rem;color:var(--text-muted);font-style:italic;">Your list is empty. Add items above!</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right side: Comparison breakdown -->
+      <div class="card optimizer-results" style="padding:1.5rem 2rem;">
+        <div class="opt-tab-bar">
+          <button class="opt-tab active" id="tabSingle" onclick="switchOptTab('single')">Cheapest App Cart</button>
+          <button class="opt-tab" id="tabSplit" onclick="switchOptTab('split')">Split-Order Saver (Cheapest/Item) 🏆</button>
+        </div>
+
+        <!-- Breakdown table -->
+        <div style="overflow-x:auto;">
+          <div id="comparisonGrid" style="min-width:480px;">
+            <!-- Render headers and items dynamically -->
+          </div>
+        </div>
+
+        <!-- Totals summary -->
+        <div class="summary-panel" id="summaryPanel">
+          <div class="summary-row"><span>Items Subtotal:</span><span id="summarySubtotal">₹0.00</span></div>
+          <div class="summary-row"><span>Taxes & GST:</span><span id="summaryTax">₹0.00</span></div>
+          <div class="summary-row"><span>Platform & Packaging Fees:</span><span id="summaryHandling">₹0.00</span></div>
+          <div class="summary-row"><span>Delivery Fees:</span><span id="summaryDelivery">₹0.00</span></div>
+          <div class="summary-row" style="color:var(--green);font-weight:700;" id="savingsRow"><span>Optimizer Savings:</span><span id="summarySavings">₹0.00</span></div>
+          <div class="summary-row total"><span>Total Amount:</span><span id="summaryTotal">₹0.00</span></div>
+        </div>
+
+        <!-- Order actions -->
+        <div style="display:flex;flex-direction:column;gap:1rem;margin-top:0.5rem;">
+          <!-- Monthly scheduler check -->
+          <label style="display:flex;align-items:center;gap:10px;cursor:pointer;font-size:0.9rem;font-weight:600;color:var(--text-secondary);">
+            <input type="checkbox" id="monthlyScheduleCheck" style="width:18px;height:18px;accent-color:var(--green);" onchange="toggleMonthlyScheduler()" />
+            <span>Enable Monthly Auto-Order (Replenish list on the 1st of every month) 📅</span>
+          </label>
+          <div id="monthlySettings" style="display:none;background:var(--bg-secondary);padding:1rem;border-radius:var(--radius-md);border:1.5px dashed var(--border-color);animation:fadeUp 0.3s ease;">
+            <label style="font-size:0.82rem;font-weight:700;color:var(--text-muted);display:block;margin-bottom:0.4rem;">SELECT REPLENISHMENT DATE:</label>
+            <input type="date" id="scheduleDateInput" class="form-control" style="max-width:220px;padding:0.5rem;" />
+            <span style="font-size:0.75rem;color:var(--text-muted);display:block;margin-top:0.4rem;">Prismo will automatically place this split-optimized order on the selected date.</span>
+          </div>
+
+          <button class="btn btn-primary" onclick="initiateAutoOrder()" style="background:var(--gradient-sunset);padding:1rem 2rem;font-size:1.1rem;justify-content:center;border-radius:var(--radius-md);">
+            🚀 Execute Auto-Order Now
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DYNAMIC AUTO-ORDER ANIMATION MODAL -->
+<div class="modal-overlay" id="autoOrderModal">
+  <div class="modal-card">
+    <div style="text-align:center;">
+      <h3 style="font-family:'Outfit',sans-serif;font-size:1.5rem;font-weight:800;margin-bottom:0.5rem;">⚡ Automated Purchase</h3>
+      <p style="color:var(--text-secondary);font-size:0.9rem;" id="modalSubtitle">Connecting to seller checkout APIs...</p>
+    </div>
+
+    <!-- Progress bar -->
+    <div style="margin-top:1.5rem;">
+      <div class="modal-progress">
+        <div class="modal-progress-bar" id="modalProgressBar"></div>
+      </div>
+      <div style="display:flex;justify-content:space-between;font-size:0.78rem;font-weight:700;color:var(--text-muted);">
+        <span>INITIATED</span>
+        <span id="progressPercent">0%</span>
+      </div>
+    </div>
+
+    <!-- Steps status -->
+    <div class="modal-steps">
+      <div class="modal-step" id="step1">
+        <div class="step-indicator">1</div>
+        <span>Establish secure API handshakes...</span>
+      </div>
+      <div class="modal-step" id="step2">
+        <div class="step-indicator">2</div>
+        <span id="step2Text">Populate items in cart...</span>
+      </div>
+      <div class="modal-step" id="step3">
+        <div class="step-indicator">3</div>
+        <span>Scan & apply maximum coupon codes...</span>
+      </div>
+      <div class="modal-step" id="step4">
+        <div class="step-indicator">4</div>
+        <span>Resolve platform handling fees & taxes...</span>
+      </div>
+      <div class="modal-step" id="step5">
+        <div class="step-indicator">5</div>
+        <span>Place optimized orders...</span>
+      </div>
+    </div>
+
+    <!-- Final Success state (shows when progress = 100%) -->
+    <div id="modalSuccessState" style="display:none;text-align:center;animation:fadeUp 0.4s ease;border-top:1.5px solid var(--border-light);padding-top:1.5rem;margin-top:1rem;">
+      <div style="font-size:3rem;margin-bottom:0.75rem;">🎉</div>
+      <h4 style="font-family:'Outfit',sans-serif;font-size:1.25rem;font-weight:800;color:var(--green);margin-bottom:0.4rem;">Orders Placed Successfully!</h4>
+      <p style="font-size:0.88rem;color:var(--text-secondary);line-height:1.6;margin-bottom:1.25rem;" id="modalSuccessDesc">
+        Your orders have been successfully checked out. Detailed invoices and tracking details have been sent to your email.
+      </p>
+      <button class="btn btn-secondary" onclick="closeOrderModal()" style="border-radius:100px;padding:0.5rem 1.5rem;">Close Window</button>
+    </div>
+  </div>
+</div>
+
 <!-- FEATURES -->
 <section class="section" id="features">
   <div class="container">
     <div style="text-align:center;margin-bottom:3.5rem;">
-      <div class="section-badge">✦ Features</div>
-      <h2 class="section-title">Everything your team needs to <span class="gradient-text">create magic</span></h2>
-      <p class="section-subtitle" style="margin:0 auto;">Six powerful pillars — one unified workspace.</p>
+      <div class="section-badge">✦ Product Specs</div>
+      <h2 class="section-title">Technological specs that <span class="gradient-text">save you cash</span></h2>
+      <p class="section-subtitle" style="margin:0 auto;">Six powerful features designed to find the absolute best rates in seconds.</p>
     </div>
     <div class="grid-3">
-      <div class="card" style="border-top:4px solid #7c3aed;">
-        <div class="feature-icon" style="background:rgba(124,58,237,0.1);color:#7c3aed;">🧠</div>
-        <h3 class="feature-title" style="color:#7c3aed;">AI Creative Engine</h3>
-        <p class="feature-desc">Our AI understands your brand, style, and context — generating designs, copy, and code that feel authentically yours.</p>
+      <div class="card" style="border-top:4px solid #10b981;">
+        <div class="feature-icon" style="background:rgba(16,185,129,0.1);color:#10b981;">🧠</div>
+        <h3 class="feature-title" style="color:#10b981;">Smart Category Routing</h3>
+        <p class="feature-desc">Our platform automatically routes items to the correct channels: milk to groceries, sneakers to fashion, lip balm to cosmetics.</p>
       </div>
-      <div class="card" style="border-top:4px solid #ec4899;">
-        <div class="feature-icon" style="background:rgba(236,72,153,0.1);color:#ec4899;">⚡</div>
-        <h3 class="feature-title" style="color:#ec4899;">Instant Prototyping</h3>
-        <p class="feature-desc">Go from idea to interactive prototype in minutes. Drag, drop, connect — no coding required.</p>
+      <div class="card" style="border-top:4px solid #7c3aed;">
+        <div class="feature-icon" style="background:rgba(124,58,237,0.1);color:#7c3aed;">⚡</div>
+        <h3 class="feature-title" style="color:#7c3aed;">Split-Basket Optimizer</h3>
+        <p class="feature-desc">Buy shampoo from Nykaa and onions from Zepto. We compute shipping fees to guarantee the lowest total checkout price.</p>
       </div>
       <div class="card" style="border-top:4px solid #f97316;">
         <div class="feature-icon" style="background:rgba(249,115,22,0.1);color:#f97316;">🔗</div>
-        <h3 class="feature-title" style="color:#f97316;">1,000+ Integrations</h3>
-        <p class="feature-desc">Connect every tool — Figma, GitHub, Slack, Notion — with zero-config bi-directional sync.</p>
+        <h3 class="feature-title" style="color:#f97316;">1-Click Auto Checkout</h3>
+        <p class="feature-desc">Automate your order placements. Avoid jumping between 5 different applications to secure matching carts.</p>
       </div>
-      <div class="card" style="border-top:4px solid #10b981;">
-        <div class="feature-icon" style="background:rgba(16,185,129,0.1);color:#10b981;">📊</div>
-        <h3 class="feature-title" style="color:#10b981;">Smart Analytics</h3>
-        <p class="feature-desc">Real-time dashboards surface what matters. Our AI forecasts bottlenecks before they happen.</p>
+      <div class="card" style="border-top:4px solid #ec4899;">
+        <div class="feature-icon" style="background:rgba(236,72,153,0.1);color:#ec4899;">📊</div>
+        <h3 class="feature-title" style="color:#ec4899;">Surge & Fee Tracking</h3>
+        <p class="feature-desc">We fetch real-time rain surge fees, night charges, delivery charges, packaging costs, and VAT/GST details for every order.</p>
       </div>
       <div class="card" style="border-top:4px solid #3b82f6;">
-        <div class="feature-icon" style="background:rgba(59,130,246,0.1);color:#3b82f6;">🛡️</div>
-        <h3 class="feature-title" style="color:#3b82f6;">Enterprise Security</h3>
-        <p class="feature-desc">SOC 2 Type II. End-to-end encryption, SSO, RBAC, and full audit logs.</p>
+        <div class="feature-icon" style="background:rgba(59,130,246,0.1);color:#3b82f6;">📅</div>
+        <h3 class="feature-title" style="color:#3b82f6;">Monthly Replenishment</h3>
+        <p class="feature-desc">Schedule monthly essentials. Prismo dynamically checks prices on the selected day and checks them out instantly.</p>
       </div>
       <div class="card" style="border-top:4px solid #f59e0b;">
-        <div class="feature-icon" style="background:rgba(245,158,11,0.1);color:#f59e0b;">🌍</div>
-        <h3 class="feature-title" style="color:#f59e0b;">Global Edge Network</h3>
-        <p class="feature-desc">40+ regions. 99.9% uptime SLA. Blazing fast wherever your team is.</p>
+        <div class="feature-icon" style="background:rgba(245,158,11,0.1);color:#f59e0b;">🔍</div>
+        <h3 class="feature-title" style="color:#f59e0b;">Instant Search Compare</h3>
+        <p class="feature-desc">Looking for a single specific item? Use our search comparison card to pinpoint the lowest price in 2 seconds.</p>
       </div>
     </div>
   </div>
@@ -326,23 +518,23 @@
   <div class="container">
     <div style="text-align:center;margin-bottom:3.5rem;">
       <div class="section-badge">✦ How It Works</div>
-      <h2 class="section-title">Up and running in <span class="gradient-text">3 simple steps</span></h2>
+      <h2 class="section-title">Get the best price in <span class="gradient-text">3 simple steps</span></h2>
     </div>
     <div class="steps-container">
       <div class="step">
         <div class="step-num">01</div>
-        <h3 class="step-title">Connect Your Stack</h3>
-        <p class="step-desc">Plug in tools with one-click. No API keys or code needed.</p>
+        <h3 class="step-title">Load Your Items</h3>
+        <p class="step-desc">Type items in the builder, choose presets, or type a single search query in the hero header.</p>
       </div>
       <div class="step">
         <div class="step-num">02</div>
-        <h3 class="step-title">Design Your Flow</h3>
-        <p class="step-desc">Use the visual canvas to map triggers, conditions, and actions.</p>
+        <h3 class="step-title">Review the Comparison</h3>
+        <p class="step-desc">Check out single-app totals or toggle Split-Cart mode to see combined item-by-item savings.</p>
       </div>
       <div class="step">
         <div class="step-num">03</div>
-        <h3 class="step-title">Launch & Scale</h3>
-        <p class="step-desc">Activate, monitor in real-time, and scale effortlessly.</p>
+        <h3 class="step-title">Auto-Order Instantly</h3>
+        <p class="step-desc">Click Auto-Order or schedule monthly replenishment to let our bots place orders at the lowest rates.</p>
       </div>
     </div>
   </div>
@@ -353,31 +545,31 @@
   <div class="container">
     <div style="text-align:center;margin-bottom:3.5rem;">
       <div class="section-badge">✦ Testimonials</div>
-      <h2 class="section-title">Loved by <span class="gradient-text">creative teams</span></h2>
+      <h2 class="section-title">Loved by <span class="gradient-text">smart shoppers</span></h2>
     </div>
     <div class="grid-3">
       <div class="card">
         <span class="quote-mark">"</span>
-        <p class="testimonial-text">Prismo shaved 40 hours per week off our ops team's plate. The AI genuinely understands context like nothing I've seen before.</p>
+        <p class="testimonial-text">Prismo saved me ₹800 on groceries last week by splitting our order between Zepto and Blinkit. The platform fees are calculated accurately!</p>
         <div class="testimonial-author">
           <div class="author-avatar" style="background:var(--gradient-main);">S</div>
-          <div class="author-info"><div class="name">Sarah Kim</div><div class="role">VP Operations, Swiggy</div></div>
+          <div class="author-info"><div class="name">Sarah Kim</div><div class="role">Shopper, Swiggy Instamart customer</div></div>
         </div>
       </div>
       <div class="card">
         <span class="quote-mark">"</span>
-        <p class="testimonial-text">We replaced five automation tools with Prismo. Savings paid for itself in the first month. Absolutely game-changing product.</p>
+        <p class="testimonial-text">We use Prismo to auto-order monthly pantry items. We save 15% consistently. The e-commerce routing for jeans/shirts on Myntra is flawless.</p>
         <div class="testimonial-author">
           <div class="author-avatar" style="background:var(--gradient-cool);">R</div>
-          <div class="author-info"><div class="name">Rajesh Iyer</div><div class="role">CTO, Razorpay</div></div>
+          <div class="author-info"><div class="name">Rajesh Iyer</div><div class="role">Office Manager, BKC Mumbai</div></div>
         </div>
       </div>
       <div class="card">
         <span class="quote-mark">"</span>
-        <p class="testimonial-text">Onboarding took 20 minutes. Within a day, our entire customer workflow was automated. This is the future of work.</p>
+        <p class="testimonial-text">I searched for my facewash and found a ₹120 price difference on Nykaa vs Amazon. Added to cart and auto-ordered in seconds.</p>
         <div class="testimonial-author">
           <div class="author-avatar" style="background:var(--gradient-warm);">A</div>
-          <div class="author-info"><div class="name">Aisha Patel</div><div class="role">Head of CS, Zerodha</div></div>
+          <div class="author-info"><div class="name">Aisha Patel</div><div class="role">Cosmetics enthusiast, Zerodha</div></div>
         </div>
       </div>
     </div>
@@ -389,35 +581,35 @@
   <div class="container">
     <div style="text-align:center;margin-bottom:3.5rem;">
       <div class="section-badge">✦ Pricing</div>
-      <h2 class="section-title">Simple, transparent <span class="gradient-text">pricing</span></h2>
-      <p class="section-subtitle" style="margin:0 auto;">No hidden fees. Cancel anytime. Scale as you grow.</p>
+      <h2 class="section-title">Simple, transparent <span class="gradient-text">plans</span></h2>
+      <p class="section-subtitle" style="margin:0 auto;">No hidden fees. Cancel anytime. Save more with Pro.</p>
     </div>
     <div class="grid-3" style="max-width:960px;margin:0 auto;">
       <div class="card pricing-card" style="border-top:4px solid var(--green);">
         <div class="pricing-name" style="color:var(--green);">🌱 Starter</div>
         <div class="pricing-price" style="background:var(--gradient-cool);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">₹0</div>
-        <div class="pricing-period">Free forever — no card needed</div>
+        <div class="pricing-period">Free forever — basic comparisons</div>
         <ul class="pricing-features">
-          <li>Up to 5 projects</li><li>100 AI tasks / month</li><li>10 integrations</li><li>Community support</li><li>Basic analytics</li>
+          <li>Compare up to 3 lists/mo</li><li>Manual checkouts only</li><li>Supports grocery apps</li><li>Standard platform speed</li><li>Ad-supported layout</li>
         </ul>
         <a href="waitlist.html" class="btn btn-secondary" style="width:100%;justify-content:center;">Get Started Free</a>
       </div>
       <div class="card pricing-card popular" style="border-top:4px solid var(--purple);">
-        <div class="popular-badge">⭐ Most Popular</div>
+        <div class="popular-badge">⭐ Best Value</div>
         <div class="pricing-name" style="color:var(--purple);">🚀 Pro</div>
-        <div class="pricing-price gradient-text">₹3,999</div>
-        <div class="pricing-period">per seat / month · <span style="color:var(--green);font-weight:700;">Save 20% annually</span></div>
+        <div class="pricing-price gradient-text">₹199</div>
+        <div class="pricing-period">per month · billed monthly</div>
         <ul class="pricing-features">
-          <li>Unlimited projects</li><li>50,000 AI tasks / month</li><li>All integrations</li><li>24/7 priority support</li><li>Advanced AI analytics</li><li>Team collaboration</li>
+          <li>Unlimited comparisons</li><li>1-Click Auto Checkout</li><li>Split-basket optimization</li><li>Supports all 9 apps</li><li>No ads & priority support</li><li>Monthly recurring scheduling</li>
         </ul>
-        <a href="waitlist.html" class="btn btn-primary" style="width:100%;justify-content:center;">Join Waitlist 🚀</a>
+        <a href="waitlist.html" class="btn btn-primary" style="width:100%;justify-content:center;">Join Pro Waitlist 🚀</a>
       </div>
       <div class="card pricing-card" style="border-top:4px solid var(--orange);">
         <div class="pricing-name" style="color:var(--orange);">🏢 Enterprise</div>
         <div class="pricing-price" style="background:var(--gradient-warm);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Custom</div>
-        <div class="pricing-period">Tailored to your organisation</div>
+        <div class="pricing-period">For offices & businesses</div>
         <ul class="pricing-features">
-          <li>Unlimited everything</li><li>Dedicated AI model</li><li>SSO & SAML</li><li>99.99% SLA guarantee</li><li>Onboarding manager</li><li>Custom contracts</li>
+          <li>Unlimited accounts</li><li>Automated office pantries</li><li>Corporate invoicing & GSTIN</li><li>Custom API integrations</li><li>Dedicated account manager</li><li>99.99% uptime guarantee</li>
         </ul>
         <a href="contact.html" class="btn btn-secondary" style="width:100%;justify-content:center;border-color:var(--orange);color:var(--orange);">Contact Sales →</a>
       </div>
@@ -425,41 +617,1049 @@
   </div>
 </section>
 
-<!-- CTA -->
-<section class="section">
-  <div class="cta-section">
-    <h2 class="cta-title">Ready to create at <span style="text-decoration:underline;text-decoration-color:rgba(255,255,255,0.4);">10x speed?</span></h2>
-    <p class="cta-sub">Join 50,000+ teams on the waitlist. Be the first to transform the way you work.</p>
-    <div class="cta-actions">
-      <a href="waitlist.html" class="cta-btn-white">🚀 Join the Waitlist</a>
-      <a href="contact.html" class="cta-btn-white" style="background:rgba(255,255,255,0.15);color:#fff !important;border:2px solid rgba(255,255,255,0.3);">Talk to Sales</a>
+<!-- QUIZ: Savings Shopper Profiler -->
+<section class="section" id="quiz-section" style="background:linear-gradient(135deg,#fef7ff,#f0f4ff,#f0fdf4);">
+  <div class="container" style="max-width:700px;">
+    <div style="text-align:center;margin-bottom:2.5rem;">
+      <div class="section-badge">🎮 Interactive Quiz</div>
+      <h2 class="section-title">Find your <span class="gradient-text">Shopping Style</span></h2>
+      <p class="section-subtitle" style="margin:0 auto;">Answer 3 quick questions to discover your optimizer profile and see how much you could save.</p>
+    </div>
+
+    <div class="card" style="padding:2.5rem;box-shadow:var(--shadow-xl);border:2px solid rgba(16,185,129,0.1);" id="quizCard">
+      <!-- Progress bar -->
+      <div style="display:flex;gap:6px;margin-bottom:2rem;" id="quizProgress">
+        <div style="flex:1;height:6px;border-radius:3px;background:var(--green);transition:all 0.4s ease;" id="prog1"></div>
+        <div style="flex:1;height:6px;border-radius:3px;background:#e2e8f0;transition:all 0.4s ease;" id="prog2"></div>
+        <div style="flex:1;height:6px;border-radius:3px;background:#e2e8f0;transition:all 0.4s ease;" id="prog3"></div>
+      </div>
+
+      <!-- Q1 -->
+      <div id="q1" class="quiz-step">
+        <h3 style="font-family:'Outfit',sans-serif;font-size:1.3rem;font-weight:800;margin-bottom:0.5rem;">1️⃣ How do you usually shop?</h3>
+        <p style="color:var(--text-secondary);font-size:0.9rem;margin-bottom:1.5rem;">Select your primary shopping habit.</p>
+        <div style="display:flex;flex-direction:column;gap:0.75rem;">
+          <button class="quiz-opt" onclick="quizAnswer(1,'instant')">⚡ Impulse / Need groceries in 10 minutes</button>
+          <button class="quiz-opt" onclick="quizAnswer(1,'weekly')">🥦 Weekly planned groceries & items</button>
+          <button class="quiz-opt" onclick="quizAnswer(1,'monthly')">📦 Monthly bulk replenishment orders</button>
+        </div>
+      </div>
+
+      <!-- Q2 -->
+      <div id="q2" class="quiz-step" style="display:none;">
+        <h3 style="font-family:'Outfit',sans-serif;font-size:1.3rem;font-weight:800;margin-bottom:0.5rem;">2️⃣ What's your biggest shopping concern?</h3>
+        <p style="color:var(--text-secondary);font-size:0.9rem;margin-bottom:1.5rem;">Pick the factor that bugs you the most.</p>
+        <div style="display:flex;flex-direction:column;gap:0.75rem;">
+          <button class="quiz-opt" onclick="quizAnswer(2,'price')">💸 Overpaying on item price disparities</button>
+          <button class="quiz-opt" onclick="quizAnswer(2,'fees')">📦 Annoying shipping charges & surge pricing</button>
+          <button class="quiz-opt" onclick="quizAnswer(2,'convenience')">⏳ Time wasted managing 5 different apps</button>
+        </div>
+      </div>
+
+      <!-- Q3 -->
+      <div id="q3" class="quiz-step" style="display:none;">
+        <h3 style="font-family:'Outfit',sans-serif;font-size:1.3rem;font-weight:800;margin-bottom:0.5rem;">3️⃣ What's your average monthly shopping spend?</h3>
+        <p style="color:var(--text-secondary);font-size:0.9rem;margin-bottom:1.5rem;">Includes grocer, apparel, and beauty deliveries.</p>
+        <div style="display:flex;flex-direction:column;gap:0.75rem;">
+          <button class="quiz-opt" onclick="quizAnswer(3,'low')">💳 Under ₹5,000 per month</button>
+          <button class="quiz-opt" onclick="quizAnswer(3,'moderate')">💵 ₹5,000 to ₹15,000 per month</button>
+          <button class="quiz-opt" onclick="quizAnswer(3,'high')">💎 Above ₹15,000 per month</button>
+        </div>
+      </div>
+
+      <!-- Result -->
+      <div id="quizResult" class="quiz-step" style="display:none;text-align:center;">
+        <div style="font-size:3.5rem;margin-bottom:1rem;" id="resultEmoji">🚀</div>
+        <h3 style="font-family:'Outfit',sans-serif;font-size:1.5rem;font-weight:800;margin-bottom:0.5rem;" id="resultTitle">Loading...</h3>
+        <p style="color:var(--text-secondary);font-size:0.95rem;line-height:1.7;margin-bottom:1.5rem;" id="resultDesc"></p>
+        <div style="display:flex;gap:0.75rem;justify-content:center;flex-wrap:wrap;">
+          <a href="waitlist.html" class="btn btn-primary" style="background:var(--green)">Join the Waitlist 🚀</a>
+          <button class="btn btn-secondary" onclick="resetQuiz()">Retake Quiz 🔄</button>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- FOOTER -->
+<!-- FAQ Accordion -->
+<section class="section" id="faq">
+  <div class="container" style="max-width:760px;">
+    <div style="text-align:center;margin-bottom:3rem;">
+      <div class="section-badge">❓ FAQ</div>
+      <h2 class="section-title">Got questions? We've got <span class="gradient-text">answers</span></h2>
+    </div>
+
+    <div style="display:flex;flex-direction:column;gap:0.75rem;" id="faqList">
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span>What exactly is Prismo?</span><span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">Prismo is a multi-app price comparison and auto-ordering platform. You input a list of groceries, fashion wear, or cosmetics. We route items to the cheapest apps (e.g. apples to Zepto, lipstick to Nykaa) and place your orders in a single click. 🚀</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span>Is there a fee to use Prismo?</span><span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">Our Starter plan is completely free! You can search items and compare manually. Our Pro plan costs ₹199/month and unlocks split-cart optimization, scheduled monthly replenishments, and 1-click auto checkout. 🌱</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span>How do you calculate platform fees and taxes?</span><span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">We query live price engines and calculate itemized rates, packaging charges, delivery costs, rain/surge fees, and GST depending on the app. The totals you see are the final amounts you pay. 🧠</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span>How does the Auto-Ordering feature work?</span><span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">Prismo connects directly with retail delivery checkouts through secure, local client-side API calls. Our system logs in, populates your carts with the cheapest products, enters promo codes, and processes checkouts. 🔒</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span>Can I schedule recurring orders?</span><span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">Yes! Check the "Enable Monthly Auto-Order" box on your checklist dashboard, select a date, and Prismo will automatically compute the cheapest rates on that morning and complete the checkout. 📅</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section">
+  <div class="cta-section" style="background:linear-gradient(135deg, #10b981, #7c3aed, #f97316)">
+    <h2 class="cta-title">Ready to shop at the <span style="text-decoration:underline;text-decoration-color:rgba(255,255,255,0.4);">lowest price?</span></h2>
+    <p class="cta-sub">Join 50,000+ smart shoppers on the waitlist. Start saving on groceries, apparel, and beauty today.</p>
+    <div class="cta-actions">
+      <a href="waitlist.html" class="cta-btn-white" style="color:#10b981 !important;">🚀 Join the Waitlist</a>
+      <a href="contact.html" class="cta-btn-white" style="background:rgba(255,255,255,0.15);color:#fff !important;border:2px solid rgba(255,255,255,0.3);">Talk to Partnerships</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER with real social links -->
 <footer class="footer">
-  <div class="footer-inner">
-    <a href="index.html" class="nav-logo"><div class="nav-logo-icon" style="width:28px;height:28px;font-size:12px;border-radius:8px;">✦</div><span class="nav-logo-text" style="font-size:1.1rem;">Prismo</span></a>
-    <span class="footer-copy">© 2026 Prismo Technologies Pvt. Ltd. All rights reserved.</span>
-    <div class="footer-links"><a href="index.html">Home</a><a href="tech-news.html">Tech News</a><a href="contact.html">Contact</a><a href="waitlist.html">Waitlist</a></div>
+  <div class="footer-inner" style="flex-direction:column;gap:1.5rem;text-align:center;">
+    <a href="index.html" class="nav-logo">
+      <div class="nav-logo-icon" style="width:28px;height:28px;font-size:12px;border-radius:8px;background:linear-gradient(135deg,#10b981,#7c3aed)">✦</div>
+      <span class="nav-logo-text" style="font-size:1.1rem;background:linear-gradient(135deg,#10b981,#7c3aed);-webkit-background-clip:text;background-clip:text;">Prismo</span>
+    </a>
+    
+    <div class="footer-links"><a href="index.html">Home</a><a href="tech-news.html">Tech News</a><a href="contact.html">Contact</a><a href="waitlist.html">Waitlist</a><a href="#optimizer">Optimizer</a><a href="#faq">FAQ</a></div>
+
+    <!-- Real Social Links -->
+    <div style="display:flex;gap:0.6rem;justify-content:center;flex-wrap:wrap;">
+      <a href="https://twitter.com" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;padding:0.45rem 1rem;border-radius:100px;font-size:0.82rem;font-weight:700;text-decoration:none;background:rgba(16,185,129,0.06);border:1.5px solid rgba(16,185,129,0.15);color:#10b981;transition:all 0.2s ease;">𝕏 Twitter</a>
+      <a href="https://instagram.com" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;padding:0.45rem 1rem;border-radius:100px;font-size:0.82rem;font-weight:700;text-decoration:none;background:rgba(236,72,153,0.06);border:1.5px solid rgba(236,72,153,0.15);color:#ec4899;transition:all 0.2s ease;">📸 Instagram</a>
+      <a href="https://facebook.com" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;padding:0.45rem 1rem;border-radius:100px;font-size:0.82rem;font-weight:700;text-decoration:none;background:rgba(59,130,246,0.06);border:1.5px solid rgba(59,130,246,0.15);color:#3b82f6;transition:all 0.2s ease;">👍 Facebook</a>
+      <a href="https://linkedin.com" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;padding:0.45rem 1rem;border-radius:100px;font-size:0.82rem;font-weight:700;text-decoration:none;background:rgba(6,182,212,0.06);border:1.5px solid rgba(6,182,212,0.15);color:#06b6d4;transition:all 0.2s ease;">in LinkedIn</a>
+      <a href="https://youtube.com" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;padding:0.45rem 1rem;border-radius:100px;font-size:0.82rem;font-weight:700;text-decoration:none;background:rgba(244,63,94,0.06);border:1.5px solid rgba(244,63,94,0.15);color:#f43f5e;transition:all 0.2s ease;">▶ YouTube</a>
+    </div>
+
+    <span class="footer-copy">© 2026 Prismo Technologies Pvt. Ltd. All rights reserved. Made with ❤️ in Mumbai, India.</span>
   </div>
 </footer>
 
+<!-- Scroll Progress Bar -->
+<div id="scrollProgress" style="position:fixed;top:0;left:0;height:4px;background:linear-gradient(90deg,#10b981,#7c3aed,#ec4899);z-index:9999;width:0;transition:width 0.1s linear;border-radius:0 2px 2px 0;"></div>
+
+<!-- Back to Top Button -->
+<button id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" style="position:fixed;bottom:2rem;right:2rem;width:50px;height:50px;border-radius:50%;background:linear-gradient(135deg,#10b981,#7c3aed);color:#fff;border:none;cursor:pointer;font-size:1.3rem;box-shadow:0 4px 16px rgba(16,185,129,0.3);z-index:999;opacity:0;transform:translateY(20px);transition:all 0.3s ease;display:flex;align-items:center;justify-content:center;">↑</button>
+
+<!-- Dark Mode Toggle -->
+<button id="darkModeBtn" onclick="toggleDarkMode()" style="position:fixed;bottom:2rem;left:2rem;width:50px;height:50px;border-radius:50%;background:#fff;border:2px solid var(--border-color);cursor:pointer;font-size:1.3rem;box-shadow:var(--shadow-md);z-index:999;display:flex;align-items:center;justify-content:center;transition:all 0.3s ease;" title="Toggle Dark Mode">🌙</button>
+
+<!-- Sparkle cursor canvas -->
+<canvas id="sparkleCanvas" style="position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:9998;"></canvas>
+
+<style>
+  /* Quiz styles */
+  .quiz-opt {
+    display:block; width:100%; padding:1rem 1.25rem; text-align:left;
+    background:#fff; border:2px solid var(--border-color); border-radius:var(--radius-md);
+    font-family:'DM Sans',sans-serif; font-size:0.95rem; font-weight:600;
+    color:var(--text-primary); cursor:pointer;
+    transition:all 0.25s ease;
+  }
+  .quiz-opt:hover {
+    border-color:var(--green); background:rgba(16,185,129,0.04);
+    transform:translateX(6px); box-shadow:var(--shadow-md);
+  }
+  .quiz-step { animation: fadeUp 0.4s ease; }
+
+  /* FAQ styles */
+  .faq-item {
+    background:#fff; border:1.5px solid var(--border-color); border-radius:var(--radius-md);
+    overflow:hidden; transition:border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  .faq-item:hover { border-color:rgba(16,185,129,0.2); box-shadow:var(--shadow-md); }
+  .faq-item.open { border-color:var(--green); box-shadow:0 4px 20px rgba(16,185,129,0.1); }
+  .faq-q {
+    display:flex; align-items:center; justify-content:space-between; width:100%;
+    padding:1.25rem 1.5rem; background:transparent; border:none; cursor:pointer;
+    font-family:'DM Sans',sans-serif; font-size:1rem; font-weight:700;
+    color:var(--text-primary); text-align:left; transition:color 0.2s ease;
+  }
+  .faq-q:hover { color:var(--green); }
+  .faq-icon {
+    font-size:1.4rem; font-weight:300; color:var(--green);
+    transition:transform 0.3s ease;
+  }
+  .faq-item.open .faq-icon { transform:rotate(45deg); }
+  .faq-a {
+    max-height:0; overflow:hidden; padding:0 1.5rem;
+    font-size:0.92rem; color:var(--text-secondary); line-height:1.75;
+    transition:max-height 0.4s ease, padding 0.4s ease;
+  }
+  .faq-item.open .faq-a { max-height:300px; padding:0 1.5rem 1.25rem; }
+
+  /* Dark mode */
+  body.dark-mode { --bg-primary:#0f0f1a; --bg-secondary:#161625; --bg-card:#1e1e30; --text-primary:#f1f5f9; --text-secondary:#94a3b8; --text-muted:#64748b; --border-color:rgba(255,255,255,0.08); --border-light:rgba(255,255,255,0.05); }
+  body.dark-mode .navbar { background:rgba(15,15,26,0.9); }
+  body.dark-mode .card, body.dark-mode .form-control, body.dark-mode .quiz-opt, body.dark-mode .faq-item { background:var(--bg-card); }
+  body.dark-mode .form-control { color:#f1f5f9; }
+  body.dark-mode .logo-pill, body.dark-mode .news-card, body.dark-mode .info-card { background:var(--bg-card); }
+  body.dark-mode .hero, body.dark-mode .logos-strip, body.dark-mode .footer, body.dark-mode section { background:var(--bg-primary) !important; }
+  body.dark-mode .controls-bar, body.dark-mode .search-box input, body.dark-mode .sort-select, body.dark-mode .filter-tab { background:var(--bg-card); color:var(--text-secondary); }
+  body.dark-mode .filter-tab.active { background:var(--gradient-main); color:#fff; }
+  body.dark-mode #darkModeBtn { background:var(--bg-card); border-color:rgba(255,255,255,0.1); }
+
+  /* Animated counter */
+  .counter-animate { transition: all 0.5s ease; }
+</style>
+
 <script>
+  // === Catalog Database for Items ===
+  const catalog = {
+    // Grocery Essentials
+    'apples': { name: 'Fresh Apples (1kg)', cat: 'grocery', Blinkit: 160, Zepto: 140, Instamart: 180, BigBasket: 155 },
+    'apple': { name: 'Fresh Apples (1kg)', cat: 'grocery', Blinkit: 160, Zepto: 140, Instamart: 180, BigBasket: 155 },
+    'milk': { name: 'Amul Taaza Milk (1L)', cat: 'grocery', Blinkit: 56, Zepto: 56, Instamart: 56, BigBasket: 54 },
+    'tomato': { name: 'Local Tomatoes (500g)', cat: 'grocery', Blinkit: 30, Zepto: 25, Instamart: 32, BigBasket: 28 },
+    'tomatoes': { name: 'Local Tomatoes (500g)', cat: 'grocery', Blinkit: 30, Zepto: 25, Instamart: 32, BigBasket: 28 },
+    'eggs': { name: 'Farm Eggs (Pack of 6)', cat: 'grocery', Blinkit: 48, Zepto: 50, Instamart: 52, BigBasket: 46 },
+    'egg': { name: 'Farm Eggs (Pack of 6)', cat: 'grocery', Blinkit: 48, Zepto: 50, Instamart: 52, BigBasket: 46 },
+    'bread': { name: 'Whole Wheat Bread', cat: 'grocery', Blinkit: 45, Zepto: 40, Instamart: 42, BigBasket: 38 },
+    'potato': { name: 'Potatoes (1kg)', cat: 'grocery', Blinkit: 35, Zepto: 30, Instamart: 38, BigBasket: 32 },
+    'potatoes': { name: 'Potatoes (1kg)', cat: 'grocery', Blinkit: 35, Zepto: 30, Instamart: 38, BigBasket: 32 },
+    'onion': { name: 'Onions (1kg)', cat: 'grocery', Blinkit: 45, Zepto: 42, Instamart: 48, BigBasket: 40 },
+    'onions': { name: 'Onions (1kg)', cat: 'grocery', Blinkit: 45, Zepto: 42, Instamart: 48, BigBasket: 40 },
+
+    // Fashion Wear
+    'jeans': { name: 'Levi\'s Men\'s Jeans', cat: 'fashion', Myntra: 2199, Ajio: 2499, Amazon: 1999, Flipkart: 2099 },
+    't-shirt': { name: 'Adidas Classic T-Shirt', cat: 'fashion', Myntra: 999, Ajio: 899, Amazon: 950, Flipkart: 920 },
+    'tshirt': { name: 'Adidas Classic T-Shirt', cat: 'fashion', Myntra: 999, Ajio: 899, Amazon: 950, Flipkart: 920 },
+    'sneakers': { name: 'Puma Sports Sneakers', cat: 'fashion', Myntra: 3499, Ajio: 3799, Amazon: 3299, Flipkart: 3399 },
+    'sneaker': { name: 'Puma Sports Sneakers', cat: 'fashion', Myntra: 3499, Ajio: 3799, Amazon: 3299, Flipkart: 3399 },
+    'jacket': { name: 'Denim Trucker Jacket', cat: 'fashion', Myntra: 1799, Ajio: 1599, Amazon: 1650, Flipkart: 1690 },
+    'dress': { name: 'Floral Summer Dress', cat: 'fashion', Myntra: 1299, Ajio: 1399, Amazon: 1199, Flipkart: 1250 },
+
+    // Beauty / Cosmetics
+    'lipstick': { name: 'Maybelline Matte Lipstick', cat: 'beauty', Nykaa: 299, Myntra: 320, Amazon: 279, Flipkart: 285 },
+    'lipsticks': { name: 'Maybelline Matte Lipstick', cat: 'beauty', Nykaa: 299, Myntra: 320, Amazon: 279, Flipkart: 285 },
+    'shampoo': { name: 'L\'Oreal Repair Shampoo', cat: 'beauty', Nykaa: 649, Myntra: 699, Amazon: 599, Flipkart: 620 },
+    'sunscreen': { name: 'Neutrogena Sunscreen SPF50', cat: 'beauty', Nykaa: 550, Myntra: 560, Amazon: 499, Flipkart: 510 },
+    'facewash': { name: 'Cetaphil Skin Cleanser', cat: 'beauty', Nykaa: 399, Myntra: 410, Amazon: 375, Flipkart: 380 },
+    'serum': { name: 'Ordinary Niacinamide Serum', cat: 'beauty', Nykaa: 600, Myntra: 620, Amazon: 580, Flipkart: 590 }
+  };
+
+  // Category Configuration
+  const categoryConfig = {
+    grocery: {
+      apps: ['Blinkit', 'Zepto', 'Instamart', 'BigBasket'],
+      classes: { Blinkit: 'brand-blinkit', Zepto: 'brand-zepto', Instamart: 'brand-instamart', BigBasket: 'brand-bigbasket' },
+      fees: {
+        Blinkit: { delivery: 29, handling: 4, surge: 10, tax: 0.05 },
+        Zepto: { delivery: 19, handling: 3, surge: 0, tax: 0.05 },
+        Instamart: { delivery: 35, handling: 4, surge: 5, tax: 0.05 },
+        BigBasket: { delivery: 30, handling: 0, surge: 0, tax: 0.05 }
+      }
+    },
+    fashion: {
+      apps: ['Myntra', 'Ajio', 'Amazon', 'Flipkart'],
+      classes: { Myntra: 'brand-myntra', Ajio: 'brand-ajio', Amazon: 'brand-amazon', Flipkart: 'brand-flipkart' },
+      fees: {
+        Myntra: { delivery: 99, handling: 10, surge: 0, tax: 0.12 },
+        Ajio: { delivery: 79, handling: 9, surge: 0, tax: 0.12 },
+        Amazon: { delivery: 40, handling: 0, surge: 0, tax: 0.12 },
+        Flipkart: { delivery: 40, handling: 0, surge: 0, tax: 0.12 }
+      }
+    },
+    beauty: {
+      apps: ['Nykaa', 'Myntra', 'Amazon', 'Flipkart'],
+      classes: { Nykaa: 'brand-nykaa', Myntra: 'brand-myntra', Amazon: 'brand-amazon', Flipkart: 'brand-flipkart' },
+      fees: {
+        Nykaa: { delivery: 50, handling: 5, surge: 0, tax: 0.18 },
+        Myntra: { delivery: 99, handling: 10, surge: 0, tax: 0.18 },
+        Amazon: { delivery: 40, handling: 0, surge: 0, tax: 0.18 },
+        Flipkart: { delivery: 40, handling: 0, surge: 0, tax: 0.18 }
+      }
+    }
+  };
+
+  // State
+  let shoppingCart = [];
+  let currentOptTab = 'single'; // 'single' or 'split'
+
+  // === Single Item Quick Search ===
+  function triggerQuickSearch() {
+    const input = document.getElementById('quickSearchInput').value.trim().toLowerCase();
+    const box = document.getElementById('quickSearchResults');
+    if (!input) return;
+
+    // Search catalog
+    let matchedKey = null;
+    if (catalog[input]) {
+      matchedKey = input;
+    } else {
+      // Fuzzy key search
+      matchedKey = Object.keys(catalog).find(k => k.includes(input) || input.includes(k));
+    }
+
+    if (!matchedKey) {
+      alert("🔍 Item '" + input + "' not directly in our mock index.\nTry: 'Milk', 'Eggs', 'Jeans', 'Lipstick', 'Sneakers', or 'Shampoo'!");
+      box.style.display = 'none';
+      return;
+    }
+
+    const item = catalog[matchedKey];
+    document.getElementById('searchResultTitle').textContent = item.name;
+    
+    // Set category text
+    const cat = item.cat;
+    const catLabel = cat.charAt(0).toUpperCase() + cat.slice(1);
+    document.getElementById('searchResultCategory').textContent = catLabel;
+    
+    // Fill prices
+    const config = categoryConfig[cat];
+    const pricesDiv = document.getElementById('searchResultPrices');
+    pricesDiv.innerHTML = '';
+
+    let bestApp = '';
+    let bestVal = Infinity;
+    let worstVal = -Infinity;
+
+    config.apps.forEach(app => {
+      const price = item[app];
+      if (price < bestVal) { bestVal = price; bestApp = app; }
+      if (price > worstVal) { worstVal = price; }
+    });
+
+    config.apps.forEach(app => {
+      const price = item[app];
+      const isBest = (app === bestApp);
+      const row = document.createElement('div');
+      row.style.cssText = 'display:flex;justify-content:space-between;align-items:center;font-size:0.92rem;';
+      row.innerHTML = `
+        <span class="brand-pill ${config.classes[app]}">${app}</span>
+        <span style="font-weight:700;${isBest ? 'color:var(--green)' : ''}">${isBest ? '🏆 ₹' + price : '₹' + price}</span>
+      `;
+      pricesDiv.appendChild(row);
+    });
+
+    const savings = worstVal - bestVal;
+    document.getElementById('searchResultSavings').textContent = savings > 0 ? `Savings: Save ₹${savings} on ${bestApp}! 🏆` : 'Prices are equal across apps.';
+    
+    // Set Add to Checklist button click handler
+    document.getElementById('addToCartBtn').onclick = function() {
+      addItemToCart(matchedKey);
+      document.getElementById('quickSearchInput').value = '';
+      box.style.display = 'none';
+      // Scroll to optimizer
+      document.getElementById('optimizer').scrollIntoView({ behavior: 'smooth' });
+    };
+
+    box.style.display = 'block';
+  }
+
+  // === Navbar scroll ===
   const navbar = document.getElementById('navbar');
   window.addEventListener('scroll', () => navbar.classList.toggle('scrolled', window.scrollY > 20));
 
+  // === Card scroll animation ===
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) { entry.target.style.opacity = '1'; entry.target.style.transform = 'translateY(0)'; }
     });
   }, { threshold: 0.1 });
-  document.querySelectorAll('.card').forEach(el => {
-    el.style.opacity = '0'; el.style.transform = 'translateY(24px)';
-    el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-    observer.observe(el);
+  
+  function refreshCardObservers() {
+    document.querySelectorAll('.card').forEach(el => {
+      if (!el.dataset.observed) {
+        el.style.opacity = '0'; el.style.transform = 'translateY(24px)';
+        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        observer.observe(el);
+        el.dataset.observed = 'true';
+      }
+    });
+  }
+  refreshCardObservers();
+
+  // === Scroll Progress Bar ===
+  window.addEventListener('scroll', () => {
+    const h = document.documentElement.scrollHeight - window.innerHeight;
+    const pct = (window.scrollY / h) * 100;
+    document.getElementById('scrollProgress').style.width = pct + '%';
   });
+
+  // === Back to Top Button ===
+  window.addEventListener('scroll', () => {
+    const btn = document.getElementById('backToTop');
+    if (window.scrollY > 500) { btn.style.opacity = '1'; btn.style.transform = 'translateY(0)'; }
+    else { btn.style.opacity = '0'; btn.style.transform = 'translateY(20px)'; }
+  });
+
+  // === Dark Mode Toggle ===
+  function toggleDarkMode() {
+    document.body.classList.toggle('dark-mode');
+    const btn = document.getElementById('darkModeBtn');
+    btn.textContent = document.body.classList.contains('dark-mode') ? '☀️' : '🌙';
+  }
+
+  // === Animated Stat Counters ===
+  function animateCounter(el, target, suffix = '') {
+    let current = 0;
+    const step = target / 50;
+    const interval = setInterval(() => {
+      current += step;
+      if (current >= target) { current = target; clearInterval(interval); }
+      el.textContent = (target >= 1000 ? Math.floor(current).toLocaleString() : 
+                        target % 1 !== 0 ? current.toFixed(1) : Math.floor(current)) + suffix;
+    }, 30);
+  }
+  const statObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting && !entry.target.dataset.animated) {
+        entry.target.dataset.animated = 'true';
+        const text = entry.target.textContent;
+        if (text.includes('18%')) animateCounter(entry.target, 18, '%');
+        else if (text.includes('9')) animateCounter(entry.target, 9, ' Apps');
+      }
+    });
+  }, { threshold: 0.5 });
+  document.querySelectorAll('.stat-number').forEach(el => statObserver.observe(el));
+
+  // === Optimizer Cart Management ===
+  function handleItemKeyPress(event) {
+    if (event.key === 'Enter') {
+      addItemFromInput();
+    }
+  }
+
+  function addItemFromInput() {
+    const inputEl = document.getElementById('itemInput');
+    const name = inputEl.value.trim().toLowerCase();
+    if (!name) return;
+
+    let matchedKey = null;
+    if (catalog[name]) {
+      matchedKey = name;
+    } else {
+      // Fuzzy key search
+      matchedKey = Object.keys(catalog).find(k => k.includes(name) || name.includes(k));
+    }
+
+    if (!matchedKey) {
+      alert("🔍 Item '" + name + "' not found in our mock catalog database.\nTry adding: 'milk', 'eggs', 'shampoo', 'lipstick', 'jeans', 'sneakers', 'tomato'!");
+      return;
+    }
+
+    addItemToCart(matchedKey);
+    inputEl.value = '';
+  }
+
+  function addItemToCart(key) {
+    if (shoppingCart.includes(key)) {
+      alert("📝 '" + catalog[key].name + "' is already in your checklist!");
+      return;
+    }
+    shoppingCart.push(key);
+    updateCartUI();
+  }
+
+  function removeItemFromCart(key) {
+    shoppingCart = shoppingCart.filter(item => item !== key);
+    updateCartUI();
+  }
+
+  function clearCart() {
+    shoppingCart = [];
+    updateCartUI();
+  }
+
+  function loadPreset(presetName) {
+    clearCart();
+    if (presetName === 'grocery') {
+      shoppingCart = ['milk', 'eggs', 'tomato', 'potato', 'onion'];
+    } else if (presetName === 'beauty') {
+      shoppingCart = ['lipstick', 'shampoo', 'sunscreen', 'facewash'];
+    } else if (presetName === 'fashion') {
+      shoppingCart = ['jeans', 't-shirt', 'sneakers'];
+    } else if (presetName === 'mixed') {
+      shoppingCart = ['milk', 'eggs', 'lipstick', 'shampoo', 'jeans', 'sneakers'];
+    }
+    updateCartUI();
+  }
+
+  function updateCartUI() {
+    const listEl = document.getElementById('itemTagList');
+    const emptyMsg = document.getElementById('emptyCartMessage');
+    const countEl = document.getElementById('cartCount');
+    
+    countEl.textContent = shoppingCart.length;
+    listEl.innerHTML = '';
+
+    if (shoppingCart.length === 0) {
+      listEl.appendChild(emptyMsg);
+      renderEmptyResults();
+      return;
+    }
+
+    shoppingCart.forEach(key => {
+      const item = catalog[key];
+      const tag = document.createElement('div');
+      tag.className = 'item-tag';
+      tag.innerHTML = `
+        <span>${item.name}</span>
+        <button onclick="removeItemFromCart('${key}')">×</button>
+      `;
+      listEl.appendChild(tag);
+    });
+
+    calculateComparison();
+  }
+
+  // === Calculations Logic ===
+  function renderEmptyResults() {
+    const grid = document.getElementById('comparisonGrid');
+    grid.innerHTML = `
+      <div style="text-align:center;padding:3rem 1rem;color:var(--text-muted);font-style:italic;">
+        No items in the list yet. Add items to see live comparisons.
+      </div>
+    `;
+    document.getElementById('summarySubtotal').textContent = '₹0.00';
+    document.getElementById('summaryTax').textContent = '₹0.00';
+    document.getElementById('summaryHandling').textContent = '₹0.00';
+    document.getElementById('summaryDelivery').textContent = '₹0.00';
+    document.getElementById('summaryTotal').textContent = '₹0.00';
+    document.getElementById('summarySavings').textContent = '₹0.00';
+  }
+
+  function switchOptTab(tab) {
+    currentOptTab = tab;
+    document.getElementById('tabSingle').classList.toggle('active', tab === 'single');
+    document.getElementById('tabSplit').classList.toggle('active', tab === 'split');
+    calculateComparison();
+  }
+
+  function calculateComparison() {
+    if (shoppingCart.length === 0) {
+      renderEmptyResults();
+      return;
+    }
+
+    const grid = document.getElementById('comparisonGrid');
+    grid.innerHTML = '';
+
+    // Group cart items by category
+    const categories = [...new Set(shoppingCart.map(key => catalog[key].cat))];
+
+    if (currentOptTab === 'single') {
+      // CHEAPEST SINGLE APP PER CATEGORY
+      // We analyze each category separately since we cannot buy groceries from Myntra or jeans from Blinkit
+      categories.forEach(cat => {
+        const catItems = shoppingCart.filter(k => catalog[k].cat === cat);
+        const config = categoryConfig[cat];
+        
+        // Header Row for category
+        const header = document.createElement('div');
+        header.className = 'item-row header';
+        const labelText = cat.toUpperCase() + ' APPS';
+        header.innerHTML = `<div>${labelText} (${catItems.length} items)</div>`;
+        
+        // Find best app for this category
+        let bestApp = '';
+        let bestTotal = Infinity;
+        let worstTotal = -Infinity;
+        let appSubtotals = {};
+        
+        config.apps.forEach(app => {
+          let subtotal = 0;
+          catItems.forEach(k => { subtotal += catalog[k][app] || 0; });
+          appSubtotals[app] = subtotal;
+          
+          if (subtotal < bestTotal) { bestTotal = subtotal; bestApp = app; }
+          if (subtotal > worstTotal) { worstTotal = subtotal; }
+        });
+
+        config.apps.forEach(app => {
+          header.innerHTML += `<div style="text-align:right;">${app}</div>`;
+        });
+        grid.appendChild(header);
+
+        // Item Rows
+        catItems.forEach(key => {
+          const item = catalog[key];
+          const row = document.createElement('div');
+          row.className = 'item-row';
+          row.innerHTML = `<div>${item.name}</div>`;
+          
+          config.apps.forEach(app => {
+            const price = item[app];
+            // Highlight cheap price in single mode? It shows where it's cheapest for that specific row.
+            // Let's find which app has cheapest price for this single item
+            let cheapestPrice = Math.min(...config.apps.map(a => item[a]));
+            const isCheapest = (price === cheapestPrice);
+            
+            row.innerHTML += `
+              <div style="text-align:right;${isCheapest ? 'color:var(--green);font-weight:700;' : 'color:var(--text-secondary);'}">
+                ₹${price}
+              </div>
+            `;
+          });
+          grid.appendChild(row);
+        });
+
+        // App total comparisons in grid
+        const totalCompareRow = document.createElement('div');
+        totalCompareRow.className = 'item-row';
+        totalCompareRow.style.cssText = 'font-weight:700;border-top:1.5px solid var(--border-color);background:var(--bg-secondary);';
+        totalCompareRow.innerHTML = `<div>Cart Subtotal</div>`;
+        config.apps.forEach(app => {
+          const sub = appSubtotals[app];
+          const isBest = (app === bestApp);
+          totalCompareRow.innerHTML += `
+            <div style="text-align:right;${isBest ? 'color:var(--green);' : ''}">
+              ${isBest ? '🏆 ₹' + sub : '₹' + sub}
+            </div>
+          `;
+        });
+        grid.appendChild(totalCompareRow);
+      });
+
+      // Calculate overall totals for billing panel (using best single app per category)
+      let overallSubtotal = 0;
+      let overallTax = 0;
+      let overallHandling = 0;
+      let overallDelivery = 0;
+      let overallWorstTotal = 0; // for savings
+
+      categories.forEach(cat => {
+        const catItems = shoppingCart.filter(k => catalog[k].cat === cat);
+        const config = categoryConfig[cat];
+        
+        let bestApp = '';
+        let bestSub = Infinity;
+        let worstSub = -Infinity;
+        
+        config.apps.forEach(app => {
+          let sub = 0;
+          catItems.forEach(k => { sub += catalog[k][app] || 0; });
+          if (sub < bestSub) { bestSub = sub; bestApp = app; }
+          if (sub > worstSub) { worstSub = sub; }
+        });
+
+        // Add fee rules
+        const fees = config.fees[bestApp];
+        overallSubtotal += bestSub;
+        overallTax += bestSub * fees.tax;
+        overallHandling += fees.handling;
+        overallDelivery += fees.delivery;
+
+        // Worst app calculations for comparison
+        let worstApp = config.apps.find(a => {
+          let s = 0;
+          catItems.forEach(k => { s += catalog[k][a] || 0; });
+          return s === worstSub;
+        }) || config.apps[0];
+        const wFees = config.fees[worstApp];
+        overallWorstTotal += worstSub + (worstSub * wFees.tax) + wFees.handling + wFees.delivery;
+      });
+
+      const overallTotal = overallSubtotal + overallTax + overallHandling + overallDelivery;
+      const overallSavings = overallWorstTotal - overallTotal;
+
+      document.getElementById('summarySubtotal').textContent = '₹' + Math.round(overallSubtotal);
+      document.getElementById('summaryTax').textContent = '₹' + Math.round(overallTax);
+      document.getElementById('summaryHandling').textContent = '₹' + Math.round(overallHandling);
+      document.getElementById('summaryDelivery').textContent = '₹' + Math.round(overallDelivery);
+      document.getElementById('summaryTotal').textContent = '₹' + Math.round(overallTotal);
+      document.getElementById('summarySavings').textContent = overallSavings > 0 ? '₹' + Math.round(overallSavings) : '₹0';
+      document.getElementById('savingsRow').style.display = overallSavings > 0 ? 'flex' : 'none';
+
+    } else {
+      // SPLIT CHECKOUT SAVINGS (cheapest item-by-item)
+      categories.forEach(cat => {
+        const catItems = shoppingCart.filter(k => catalog[k].cat === cat);
+        const config = categoryConfig[cat];
+        
+        // Header
+        const header = document.createElement('div');
+        header.className = 'item-row header';
+        header.innerHTML = `<div>${cat.toUpperCase()} (SPLIT COST)</div><div style="text-align:right;">App Checked</div><div style="text-align:right;">Best Price</div>`;
+        grid.appendChild(header);
+
+        catItems.forEach(key => {
+          const item = catalog[key];
+          let cheapestApp = '';
+          let cheapestPrice = Infinity;
+
+          config.apps.forEach(app => {
+            const price = item[app];
+            if (price < cheapestPrice) { cheapestPrice = price; cheapestApp = app; }
+          });
+
+          const row = document.createElement('div');
+          row.className = 'item-row';
+          row.innerHTML = `
+            <div>${item.name}</div>
+            <div style="text-align:right;"><span class="brand-pill ${config.classes[cheapestApp]}" style="font-size:0.75rem;padding:0.2rem 0.5rem;">${cheapestApp}</span></div>
+            <div style="text-align:right;color:var(--green);font-weight:700;">₹${cheapestPrice}</div>
+          `;
+          grid.appendChild(row);
+        });
+      });
+
+      // Split order calculations
+      // Determine what items go to what app
+      let appSplits = {}; // Map of app -> list of item keys
+      shoppingCart.forEach(key => {
+        const item = catalog[key];
+        const cat = item.cat;
+        const config = categoryConfig[cat];
+        
+        let cheapestApp = '';
+        let cheapestPrice = Infinity;
+        config.apps.forEach(app => {
+          if (item[app] < cheapestPrice) { cheapestPrice = item[app]; cheapestApp = app; }
+        });
+
+        if (!appSplits[cheapestApp]) appSplits[cheapestApp] = [];
+        appSplits[cheapestApp].push(key);
+      });
+
+      let overallSubtotal = 0;
+      let overallTax = 0;
+      let overallHandling = 0;
+      let overallDelivery = 0;
+      
+      // Calculate fees for each app that has split items
+      Object.keys(appSplits).forEach(app => {
+        // Find which category this app belongs to
+        let cat = 'grocery';
+        if (categoryConfig.fashion.apps.includes(app)) cat = 'fashion';
+        else if (categoryConfig.beauty.apps.includes(app)) cat = 'beauty';
+
+        const config = categoryConfig[cat];
+        const fees = config.fees[app];
+        const items = appSplits[app];
+
+        let sub = 0;
+        items.forEach(k => { sub += catalog[k][app]; });
+
+        overallSubtotal += sub;
+        overallTax += sub * fees.tax;
+        overallHandling += fees.handling;
+        overallDelivery += fees.delivery; // Split shopping pays delivery on multiple if orders are small
+      });
+
+      // For worst comparison (worst single app total overall)
+      let overallWorstTotal = 0;
+      categories.forEach(cat => {
+        const catItems = shoppingCart.filter(k => catalog[k].cat === cat);
+        const config = categoryConfig[cat];
+        let worstSub = -Infinity;
+        config.apps.forEach(app => {
+          let s = 0; catItems.forEach(k => { s += catalog[k][app] || 0; });
+          if (s > worstSub) worstSub = s;
+        });
+        let worstApp = config.apps[0]; // simple fallback
+        const wFees = config.fees[worstApp];
+        overallWorstTotal += worstSub + (worstSub * wFees.tax) + wFees.handling + wFees.delivery;
+      });
+
+      const overallTotal = overallSubtotal + overallTax + overallHandling + overallDelivery;
+      const overallSavings = overallWorstTotal - overallTotal;
+
+      document.getElementById('summarySubtotal').textContent = '₹' + Math.round(overallSubtotal);
+      document.getElementById('summaryTax').textContent = '₹' + Math.round(overallTax);
+      document.getElementById('summaryHandling').textContent = '₹' + Math.round(overallHandling);
+      document.getElementById('summaryDelivery').textContent = '₹' + Math.round(overallDelivery);
+      document.getElementById('summaryTotal').textContent = '₹' + Math.round(overallTotal);
+      document.getElementById('summarySavings').textContent = overallSavings > 0 ? '₹' + Math.round(overallSavings) : '₹0';
+      document.getElementById('savingsRow').style.display = overallSavings > 0 ? 'flex' : 'none';
+    }
+  }
+
+  function toggleMonthlyScheduler() {
+    const isChecked = document.getElementById('monthlyScheduleCheck').checked;
+    document.getElementById('monthlySettings').style.display = isChecked ? 'block' : 'none';
+    
+    // Set default date as 1st of next month
+    if (isChecked) {
+      const d = new Date();
+      d.setMonth(d.getMonth() + 1);
+      d.setDate(1);
+      document.getElementById('scheduleDateInput').value = d.toISOString().split('T')[0];
+    }
+  }
+
+  // === Initiate Simulated Checkout ===
+  function initiateAutoOrder() {
+    if (shoppingCart.length === 0) {
+      alert("📋 Add items to your shopping checklist before ordering!");
+      return;
+    }
+
+    const modal = document.getElementById('autoOrderModal');
+    const progress = document.getElementById('modalProgressBar');
+    const pctLabel = document.getElementById('progressPercent');
+    const subtitle = document.getElementById('modalSubtitle');
+    const successBox = document.getElementById('modalSuccessState');
+
+    // Reset steps
+    for (let i = 1; i <= 5; i++) {
+      const step = document.getElementById('step' + i);
+      step.className = 'modal-step';
+    }
+    progress.style.width = '0%';
+    pctLabel.textContent = '0%';
+    successBox.style.display = 'none';
+    modal.classList.add('show');
+
+    // Calculate details for modal display text
+    let targetText = '';
+    if (currentOptTab === 'single') {
+      targetText = "Populating items in cheapest vendor carts...";
+    } else {
+      // Find splits
+      let appsUsed = [];
+      shoppingCart.forEach(key => {
+        const item = catalog[key];
+        const config = categoryConfig[item.cat];
+        let cheapestApp = '';
+        let cheapestPrice = Infinity;
+        config.apps.forEach(app => {
+          if (item[app] < cheapestPrice) { cheapestPrice = item[app]; cheapestApp = app; }
+        });
+        appsUsed.push(cheapestApp);
+      });
+      appsUsed = [...new Set(appsUsed)];
+      targetText = `Populating carts across splits: ${appsUsed.join(', ')}...`;
+    }
+    document.getElementById('step2Text').textContent = targetText;
+
+    // Run progress steps
+    let currentStep = 1;
+    let width = 0;
+    
+    subtitle.textContent = "Connecting to secure delivery checkouts...";
+    document.getElementById('step1').className = 'modal-step active';
+
+    const interval = setInterval(() => {
+      width += 1.25; // speed rate
+      progress.style.width = width + '%';
+      pctLabel.textContent = Math.round(width) + '%';
+
+      if (width >= 20 && currentStep === 1) {
+        document.getElementById('step1').className = 'modal-step success';
+        document.getElementById('step2').className = 'modal-step active';
+        subtitle.textContent = "Adding optimized items to cart...";
+        currentStep = 2;
+      }
+      if (width >= 45 && currentStep === 2) {
+        document.getElementById('step2').className = 'modal-step success';
+        document.getElementById('step3').className = 'modal-step active';
+        subtitle.textContent = "Scanning active discount coupons...";
+        currentStep = 3;
+      }
+      if (width >= 70 && currentStep === 3) {
+        document.getElementById('step3').className = 'modal-step success';
+        document.getElementById('step4').className = 'modal-step active';
+        subtitle.textContent = "Computing packing, Platform and GST/Taxes...";
+        currentStep = 4;
+      }
+      if (width >= 90 && currentStep === 4) {
+        document.getElementById('step4').className = 'modal-step success';
+        document.getElementById('step5').className = 'modal-step active';
+        subtitle.textContent = "Finalizing handshakes and ordering...";
+        currentStep = 5;
+      }
+
+      if (width >= 100) {
+        clearInterval(interval);
+        document.getElementById('step5').className = 'modal-step success';
+        subtitle.textContent = "Orders checked out successfully!";
+        
+        // Show success detail
+        const isScheduled = document.getElementById('monthlyScheduleCheck').checked;
+        const totalStr = document.getElementById('summaryTotal').textContent;
+        const savingsStr = document.getElementById('summarySavings').textContent;
+        
+        let successHtml = `
+          We have successfully checked out your checklist for a total of <strong>${totalStr}</strong>, saving you <strong>${savingsStr}</strong>.
+        `;
+        if (isScheduled) {
+          const dateVal = document.getElementById('scheduleDateInput').value;
+          successHtml += `<br/><br/>📅 <strong>Monthly Replenishment Active:</strong> Next recurring order scheduled for <strong>${dateVal}</strong>.`;
+        }
+        
+        document.getElementById('modalSuccessDesc').innerHTML = successHtml;
+        successBox.style.display = 'block';
+
+        // Trigger Confetti!
+        launchConfetti();
+      }
+    }, 70);
+  }
+
+  function closeOrderModal() {
+    document.getElementById('autoOrderModal').classList.remove('show');
+    clearCart();
+  }
+
+  // === Quiz Logic (Savings Style) ===
+  let quizAnswers = {};
+  function quizAnswer(qNum, val) {
+    quizAnswers[qNum] = val;
+    document.getElementById('q' + qNum).style.display = 'none';
+    if (qNum < 3) {
+      document.getElementById('q' + (qNum + 1)).style.display = 'block';
+      document.getElementById('prog' + (qNum + 1)).style.background = 'var(--green)';
+    } else {
+      showQuizResult();
+    }
+  }
+
+  function showQuizResult() {
+    const { 1: shopHabit, 2: concern, 3: spend } = quizAnswers;
+    let title, emoji, desc;
+
+    if (shopHabit === 'instant') {
+      title = 'Speed-First Shopper (Blinkit/Zepto Priority)';
+      emoji = '⚡';
+      desc = 'You prioritize rapid delivery and need products in 10 minutes. For your lifestyle, Prismo\'s single-cart comparison ensures you pick the overall cheapest app (e.g. Zepto or Blinkit) in 2 seconds flat before checkout, saving up to ₹1,200 monthly in surge fees!';
+    } else if (shopHabit === 'monthly' || concern === 'convenience') {
+      title = 'Auto-Replenish Master (Scheduled Saver)';
+      emoji = '📅';
+      desc = 'You are a meticulous planner who likes to set and forget. Prismo\'s Monthly Replenishment mode fits you perfectly! Save up to 18% automatically by letting our bot split and checkout your recurring pantry essentials on the 1st of every month.';
+    } else {
+      title = 'Split-Basket Saver (Maximum Optimizer)';
+      emoji = '🏆';
+      desc = 'You hate overpaying and want the absolute best deals. By using Prismo\'s Split-Basket Optimizer, you save the maximum amount by routing clothes to Myntra, toiletries to Nykaa, and veggies to Zepto, saving over ₹2,500 every single month!';
+    }
+
+    document.getElementById('resultEmoji').textContent = emoji;
+    document.getElementById('resultTitle').textContent = 'Profile: ' + title;
+    document.getElementById('resultDesc').textContent = desc;
+    document.getElementById('quizResult').style.display = 'block';
+
+    // 🎉 Confetti burst!
+    launchConfetti();
+  }
+
+  function resetQuiz() {
+    quizAnswers = {};
+    document.getElementById('quizResult').style.display = 'none';
+    document.getElementById('q1').style.display = 'block';
+    ['prog2','prog3'].forEach(id => document.getElementById(id).style.background = '#e2e8f0');
+  }
+
+  // === FAQ Toggle ===
+  function toggleFaq(btn) {
+    const item = btn.parentElement;
+    const wasOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!wasOpen) item.classList.add('open');
+  }
+
+  // === Confetti 🎉 ===
+  function launchConfetti() {
+    const colors = ['#10b981','#7c3aed','#ec4899','#f97316','#3b82f6','#f59e0b','#f43f5e'];
+    for (let i = 0; i < 80; i++) {
+      const confetti = document.createElement('div');
+      confetti.style.cssText = `
+        position:fixed; z-index:10000;
+        width:${6+Math.random()*8}px; height:${6+Math.random()*8}px;
+        background:${colors[Math.floor(Math.random()*colors.length)]};
+        border-radius:${Math.random()>0.5?'50%':'2px'};
+        left:${Math.random()*100}vw; top:-10px;
+        pointer-events:none;
+        animation:confettiFall ${1.5+Math.random()*2}s ease forwards;
+        animation-delay:${Math.random()*0.5}s;
+      `;
+      document.body.appendChild(confetti);
+      setTimeout(() => confetti.remove(), 4000);
+    }
+  }
+
+  // Add confetti keyframes
+  const confettiStyle = document.createElement('style');
+  confettiStyle.textContent = `
+    @keyframes confettiFall {
+      0% { transform: translateY(0) rotate(0deg) scale(1); opacity:1; }
+      100% { transform: translateY(100vh) rotate(${360+Math.random()*720}deg) scale(0.3); opacity:0; }
+    }
+  `;
+  document.head.appendChild(confettiStyle);
+
+  // === Sparkle Cursor Trail ✨ ===
+  const canvas = document.getElementById('sparkleCanvas');
+  const ctx = canvas.getContext('2d');
+  let sparkles = [];
+  let mouseX = 0, mouseY = 0;
+  
+  function resizeCanvas() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+  }
+  resizeCanvas();
+  window.addEventListener('resize', resizeCanvas);
+
+  document.addEventListener('mousemove', (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+    if (Math.random() > 0.6) { // throttle sparkles
+      sparkles.push({
+        x: mouseX, y: mouseY,
+        size: Math.random() * 4 + 1,
+        life: 1,
+        color: ['#10b981','#7c3aed','#ec4899','#f97316','#3b82f6','#f59e0b'][Math.floor(Math.random()*6)],
+        vx: (Math.random() - 0.5) * 2,
+        vy: (Math.random() - 0.5) * 2 - 1,
+      });
+    }
+  });
+
+  function drawSparkles() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    sparkles = sparkles.filter(s => s.life > 0);
+    sparkles.forEach(s => {
+      ctx.globalAlpha = s.life;
+      ctx.fillStyle = s.color;
+      ctx.beginPath();
+      // Draw star shape
+      const spikes = 4;
+      for (let i = 0; i < spikes * 2; i++) {
+        const r = i % 2 === 0 ? s.size : s.size * 0.4;
+        const angle = (i * Math.PI) / spikes - Math.PI / 2;
+        const x = s.x + Math.cos(angle) * r;
+        const y = s.y + Math.sin(angle) * r;
+        if (i === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+      }
+      ctx.closePath();
+      ctx.fill();
+      s.x += s.vx;
+      s.y += s.vy;
+      s.life -= 0.025;
+      s.size *= 0.98;
+    });
+    ctx.globalAlpha = 1;
+    requestAnimationFrame(drawSparkles);
+  }
+  drawSparkles();
+
+  // Initialize
+  renderEmptyResults();
 </script>
 </body>
 </html>
