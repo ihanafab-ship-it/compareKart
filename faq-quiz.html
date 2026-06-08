@@ -11,7 +11,7 @@
   <style>
     .faq-quiz-page {
       padding-top: 100px; padding-bottom: 4rem; min-height: 100vh;
-      background: linear-gradient(180deg, #090d16 0%, #030712 100%);
+      background: linear-gradient(180deg, rgba(0, 255, 102, 0.04) 0%, var(--bg-primary) 100%);
       position: relative; overflow: hidden;
     }
     
@@ -29,6 +29,11 @@
   </style>
 </head>
 <body>
+<script>
+  if (localStorage.getItem('theme') === 'dark') {
+    document.body.classList.add('dark-mode');
+  }
+</script>
 
 <div class="neon-orb orb-green" aria-hidden="true"></div>
 <div class="neon-orb orb-cyan" aria-hidden="true"></div>
@@ -258,6 +263,30 @@
     }
   `;
   document.head.appendChild(confettiStyle);
+
+  // === Dark Mode Toggle (Default Light -> toggles body.dark-mode) ===
+  function toggleDarkMode() {
+    document.body.classList.toggle('dark-mode');
+    const isDark = document.body.classList.contains('dark-mode');
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    const btn = document.getElementById('darkModeBtn');
+    if (btn) {
+      btn.textContent = isDark ? '☀️' : '🌙';
+      btn.title = isDark ? 'Toggle Light Mode' : 'Toggle Dark Mode';
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const isDark = document.body.classList.contains('dark-mode');
+    const btn = document.getElementById('darkModeBtn');
+    if (btn) {
+      btn.textContent = isDark ? '☀️' : '🌙';
+      btn.title = isDark ? 'Toggle Light Mode' : 'Toggle Dark Mode';
+    }
+  });
 </script>
+
+<!-- Dark Mode Toggle -->
+<button id="darkModeBtn" onclick="toggleDarkMode()" style="position:fixed;bottom:2rem;left:2rem;width:50px;height:50px;border-radius:50%;background:var(--bg-card);border:2px solid var(--border-color);color:var(--text-primary);cursor:pointer;font-size:1.3rem;box-shadow:var(--shadow-md);z-index:999;display:flex;align-items:center;justify-content:center;transition:all 0.3s ease;" title="Toggle Dark Mode">🌙</button>
 </body>
 </html>

@@ -9,7 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
   <style>
-    .contact-page { padding-top: 90px; padding-bottom: 4rem; min-height: 100vh; background: linear-gradient(180deg, #090d16 0%, #030712 100%); }
+    .contact-page { padding-top: 90px; padding-bottom: 4rem; min-height: 100vh; background: linear-gradient(180deg, rgba(0, 255, 102, 0.04) 0%, var(--bg-primary) 100%); }
 
     .contact-wrapper { display: grid; grid-template-columns: 1fr 1.15fr; gap: 3rem; align-items: start; }
 
@@ -73,6 +73,11 @@
   </style>
 </head>
 <body>
+<script>
+  if (localStorage.getItem('theme') === 'dark') {
+    document.body.classList.add('dark-mode');
+  }
+</script>
 
 <!-- NAVBAR -->
 <nav class="navbar scrolled" id="navbar">
@@ -236,6 +241,30 @@
     document.getElementById('successState').classList.remove('show');
     ['name','email','message'].forEach(id => document.getElementById(id).classList.remove('error'));
   }
+
+  // === Dark Mode Toggle (Default Light -> toggles body.dark-mode) ===
+  function toggleDarkMode() {
+    document.body.classList.toggle('dark-mode');
+    const isDark = document.body.classList.contains('dark-mode');
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    const btn = document.getElementById('darkModeBtn');
+    if (btn) {
+      btn.textContent = isDark ? '☀️' : '🌙';
+      btn.title = isDark ? 'Toggle Light Mode' : 'Toggle Dark Mode';
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const isDark = document.body.classList.contains('dark-mode');
+    const btn = document.getElementById('darkModeBtn');
+    if (btn) {
+      btn.textContent = isDark ? '☀️' : '🌙';
+      btn.title = isDark ? 'Toggle Light Mode' : 'Toggle Dark Mode';
+    }
+  });
 </script>
+
+<!-- Dark Mode Toggle -->
+<button id="darkModeBtn" onclick="toggleDarkMode()" style="position:fixed;bottom:2rem;left:2rem;width:50px;height:50px;border-radius:50%;background:var(--bg-card);border:2px solid var(--border-color);color:var(--text-primary);cursor:pointer;font-size:1.3rem;box-shadow:var(--shadow-md);z-index:999;display:flex;align-items:center;justify-content:center;transition:all 0.3s ease;" title="Toggle Dark Mode">🌙</button>
 </body>
 </html>

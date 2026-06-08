@@ -18,20 +18,20 @@
       overflow: hidden;
       text-align: center;
       padding: 7rem 2rem 4rem;
-      background: linear-gradient(180deg, #090d16 0%, #030712 100%);
+      background: linear-gradient(180deg, rgba(0, 255, 102, 0.04) 0%, #ffffff 100%);
     }
     .hero-bg {
       position: absolute;
       inset: 0;
-      background: radial-gradient(circle at 12% 20%, rgba(0, 255, 102, 0.15) 0%, transparent 40%),
-                  radial-gradient(circle at 88% 80%, rgba(255, 0, 127, 0.12) 0%, transparent 40%),
-                  radial-gradient(circle at 50% 55%, rgba(0, 240, 255, 0.1) 0%, transparent 50%);
+      background: radial-gradient(circle at 12% 20%, rgba(0, 255, 102, 0.12) 0%, transparent 40%),
+                  radial-gradient(circle at 88% 80%, rgba(255, 0, 127, 0.08) 0%, transparent 40%),
+                  radial-gradient(circle at 50% 55%, rgba(0, 240, 255, 0.06) 0%, transparent 50%);
       opacity: 1;
     }
     .hero-overlay {
       position: absolute;
       inset: 0;
-      background: linear-gradient(to bottom, transparent 60%, #030712 100%);
+      background: linear-gradient(to bottom, transparent 60%, #ffffff 100%);
     }
     .hero-content { position: relative; z-index: 2; max-width: 850px; margin: 0 auto; }
 
@@ -74,8 +74,8 @@
       position: relative; z-index: 10;
     }
     .hero-search-bar {
-      display: flex; gap: 8px; background: rgba(255,255,255,0.05); padding: 6px;
-      border-radius: 100px; border: 2.5px solid rgba(255,255,255,0.12);
+      display: flex; gap: 8px; background: #ffffff; padding: 6px;
+      border-radius: 100px; border: 2.5px solid rgba(0, 240, 255, 0.25);
       box-shadow: var(--shadow-md); transition: all var(--transition-fast);
       align-items: center;
     }
@@ -104,9 +104,8 @@
     .float-badge {
       position: absolute; z-index: 1;
       padding: 0.6rem 1rem; border-radius: var(--radius-lg);
-      background: rgba(18, 24, 38, 0.85); border: 1.5px solid rgba(255,255,255,0.08);
-      backdrop-filter: blur(8px);
-      box-shadow: var(--shadow-lg); font-size: 0.82rem; font-weight: 600;
+      background: #ffffff; border: 1.5px solid rgba(0, 255, 102, 0.2);
+      box-shadow: 0 8px 30px rgba(0, 255, 102, 0.06); font-size: 0.82rem; font-weight: 600;
       display: flex; align-items: center; gap: 8px; color: var(--text-primary);
     }
     .float-1 { top: 22%; left: 4%; animation: float 6s ease-in-out infinite; }
@@ -121,7 +120,7 @@
     .logos-label { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted); margin-bottom: 1.5rem; font-weight: 700; }
     .logos-row { display: flex; align-items: center; justify-content: center; gap: 1.5rem; flex-wrap: wrap; }
     .logo-pill {
-      padding: 0.55rem 1.35rem; background: rgba(255,255,255,0.03); border: 1.5px solid rgba(255,255,255,0.08);
+      padding: 0.55rem 1.35rem; background: #ffffff; border: 1px solid var(--border-color);
       border-radius: 100px; font-size: 0.88rem; font-weight: 800;
       transition: all var(--transition-fast); box-shadow: var(--shadow-sm);
     }
@@ -145,11 +144,11 @@
     }
     .step { flex: 1; text-align: center; padding: 2rem 1rem; position: relative; z-index: 1; }
     .step-num {
-      width: 60px; height: 60px; border-radius: 50%; background: rgba(18, 24, 38, 0.85);
+      width: 60px; height: 60px; border-radius: 50%; background: #ffffff;
       border: 3px solid var(--green); display: flex; align-items: center; justify-content: center;
       font-family: 'Outfit', sans-serif; font-size: 1.3rem; font-weight: 800;
       color: var(--green); margin: 0 auto 1.25rem;
-      box-shadow: 0 0 0 6px rgba(0,255,102,0.12);
+      box-shadow: 0 0 0 6px rgba(0,255,102,0.08);
       transition: all var(--transition-smooth);
     }
     .step:hover .step-num { background: var(--gradient-main); color: #fff; border-color: transparent; box-shadow: 0 4px 20px rgba(124,58,237,0.3); }
@@ -203,6 +202,11 @@
   </style>
 </head>
 <body>
+<script>
+  if (localStorage.getItem('theme') === 'dark') {
+    document.body.classList.add('dark-mode');
+  }
+</script>
 
 <!-- NAVBAR -->
 <nav class="navbar" id="navbar">
@@ -665,7 +669,7 @@
 <button id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" style="position:fixed;bottom:2rem;right:2rem;width:50px;height:50px;border-radius:50%;background:linear-gradient(135deg,#00ff66,#00f0ff);color:#fff;border:none;cursor:pointer;font-size:1.3rem;box-shadow:0 0 15px rgba(0,255,102,0.3);z-index:999;opacity:0;transform:translateY(20px);transition:all 0.3s ease;display:flex;align-items:center;justify-content:center;">↑</button>
 
 <!-- Dark Mode Toggle -->
-<button id="darkModeBtn" onclick="toggleDarkMode()" style="position:fixed;bottom:2rem;left:2rem;width:50px;height:50px;border-radius:50%;background:var(--bg-card);border:2px solid var(--border-color);color:var(--text-primary);cursor:pointer;font-size:1.3rem;box-shadow:var(--shadow-md);z-index:999;display:flex;align-items:center;justify-content:center;transition:all 0.3s ease;" title="Toggle Light Mode">☀️</button>
+<button id="darkModeBtn" onclick="toggleDarkMode()" style="position:fixed;bottom:2rem;left:2rem;width:50px;height:50px;border-radius:50%;background:#ffffff;border:2px solid var(--border-color);color:var(--text-primary);cursor:pointer;font-size:1.3rem;box-shadow:var(--shadow-md);z-index:999;display:flex;align-items:center;justify-content:center;transition:all 0.3s ease;" title="Toggle Dark Mode">🌙</button>
 
 <!-- Sparkle cursor canvas -->
 <canvas id="sparkleCanvas" style="position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:9998;"></canvas>
@@ -934,14 +938,26 @@
     else { btn.style.opacity = '0'; btn.style.transform = 'translateY(20px)'; }
   });
 
-  // === Dark Mode Toggle (Default Dark -> toggles body.light-mode) ===
+  // === Dark Mode Toggle (Default Light -> toggles body.dark-mode) ===
   function toggleDarkMode() {
-    document.body.classList.toggle('light-mode');
+    document.body.classList.toggle('dark-mode');
+    const isDark = document.body.classList.contains('dark-mode');
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
     const btn = document.getElementById('darkModeBtn');
-    const isLight = document.body.classList.contains('light-mode');
-    btn.textContent = isLight ? '🌙' : '☀️';
-    btn.title = isLight ? 'Toggle Dark Mode' : 'Toggle Light Mode';
+    if (btn) {
+      btn.textContent = isDark ? '☀️' : '🌙';
+      btn.title = isDark ? 'Toggle Light Mode' : 'Toggle Dark Mode';
+    }
   }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const isDark = document.body.classList.contains('dark-mode');
+    const btn = document.getElementById('darkModeBtn');
+    if (btn) {
+      btn.textContent = isDark ? '☀️' : '🌙';
+      btn.title = isDark ? 'Toggle Light Mode' : 'Toggle Dark Mode';
+    }
+  });
 
   // === Animated Stat Counters ===
   function animateCounter(el, target, suffix = '') {
