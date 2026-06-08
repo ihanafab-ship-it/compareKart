@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact Us — Prismo</title>
-  <meta name="description" content="Get in touch with the Prismo shopping optimizer team. We'd love to hear from you." />
+  <title>Contact Us — CompareKart</title>
+  <meta name="description" content="Get in touch with the CompareKart shopping optimizer team. We'd love to hear from you." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
   <style>
-    .contact-page { padding-top: 90px; padding-bottom: 4rem; min-height: 100vh; background: linear-gradient(180deg, #f8f9ff 0%, #fff 100%); }
+    .contact-page { padding-top: 90px; padding-bottom: 4rem; min-height: 100vh; background: linear-gradient(180deg, #090d16 0%, #030712 100%); }
 
     .contact-wrapper { display: grid; grid-template-columns: 1fr 1.15fr; gap: 3rem; align-items: start; }
 
@@ -19,11 +19,11 @@
 
     .info-card {
       display: flex; align-items: flex-start; gap: 1rem; padding: 1.25rem;
-      background: #fff; border: 1px solid var(--border-color); border-radius: var(--radius-md);
+      background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-md);
       box-shadow: var(--shadow-sm);
       transition: transform var(--transition-fast), box-shadow var(--transition-fast), border-color var(--transition-fast);
     }
-    .info-card:hover { transform: translateX(6px); box-shadow: var(--shadow-md); border-color: rgba(16,185,129,0.2); }
+    .info-card:hover { transform: translateX(6px); box-shadow: var(--shadow-md); border-color: rgba(0,255,102,0.25); }
 
     .info-icon {
       width: 48px; height: 48px; border-radius: 14px;
@@ -46,7 +46,7 @@
     .sp-insta    { color: #ec4899; border-color: rgba(236,72,153,0.2); background: rgba(236,72,153,0.05); }
 
     .form-panel {
-      background: #fff; border: 1px solid var(--border-color); border-radius: var(--radius-xl);
+      background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-xl);
       padding: 2.5rem; box-shadow: var(--shadow-lg);
     }
     .form-header h2 { font-family: 'Outfit', sans-serif; font-size: 1.5rem; font-weight: 800; margin-bottom: 0.4rem; }
@@ -62,7 +62,7 @@
     }
     .success-state.show { display: flex; }
     .success-ring { width: 80px; height: 80px; border-radius: 50%; background: var(--gradient-cool); display: flex; align-items: center; justify-content: center; }
-    .success-ring-inner { width: 60px; height: 60px; border-radius: 50%; background: #fff; display: flex; align-items: center; justify-content: center; font-size: 2rem; }
+    .success-ring-inner { width: 60px; height: 60px; border-radius: 50%; background: var(--bg-card); display: flex; align-items: center; justify-content: center; font-size: 2rem; }
     .success-state h3 { font-family: 'Outfit', sans-serif; font-size: 1.5rem; font-weight: 800; }
     .success-state p { color: var(--text-secondary); }
 
@@ -77,14 +77,14 @@
 <!-- NAVBAR -->
 <nav class="navbar scrolled" id="navbar">
   <a href="index.html" class="nav-logo">
-    <div class="nav-logo-icon" style="background:linear-gradient(135deg,#10b981,#7c3aed)">✦</div>
-    <span class="nav-logo-text" style="background:linear-gradient(135deg,#10b981,#7c3aed);-webkit-background-clip:text;background-clip:text;">Prismo</span>
+    <div class="nav-logo-icon" style="background:linear-gradient(135deg,#00ff66,#00f0ff);box-shadow:0 0 15px rgba(0,255,102,0.3)">✦</div>
+    <span class="nav-logo-text" style="background:linear-gradient(135deg,#00ff66,#00f0ff);-webkit-background-clip:text;background-clip:text;">CompareKart</span>
   </a>
   <ul class="nav-links" id="navLinks">
     <li><a href="index.html">Home</a></li>
-    <li><a href="tech-news.html">Tech News</a></li>
+    <li><a href="faq-quiz.html">FAQ & Quiz</a></li>
     <li><a href="contact.html" class="active">Contact</a></li>
-    <li><a href="waitlist.html" class="nav-cta" style="background:linear-gradient(135deg,#10b981,#7c3aed) !important;box-shadow:0 4px 14px rgba(16,185,129,0.3)">Join Waitlist 🚀</a></li>
+    <li><a href="waitlist.html" class="nav-cta" style="background:linear-gradient(135deg,#00ff66,#00f0ff) !important;box-shadow:0 0 15px rgba(0,255,102,0.25)">Join Waitlist 🚀</a></li>
   </ul>
   <div class="hamburger" onclick="document.getElementById('navLinks').classList.toggle('open')"><span></span><span></span><span></span></div>
 </nav>
@@ -105,7 +105,7 @@
         <div class="info-cards">
           <div class="info-card">
             <div class="info-icon" style="background:rgba(16,185,129,0.08);">📧</div>
-            <div><div class="info-label">Partnerships Email</div><div class="info-value">partnerships@prismo.in</div></div>
+            <div><div class="info-label">Partnerships Email</div><div class="info-value">partnerships@comparekart.in</div></div>
           </div>
           <div class="info-card">
             <div class="info-icon" style="background:rgba(124,58,237,0.08);">📞</div>
@@ -155,7 +155,7 @@
               <textarea id="message" class="form-control" placeholder="Describe your inquiry (integration request, partnership proposal)..."></textarea>
               <span class="error-msg" id="messageErr">⚠ Message cannot be empty.</span>
             </div>
-            <button type="submit" id="submitBtn" class="btn btn-primary" style="width:100%;justify-content:center;padding:1rem;font-size:1rem;border-radius:var(--radius-md);background:linear-gradient(135deg,#10b981,#7c3aed)">
+            <button type="submit" id="submitBtn" class="btn btn-primary" style="width:100%;justify-content:center;padding:1rem;font-size:1rem;border-radius:var(--radius-md);background:linear-gradient(135deg,#00ff66,#00f0ff)">
               <span id="btnText">Send Message 🚀</span>
             </button>
           </form>
@@ -176,11 +176,11 @@
 <footer class="footer">
   <div class="footer-inner">
     <a href="index.html" class="nav-logo">
-      <div class="nav-logo-icon" style="width:28px;height:28px;font-size:12px;border-radius:8px;background:linear-gradient(135deg,#10b981,#7c3aed)">✦</div>
-      <span class="nav-logo-text" style="font-size:1.1rem;background:linear-gradient(135deg,#10b981,#7c3aed);-webkit-background-clip:text;background-clip:text;">Prismo</span>
+      <div class="nav-logo-icon" style="width:28px;height:28px;font-size:12px;border-radius:8px;background:linear-gradient(135deg,#00ff66,#00f0ff)">✦</div>
+      <span class="nav-logo-text" style="font-size:1.1rem;background:linear-gradient(135deg,#00ff66,#00f0ff);-webkit-background-clip:text;background-clip:text;">CompareKart</span>
     </a>
-    <span class="footer-copy">© 2026 Prismo Technologies Pvt. Ltd.</span>
-    <div class="footer-links"><a href="index.html">Home</a><a href="tech-news.html">Tech News</a><a href="contact.html">Contact</a><a href="waitlist.html">Waitlist</a></div>
+    <span class="footer-copy">© 2026 CompareKart Technologies Pvt. Ltd.</span>
+    <div class="footer-links"><a href="index.html">Home</a><a href="faq-quiz.html">FAQ & Quiz</a><a href="contact.html">Contact</a><a href="waitlist.html">Waitlist</a></div>
   </div>
 </footer>
 

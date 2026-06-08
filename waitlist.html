@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Join the Waitlist — Prismo</title>
-  <meta name="description" content="Secure your spot on the Prismo early access shopping optimizer waitlist." />
+  <title>Join the Waitlist — CompareKart</title>
+  <meta name="description" content="Secure your spot on the CompareKart early access shopping optimizer waitlist." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
@@ -13,19 +13,19 @@
       min-height: 100vh; display: flex; flex-direction: column;
       align-items: center; justify-content: center;
       padding: 110px 2rem 4rem;
-      background: linear-gradient(180deg, #f8f9ff 0%, #fff 50%, #f5fcf6 100%);
+      background: linear-gradient(180deg, #090d16 0%, #030712 100%);
       position: relative; overflow: hidden;
     }
 
     .orb { position: fixed; border-radius: 50%; filter: blur(100px); pointer-events: none; z-index: 0; opacity: 0.5; }
-    .orb-1 { width: 500px; height: 500px; top: -150px; left: -100px; background: rgba(16,185,129,0.12); animation: float 10s ease-in-out infinite; }
-    .orb-2 { width: 400px; height: 400px; bottom: -100px; right: -80px; background: rgba(124,58,237,0.12); animation: float 12s 2s ease-in-out infinite; }
-    .orb-3 { width: 350px; height: 350px; top: 40%; right: 20%; background: rgba(249,115,22,0.1); animation: float 8s 1s ease-in-out infinite; }
+    .orb-1 { width: 500px; height: 500px; top: -150px; left: -100px; background: rgba(0,255,102,0.15); animation: float 10s ease-in-out infinite; }
+    .orb-2 { width: 400px; height: 400px; bottom: -100px; right: -80px; background: rgba(191,85,236,0.15); animation: float 12s 2s ease-in-out infinite; }
+    .orb-3 { width: 350px; height: 350px; top: 40%; right: 20%; background: rgba(0,240,255,0.12); animation: float 8s 1s ease-in-out infinite; }
 
     .counter-row { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 2rem; z-index: 1; }
     .avatar-stack { display: flex; }
     .avatar-stack span {
-      width: 36px; height: 36px; border-radius: 50%; border: 3px solid #fff;
+      width: 36px; height: 36px; border-radius: 50%; border: 3px solid var(--bg-card);
       display: flex; align-items: center; justify-content: center;
       font-size: 0.85rem; font-weight: 800; color: #fff; margin-left: -10px;
       box-shadow: var(--shadow-sm);
@@ -39,7 +39,7 @@
     .waitlist-subtitle { font-size: 1.05rem; color: var(--text-secondary); line-height: 1.75; }
 
     .waitlist-card {
-      width: 100%; max-width: 520px; background: #fff;
+      width: 100%; max-width: 520px; background: var(--bg-card);
       border: 1px solid var(--border-color); border-radius: var(--radius-xl);
       padding: 2.5rem; box-shadow: var(--shadow-xl); z-index: 1;
       animation: fadeUp 0.7s 0.2s ease both;
@@ -48,8 +48,8 @@
     .perks-list {
       display: flex; flex-direction: column; gap: 0.6rem;
       margin-bottom: 2rem; padding: 1.25rem;
-      background: linear-gradient(135deg, rgba(16,185,129,0.04), rgba(124,58,237,0.04));
-      border: 1.5px solid rgba(16,185,129,0.15); border-radius: var(--radius-md);
+      background: linear-gradient(135deg, rgba(0,255,102,0.04), rgba(191,85,236,0.04));
+      border: 1.5px solid rgba(0,255,102,0.15); border-radius: var(--radius-md);
     }
     .perk-item { display: flex; align-items: center; gap: 0.6rem; font-size: 0.9rem; color: var(--text-secondary); }
     .perk-icon { font-size: 1rem; }
@@ -80,7 +80,7 @@
       background: conic-gradient(from 0deg, #10b981, #7c3aed, #ec4899, #f97316, #3b82f6, #10b981);
       display: flex; align-items: center; justify-content: center; animation: spin 3s linear infinite;
     }
-    .success-ring-inner { width: 60px; height: 60px; border-radius: 50%; background: #fff; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; }
+    .success-ring-inner { width: 60px; height: 60px; border-radius: 50%; background: var(--bg-card); display: flex; align-items: center; justify-content: center; font-size: 1.8rem; }
     .position-badge {
       display: inline-flex; align-items: center; gap: 6px; padding: 0.4rem 1rem;
       background: rgba(16,185,129,0.08); border: 1.5px solid rgba(16,185,129,0.2);
@@ -104,14 +104,14 @@
 <!-- NAVBAR -->
 <nav class="navbar scrolled">
   <a href="index.html" class="nav-logo">
-    <div class="nav-logo-icon" style="background:linear-gradient(135deg,#10b981,#7c3aed)">✦</div>
-    <span class="nav-logo-text" style="background:linear-gradient(135deg,#10b981,#7c3aed);-webkit-background-clip:text;background-clip:text;">Prismo</span>
+    <div class="nav-logo-icon" style="background:linear-gradient(135deg,#00ff66,#00f0ff);box-shadow:0 0 15px rgba(0,255,102,0.3)">✦</div>
+    <span class="nav-logo-text" style="background:linear-gradient(135deg,#00ff66,#00f0ff);-webkit-background-clip:text;background-clip:text;">CompareKart</span>
   </a>
   <ul class="nav-links" id="navLinks">
     <li><a href="index.html">Home</a></li>
-    <li><a href="tech-news.html">Tech News</a></li>
+    <li><a href="faq-quiz.html">FAQ & Quiz</a></li>
     <li><a href="contact.html">Contact</a></li>
-    <li><a href="waitlist.html" class="active nav-cta" style="background:linear-gradient(135deg,#10b981,#7c3aed) !important;box-shadow:0 4px 14px rgba(16,185,129,0.3)">Join Waitlist 🚀</a></li>
+    <li><a href="waitlist.html" class="active nav-cta" style="background:linear-gradient(135deg,#00ff66,#00f0ff) !important;box-shadow:0 0 15px rgba(0,255,102,0.25)">Join Waitlist 🚀</a></li>
   </ul>
   <div class="hamburger" onclick="document.getElementById('navLinks').classList.toggle('open')"><span></span><span></span><span></span></div>
 </nav>
@@ -133,7 +133,7 @@
   <div class="waitlist-hero">
     <div class="section-badge">🚀 Early Access</div>
     <h1 class="waitlist-title">Shop smarter with<br/><span class="gradient-text">automated savings</span></h1>
-    <p class="waitlist-subtitle">Secure your spot on the waitlist to test Prismo's multi-app cart routing, split shipments calculation, and auto-checkout engine.</p>
+    <p class="waitlist-subtitle">Secure your spot on the waitlist to test CompareKart's multi-app cart routing, split shipments calculation, and auto-checkout engine.</p>
   </div>
 
   <div class="waitlist-card">
@@ -200,11 +200,11 @@
 <footer class="footer">
   <div class="footer-inner">
     <a href="index.html" class="nav-logo">
-      <div class="nav-logo-icon" style="width:28px;height:28px;font-size:12px;border-radius:8px;background:linear-gradient(135deg,#10b981,#7c3aed)">✦</div>
-      <span class="nav-logo-text" style="font-size:1.1rem;background:linear-gradient(135deg,#10b981,#7c3aed);-webkit-background-clip:text;background-clip:text;">Prismo</span>
+      <div class="nav-logo-icon" style="width:28px;height:28px;font-size:12px;border-radius:8px;background:linear-gradient(135deg,#00ff66,#00f0ff)">✦</div>
+      <span class="nav-logo-text" style="font-size:1.1rem;background:linear-gradient(135deg,#00ff66,#00f0ff);-webkit-background-clip:text;background-clip:text;">CompareKart</span>
     </a>
-    <span class="footer-copy">© 2026 Prismo Technologies Pvt. Ltd.</span>
-    <div class="footer-links"><a href="index.html">Home</a><a href="tech-news.html">Tech News</a><a href="contact.html">Contact</a><a href="waitlist.html">Waitlist</a></div>
+    <span class="footer-copy">© 2026 CompareKart Technologies Pvt. Ltd.</span>
+    <div class="footer-links"><a href="index.html">Home</a><a href="faq-quiz.html">FAQ & Quiz</a><a href="contact.html">Contact</a><a href="waitlist.html">Waitlist</a></div>
   </div>
 </footer>
 
@@ -238,7 +238,7 @@
 
     setTimeout(() => {
       alert(
-        '🎉 You\'re on the Prismo Waitlist!\n\n' +
+        '🎉 You\'re on the CompareKart Waitlist!\n\n' +
         'Email: ' + email + '\n' +
         'Receive Updates: ' + notifLabel + '\n\n' +
         'We\'ll reach out to ' + email + ' with your early access invite soon! 🚀'

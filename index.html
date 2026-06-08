@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Prismo — Smart Price Optimizer & Auto-Orderer</title>
-  <meta name="description" content="Prismo compares prices, taxes, and shipping charges across Blinkit, Zepto, Swiggy Instamart, BigBasket, Amazon, and Flipkart, auto-ordering your items at the best rate." />
+  <title>CompareKart — Smart Price Optimizer & Auto-Orderer</title>
+  <meta name="description" content="CompareKart compares prices, taxes, and shipping charges across Blinkit, Zepto, Swiggy Instamart, BigBasket, Amazon, and Flipkart, auto-ordering your items at the best rate." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
@@ -18,34 +18,34 @@
       overflow: hidden;
       text-align: center;
       padding: 7rem 2rem 4rem;
-      background: linear-gradient(180deg, #f0fbf4 0%, #ffffff 100%);
+      background: linear-gradient(180deg, #090d16 0%, #030712 100%);
     }
     .hero-bg {
       position: absolute;
       inset: 0;
-      background: radial-gradient(circle at 12% 20%, rgba(16, 185, 129, 0.08) 0%, transparent 40%),
-                  radial-gradient(circle at 88% 80%, rgba(124, 58, 237, 0.07) 0%, transparent 40%),
-                  radial-gradient(circle at 50% 55%, rgba(59, 130, 246, 0.05) 0%, transparent 50%);
+      background: radial-gradient(circle at 12% 20%, rgba(0, 255, 102, 0.15) 0%, transparent 40%),
+                  radial-gradient(circle at 88% 80%, rgba(255, 0, 127, 0.12) 0%, transparent 40%),
+                  radial-gradient(circle at 50% 55%, rgba(0, 240, 255, 0.1) 0%, transparent 50%);
       opacity: 1;
     }
     .hero-overlay {
       position: absolute;
       inset: 0;
-      background: linear-gradient(to bottom, transparent 60%, #fff 100%);
+      background: linear-gradient(to bottom, transparent 60%, #030712 100%);
     }
     .hero-content { position: relative; z-index: 2; max-width: 850px; margin: 0 auto; }
 
     .hero-eyebrow {
       display: inline-flex; align-items: center; gap: 8px;
       padding: 0.45rem 1.1rem;
-      background: linear-gradient(135deg, rgba(16,185,129,0.1), rgba(124,58,237,0.1));
-      border: 1.5px solid rgba(16,185,129,0.25);
+      background: linear-gradient(135deg, rgba(0,255,102,0.1), rgba(191,85,236,0.1));
+      border: 1.5px solid rgba(0,255,102,0.25);
       border-radius: 100px;
       font-size: 0.82rem; font-weight: 700; color: var(--emerald);
       margin-bottom: 1.75rem;
       animation: fadeUp 0.6s ease both;
     }
-    .live-dot { width: 8px; height: 8px; border-radius: 50%; background: #10b981; animation: pulseGlow 2s ease infinite; }
+    .live-dot { width: 8px; height: 8px; border-radius: 50%; background: #00ff66; animation: pulseGlow 2s ease infinite; }
 
     .hero-title {
       font-family: 'Outfit', sans-serif;
@@ -56,7 +56,7 @@
       color: var(--text-primary);
     }
     .hero-title .highlight {
-      background: linear-gradient(135deg, #10b981, #7c3aed, #f97316);
+      background: linear-gradient(135deg, #00ff66, #00f0ff, #ff007f);
       -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
     }
 
@@ -74,14 +74,14 @@
       position: relative; z-index: 10;
     }
     .hero-search-bar {
-      display: flex; gap: 8px; background: #fff; padding: 6px;
-      border-radius: 100px; border: 2.5px solid var(--border-color);
+      display: flex; gap: 8px; background: rgba(255,255,255,0.05); padding: 6px;
+      border-radius: 100px; border: 2.5px solid rgba(255,255,255,0.12);
       box-shadow: var(--shadow-md); transition: all var(--transition-fast);
       align-items: center;
     }
     .hero-search-bar:focus-within {
-      border-color: var(--green);
-      box-shadow: 0 8px 30px rgba(16,185,129,0.15);
+      border-color: var(--cyan);
+      box-shadow: 0 0 20px rgba(0, 240, 255, 0.45);
     }
     .hero-search-input {
       flex: 1; border: none; outline: none; background: transparent;
@@ -104,7 +104,8 @@
     .float-badge {
       position: absolute; z-index: 1;
       padding: 0.6rem 1rem; border-radius: var(--radius-lg);
-      background: #fff; border: 1px solid var(--border-color);
+      background: rgba(18, 24, 38, 0.85); border: 1.5px solid rgba(255,255,255,0.08);
+      backdrop-filter: blur(8px);
       box-shadow: var(--shadow-lg); font-size: 0.82rem; font-weight: 600;
       display: flex; align-items: center; gap: 8px; color: var(--text-primary);
     }
@@ -120,7 +121,7 @@
     .logos-label { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted); margin-bottom: 1.5rem; font-weight: 700; }
     .logos-row { display: flex; align-items: center; justify-content: center; gap: 1.5rem; flex-wrap: wrap; }
     .logo-pill {
-      padding: 0.55rem 1.35rem; background: #fff; border: 1px solid var(--border-color);
+      padding: 0.55rem 1.35rem; background: rgba(255,255,255,0.03); border: 1.5px solid rgba(255,255,255,0.08);
       border-radius: 100px; font-size: 0.88rem; font-weight: 800;
       transition: all var(--transition-fast); box-shadow: var(--shadow-sm);
     }
@@ -144,11 +145,11 @@
     }
     .step { flex: 1; text-align: center; padding: 2rem 1rem; position: relative; z-index: 1; }
     .step-num {
-      width: 60px; height: 60px; border-radius: 50%; background: #fff;
+      width: 60px; height: 60px; border-radius: 50%; background: rgba(18, 24, 38, 0.85);
       border: 3px solid var(--green); display: flex; align-items: center; justify-content: center;
       font-family: 'Outfit', sans-serif; font-size: 1.3rem; font-weight: 800;
       color: var(--green); margin: 0 auto 1.25rem;
-      box-shadow: 0 0 0 6px rgba(16,185,129,0.08);
+      box-shadow: 0 0 0 6px rgba(0,255,102,0.12);
       transition: all var(--transition-smooth);
     }
     .step:hover .step-num { background: var(--gradient-main); color: #fff; border-color: transparent; box-shadow: 0 4px 20px rgba(124,58,237,0.3); }
@@ -206,14 +207,14 @@
 <!-- NAVBAR -->
 <nav class="navbar" id="navbar">
   <a href="index.html" class="nav-logo">
-    <div class="nav-logo-icon" style="background:linear-gradient(135deg, #10b981, #7c3aed)">✦</div>
-    <span class="nav-logo-text" style="background:linear-gradient(135deg, #10b981, #7c3aed);-webkit-background-clip:text;background-clip:text;">Prismo</span>
+    <div class="nav-logo-icon" style="background:linear-gradient(135deg, #00ff66, #00f0ff);box-shadow:0 0 15px rgba(0,255,102,0.3)">✦</div>
+    <span class="nav-logo-text" style="background:linear-gradient(135deg, #00ff66, #00f0ff);-webkit-background-clip:text;background-clip:text;">CompareKart</span>
   </a>
   <ul class="nav-links" id="navLinks">
     <li><a href="index.html" class="active">Home</a></li>
-    <li><a href="tech-news.html">Tech News</a></li>
+    <li><a href="faq-quiz.html">FAQ & Quiz</a></li>
     <li><a href="contact.html">Contact</a></li>
-    <li><a href="waitlist.html" class="nav-cta" style="background:linear-gradient(135deg, #10b981, #7c3aed) !important;box-shadow:0 4px 14px rgba(16,185,129,0.3);">Join Waitlist 🚀</a></li>
+    <li><a href="waitlist.html" class="nav-cta" style="background:linear-gradient(135deg, #00ff66, #00f0ff) !important;box-shadow:0 0 15px rgba(0,255,102,0.25);">Join Waitlist 🚀</a></li>
   </ul>
   <div class="hamburger" onclick="document.getElementById('navLinks').classList.toggle('open')" aria-label="Toggle navigation">
     <span></span><span></span><span></span>
@@ -252,7 +253,7 @@
           <span id="searchResultTitle">Matched Item</span>
           <span class="brand-pill" id="searchResultCategory" style="font-size:0.7rem;">Grocery</span>
         </div>
-        <div style="padding:1rem;background:#fff;display:flex;flex-direction:column;gap:0.75rem;" id="searchResultPrices">
+        <div style="padding:1rem;background:var(--bg-card);display:flex;flex-direction:column;gap:0.75rem;" id="searchResultPrices">
           <!-- Dynamically filled -->
         </div>
         <div style="padding:0.75rem 1rem;background:var(--bg-secondary);border-top:1.5px solid var(--border-color);display:flex;justify-content:space-between;align-items:center;">
@@ -263,7 +264,7 @@
     </div>
 
     <div class="hero-actions">
-      <a href="#optimizer" class="btn btn-primary btn-lg" style="background:linear-gradient(135deg, #10b981, #7c3aed)">📋 Open List Optimizer</a>
+      <a href="#optimizer" class="btn btn-primary btn-lg" style="background:linear-gradient(135deg, #00ff66, #bf55ec)">📋 Open List Optimizer</a>
       <a href="#features" class="btn btn-secondary btn-lg">Explore Specs →</a>
     </div>
   </div>
@@ -295,12 +296,12 @@
     <div style="text-align:center;margin-bottom:3.5rem;">
       <div class="section-badge">✦ Who We Are</div>
       <h2 class="section-title">A bold mission for <span class="gradient-text">every Indian shopper</span></h2>
-      <p class="section-subtitle" style="margin:0 auto;">We believe consumer tech should fight inflation. Prismo automatically scans and computes fees to keep money in your wallet.</p>
+      <p class="section-subtitle" style="margin:0 auto;">We believe consumer tech should fight inflation. CompareKart automatically scans and computes fees to keep money in your wallet.</p>
     </div>
 
     <div class="card" style="border-left:4px solid var(--green);margin-bottom:2rem;padding:2rem 2.5rem;">
-      <h3 style="font-family:'Outfit',sans-serif;font-size:1.3rem;font-weight:800;margin-bottom:0.75rem;">🏢 About <span class="gradient-text">Prismo</span></h3>
-      <p style="color:var(--text-secondary);line-height:1.8;font-size:0.95rem;">Founded in 2024 in Mumbai, India, Prismo is a shopping automation platform. Our team builds intelligent APIs that interface with quick-commerce and marketplace apps. By analyzing items client-side, Prismo finds price disparities, calculates shipping costs, platforms fees, surge prices, and executes immediate checkout checkouts — saving you time and money on every single order.</p>
+      <h3 style="font-family:'Outfit',sans-serif;font-size:1.3rem;font-weight:800;margin-bottom:0.75rem;">🏢 About <span class="gradient-text">CompareKart</span></h3>
+      <p style="color:var(--text-secondary);line-height:1.8;font-size:0.95rem;">Founded in 2024 in Mumbai, India, CompareKart is a shopping automation platform. Our team builds intelligent APIs that interface with quick-commerce and marketplace apps. By analyzing items client-side, CompareKart finds price disparities, calculates shipping costs, platform fees, surge prices, and executes immediate checkout checkouts — saving you time and money on every single order.</p>
     </div>
 
     <div class="grid-3">
@@ -329,7 +330,7 @@
     <div style="text-align:center;margin-bottom:2.5rem;">
       <div class="section-badge" style="background:rgba(16,185,129,0.1);color:var(--green);border-color:rgba(16,185,129,0.2)">📋 Multi-App Optimizer</div>
       <h2 class="section-title">Build Your Shopping <span class="gradient-text">List & Compare</span></h2>
-      <p class="section-subtitle" style="margin:0 auto;">Add items to your checklist. Prismo will analyze delivery windows, compare prices, and auto-place the order.</p>
+      <p class="section-subtitle" style="margin:0 auto;">Add items to your checklist. CompareKart will analyze delivery windows, compare prices, and auto-place the order.</p>
     </div>
 
     <div class="optimizer-container">
@@ -406,7 +407,7 @@
           <div id="monthlySettings" style="display:none;background:var(--bg-secondary);padding:1rem;border-radius:var(--radius-md);border:1.5px dashed var(--border-color);animation:fadeUp 0.3s ease;">
             <label style="font-size:0.82rem;font-weight:700;color:var(--text-muted);display:block;margin-bottom:0.4rem;">SELECT REPLENISHMENT DATE:</label>
             <input type="date" id="scheduleDateInput" class="form-control" style="max-width:220px;padding:0.5rem;" />
-            <span style="font-size:0.75rem;color:var(--text-muted);display:block;margin-top:0.4rem;">Prismo will automatically place this split-optimized order on the selected date.</span>
+            <span style="font-size:0.75rem;color:var(--text-muted);display:block;margin-top:0.4rem;">CompareKart will automatically place this split-optimized order on the selected date.</span>
           </div>
 
           <button class="btn btn-primary" onclick="initiateAutoOrder()" style="background:var(--gradient-sunset);padding:1rem 2rem;font-size:1.1rem;justify-content:center;border-radius:var(--radius-md);">
@@ -505,7 +506,7 @@
       <div class="card" style="border-top:4px solid #3b82f6;">
         <div class="feature-icon" style="background:rgba(59,130,246,0.1);color:#3b82f6;">📅</div>
         <h3 class="feature-title" style="color:#3b82f6;">Monthly Replenishment</h3>
-        <p class="feature-desc">Schedule monthly essentials. Prismo dynamically checks prices on the selected day and checks them out instantly.</p>
+        <p class="feature-desc">Schedule monthly essentials. CompareKart dynamically checks prices on the selected day and checks them out instantly.</p>
       </div>
       <div class="card" style="border-top:4px solid #f59e0b;">
         <div class="feature-icon" style="background:rgba(245,158,11,0.1);color:#f59e0b;">🔍</div>
@@ -553,7 +554,7 @@
     <div class="grid-3">
       <div class="card">
         <span class="quote-mark">"</span>
-        <p class="testimonial-text">Prismo saved me ₹800 on groceries last week by splitting our order between Zepto and Blinkit. The platform fees are calculated accurately!</p>
+        <p class="testimonial-text">CompareKart saved me ₹800 on groceries last week by splitting our order between Zepto and Blinkit. The platform fees are calculated accurately!</p>
         <div class="testimonial-author">
           <div class="author-avatar" style="background:var(--gradient-main);">S</div>
           <div class="author-info"><div class="name">Sarah Kim</div><div class="role">Shopper, Swiggy Instamart customer</div></div>
@@ -561,7 +562,7 @@
       </div>
       <div class="card">
         <span class="quote-mark">"</span>
-        <p class="testimonial-text">We use Prismo to auto-order monthly pantry items. We save 15% consistently. The e-commerce comparison between Amazon and Flipkart is extremely convenient.</p>
+        <p class="testimonial-text">We use CompareKart to auto-order monthly pantry items. We save 15% consistently. The e-commerce comparison between Amazon and Flipkart is extremely convenient.</p>
         <div class="testimonial-author">
           <div class="author-avatar" style="background:var(--gradient-cool);">R</div>
           <div class="author-info"><div class="name">Rajesh Iyer</div><div class="role">Office Manager, BKC Mumbai</div></div>
@@ -620,120 +621,15 @@
   </div>
 </section>
 
-<!-- QUIZ: Savings Shopper Profiler -->
-<section class="section" id="quiz-section" style="background:linear-gradient(135deg,#fef7ff,#f0f4ff,#f0fdf4);">
-  <div class="container" style="max-width:700px;">
-    <div style="text-align:center;margin-bottom:2.5rem;">
-      <div class="section-badge">🎮 Interactive Quiz</div>
-      <h2 class="section-title">Find your <span class="gradient-text">Shopping Style</span></h2>
-      <p class="section-subtitle" style="margin:0 auto;">Answer 3 quick questions to discover your optimizer profile and see how much you could save.</p>
-    </div>
 
-    <div class="card" style="padding:2.5rem;box-shadow:var(--shadow-xl);border:2px solid rgba(16,185,129,0.1);" id="quizCard">
-      <!-- Progress bar -->
-      <div style="display:flex;gap:6px;margin-bottom:2rem;" id="quizProgress">
-        <div style="flex:1;height:6px;border-radius:3px;background:var(--green);transition:all 0.4s ease;" id="prog1"></div>
-        <div style="flex:1;height:6px;border-radius:3px;background:#e2e8f0;transition:all 0.4s ease;" id="prog2"></div>
-        <div style="flex:1;height:6px;border-radius:3px;background:#e2e8f0;transition:all 0.4s ease;" id="prog3"></div>
-      </div>
-
-      <!-- Q1 -->
-      <div id="q1" class="quiz-step">
-        <h3 style="font-family:'Outfit',sans-serif;font-size:1.3rem;font-weight:800;margin-bottom:0.5rem;">1️⃣ How do you usually shop?</h3>
-        <p style="color:var(--text-secondary);font-size:0.9rem;margin-bottom:1.5rem;">Select your primary shopping habit.</p>
-        <div style="display:flex;flex-direction:column;gap:0.75rem;">
-          <button class="quiz-opt" onclick="quizAnswer(1,'instant')">⚡ Impulse / Need groceries in 10 minutes</button>
-          <button class="quiz-opt" onclick="quizAnswer(1,'weekly')">🥦 Weekly planned groceries & items</button>
-          <button class="quiz-opt" onclick="quizAnswer(1,'monthly')">📦 Monthly bulk replenishment orders</button>
-        </div>
-      </div>
-
-      <!-- Q2 -->
-      <div id="q2" class="quiz-step" style="display:none;">
-        <h3 style="font-family:'Outfit',sans-serif;font-size:1.3rem;font-weight:800;margin-bottom:0.5rem;">2️⃣ What's your biggest shopping concern?</h3>
-        <p style="color:var(--text-secondary);font-size:0.9rem;margin-bottom:1.5rem;">Pick the factor that bugs you the most.</p>
-        <div style="display:flex;flex-direction:column;gap:0.75rem;">
-          <button class="quiz-opt" onclick="quizAnswer(2,'price')">💸 Overpaying on item price disparities</button>
-          <button class="quiz-opt" onclick="quizAnswer(2,'fees')">📦 Annoying shipping charges & surge pricing</button>
-          <button class="quiz-opt" onclick="quizAnswer(2,'convenience')">⏳ Time wasted managing 5 different apps</button>
-        </div>
-      </div>
-
-      <!-- Q3 -->
-      <div id="q3" class="quiz-step" style="display:none;">
-        <h3 style="font-family:'Outfit',sans-serif;font-size:1.3rem;font-weight:800;margin-bottom:0.5rem;">3️⃣ What's your average monthly shopping spend?</h3>
-        <p style="color:var(--text-secondary);font-size:0.9rem;margin-bottom:1.5rem;">Includes grocery, apparel, and tech deliveries.</p>
-        <div style="display:flex;flex-direction:column;gap:0.75rem;">
-          <button class="quiz-opt" onclick="quizAnswer(3,'low')">💳 Under ₹5,000 per month</button>
-          <button class="quiz-opt" onclick="quizAnswer(3,'moderate')">💵 ₹5,000 to ₹15,000 per month</button>
-          <button class="quiz-opt" onclick="quizAnswer(3,'high')">💎 Above ₹15,000 per month</button>
-        </div>
-      </div>
-
-      <!-- Result -->
-      <div id="quizResult" class="quiz-step" style="display:none;text-align:center;">
-        <div style="font-size:3.5rem;margin-bottom:1rem;" id="resultEmoji">🚀</div>
-        <h3 style="font-family:'Outfit',sans-serif;font-size:1.5rem;font-weight:800;margin-bottom:0.5rem;" id="resultTitle">Loading...</h3>
-        <p style="color:var(--text-secondary);font-size:0.95rem;line-height:1.7;margin-bottom:1.5rem;" id="resultDesc"></p>
-        <div style="display:flex;gap:0.75rem;justify-content:center;flex-wrap:wrap;">
-          <a href="waitlist.html" class="btn btn-primary" style="background:var(--green)">Join the Waitlist 🚀</a>
-          <button class="btn btn-secondary" onclick="resetQuiz()">Retake Quiz 🔄</button>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- FAQ Accordion -->
-<section class="section" id="faq">
-  <div class="container" style="max-width:760px;">
-    <div style="text-align:center;margin-bottom:3rem;">
-      <div class="section-badge">❓ FAQ</div>
-      <h2 class="section-title">Got questions? We've got <span class="gradient-text">answers</span></h2>
-    </div>
-
-    <div style="display:flex;flex-direction:column;gap:0.75rem;" id="faqList">
-      <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)">
-          <span>What exactly is Prismo?</span><span class="faq-icon">+</span>
-        </button>
-        <div class="faq-a">Prismo is a multi-app price comparison and auto-ordering platform. You input a list of groceries, household essentials, or general products. We route items to the cheapest apps (e.g. milk to Zepto, sneakers to Flipkart) and place your orders in a single click. 🚀</div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)">
-          <span>Is there a fee to use Prismo?</span><span class="faq-icon">+</span>
-        </button>
-        <div class="faq-a">Our Starter plan is completely free! You can search items and compare manually. Our Pro plan costs ₹199/month and unlocks split-basket optimization, scheduled monthly replenishments, and 1-click auto checkout. 🌱</div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)">
-          <span>How do you calculate platform fees and taxes?</span><span class="faq-icon">+</span>
-        </button>
-        <div class="faq-a">We query live price engines and calculate itemized rates, packaging charges, delivery costs, rain/surge fees, and GST depending on the app. The totals you see are the final amounts you pay. 🧠</div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)">
-          <span>How does the Auto-Ordering feature work?</span><span class="faq-icon">+</span>
-        </button>
-        <div class="faq-a">Prismo connects directly with retail delivery checkouts through secure, local client-side API calls. Our system logs in, populates your carts with the cheapest products, enters promo codes, and processes checkouts. 🔒</div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)">
-          <span>Can I schedule recurring orders?</span><span class="faq-icon">+</span>
-        </button>
-        <div class="faq-a">Yes! Check the "Enable Monthly Auto-Order" box on your checklist dashboard, select a date, and Prismo will automatically compute the cheapest rates on that morning and complete the checkout. 📅</div>
-      </div>
-    </div>
-  </div>
-</section>
 
 <!-- CTA -->
 <section class="section">
-  <div class="cta-section" style="background:linear-gradient(135deg, #10b981, #7c3aed, #f97316)">
+  <div class="cta-section" style="background:linear-gradient(135deg, #00ff66, #bf55ec, #ff007f);box-shadow:0 0 30px rgba(0,255,102,0.25);">
     <h2 class="cta-title">Ready to shop at the <span style="text-decoration:underline;text-decoration-color:rgba(255,255,255,0.4);">lowest price?</span></h2>
     <p class="cta-sub">Join 50,000+ smart shoppers on the waitlist. Start saving on groceries, apparel, and electronics today.</p>
     <div class="cta-actions">
-      <a href="waitlist.html" class="cta-btn-white" style="color:#10b981 !important;">🚀 Join the Waitlist</a>
+      <a href="waitlist.html" class="cta-btn-white" style="color:var(--purple) !important;">🚀 Join the Waitlist</a>
       <a href="contact.html" class="cta-btn-white" style="background:rgba(255,255,255,0.15);color:#fff !important;border:2px solid rgba(255,255,255,0.3);">Talk to Partnerships</a>
     </div>
   </div>
@@ -743,11 +639,11 @@
 <footer class="footer">
   <div class="footer-inner" style="flex-direction:column;gap:1.5rem;text-align:center;">
     <a href="index.html" class="nav-logo">
-      <div class="nav-logo-icon" style="width:28px;height:28px;font-size:12px;border-radius:8px;background:linear-gradient(135deg,#10b981,#7c3aed)">✦</div>
-      <span class="nav-logo-text" style="font-size:1.1rem;background:linear-gradient(135deg,#10b981,#7c3aed);-webkit-background-clip:text;background-clip:text;">Prismo</span>
+      <div class="nav-logo-icon" style="width:28px;height:28px;font-size:12px;border-radius:8px;background:linear-gradient(135deg,#00ff66,#00f0ff)">✦</div>
+      <span class="nav-logo-text" style="font-size:1.1rem;background:linear-gradient(135deg,#00ff66,#00f0ff);-webkit-background-clip:text;background-clip:text;">CompareKart</span>
     </a>
     
-    <div class="footer-links"><a href="index.html">Home</a><a href="tech-news.html">Tech News</a><a href="contact.html">Contact</a><a href="waitlist.html">Waitlist</a><a href="#optimizer">Optimizer</a><a href="#faq">FAQ</a></div>
+    <div class="footer-links"><a href="index.html">Home</a><a href="faq-quiz.html">FAQ & Quiz</a><a href="contact.html">Contact</a><a href="waitlist.html">Waitlist</a><a href="#optimizer">Optimizer</a></div>
 
     <!-- Real Social Links -->
     <div style="display:flex;gap:0.6rem;justify-content:center;flex-wrap:wrap;">
@@ -758,18 +654,18 @@
       <a href="https://youtube.com" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;padding:0.45rem 1rem;border-radius:100px;font-size:0.82rem;font-weight:700;text-decoration:none;background:rgba(244,63,94,0.06);border:1.5px solid rgba(244,63,94,0.15);color:#f43f5e;transition:all 0.2s ease;">▶ YouTube</a>
     </div>
 
-    <span class="footer-copy">© 2026 Prismo Technologies Pvt. Ltd. All rights reserved. Made with ❤️ in Mumbai, India.</span>
+    <span class="footer-copy">© 2026 CompareKart Technologies Pvt. Ltd. All rights reserved. Made with ❤️ in Mumbai, India.</span>
   </div>
 </footer>
 
 <!-- Scroll Progress Bar -->
-<div id="scrollProgress" style="position:fixed;top:0;left:0;height:4px;background:linear-gradient(90deg,#10b981,#7c3aed,#ec4899);z-index:9999;width:0;transition:width 0.1s linear;border-radius:0 2px 2px 0;"></div>
+<div id="scrollProgress" style="position:fixed;top:0;left:0;height:4px;background:linear-gradient(90deg,var(--green),var(--cyan),var(--pink));z-index:9999;width:0;transition:width 0.1s linear;border-radius:0 2px 2px 0;"></div>
 
 <!-- Back to Top Button -->
-<button id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" style="position:fixed;bottom:2rem;right:2rem;width:50px;height:50px;border-radius:50%;background:linear-gradient(135deg,#10b981,#7c3aed);color:#fff;border:none;cursor:pointer;font-size:1.3rem;box-shadow:0 4px 16px rgba(16,185,129,0.3);z-index:999;opacity:0;transform:translateY(20px);transition:all 0.3s ease;display:flex;align-items:center;justify-content:center;">↑</button>
+<button id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" style="position:fixed;bottom:2rem;right:2rem;width:50px;height:50px;border-radius:50%;background:linear-gradient(135deg,#00ff66,#00f0ff);color:#fff;border:none;cursor:pointer;font-size:1.3rem;box-shadow:0 0 15px rgba(0,255,102,0.3);z-index:999;opacity:0;transform:translateY(20px);transition:all 0.3s ease;display:flex;align-items:center;justify-content:center;">↑</button>
 
 <!-- Dark Mode Toggle -->
-<button id="darkModeBtn" onclick="toggleDarkMode()" style="position:fixed;bottom:2rem;left:2rem;width:50px;height:50px;border-radius:50%;background:#fff;border:2px solid var(--border-color);cursor:pointer;font-size:1.3rem;box-shadow:var(--shadow-md);z-index:999;display:flex;align-items:center;justify-content:center;transition:all 0.3s ease;" title="Toggle Dark Mode">🌙</button>
+<button id="darkModeBtn" onclick="toggleDarkMode()" style="position:fixed;bottom:2rem;left:2rem;width:50px;height:50px;border-radius:50%;background:var(--bg-card);border:2px solid var(--border-color);color:var(--text-primary);cursor:pointer;font-size:1.3rem;box-shadow:var(--shadow-md);z-index:999;display:flex;align-items:center;justify-content:center;transition:all 0.3s ease;" title="Toggle Light Mode">☀️</button>
 
 <!-- Sparkle cursor canvas -->
 <canvas id="sparkleCanvas" style="position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:9998;"></canvas>
@@ -890,36 +786,76 @@
   let shoppingCart = [];
   let currentOptTab = 'instant'; // 'instant', 'standard', or 'split'
 
+  // === Get or Create Item Dynamically (supports any input product!) ===
+  function getOrCreateCatalogItem(query) {
+    const normalized = query.trim().toLowerCase();
+    if (catalog[normalized]) {
+      return catalog[normalized];
+    }
+    
+    // Fuzzy search in existing catalog first
+    const fuzzyKey = Object.keys(catalog).find(k => k.includes(normalized) || normalized.includes(k));
+    if (fuzzyKey) {
+      return catalog[fuzzyKey];
+    }
+
+    // Determine category based on common general merchandise keywords
+    const generalKeywords = [
+      'jeans', 'shirt', 'tshirt', 't-shirt', 'shoe', 'sneaker', 'boot', 'sandal', 'socks',
+      'watch', 'smartwatch', 'headphone', 'earphone', 'laptop', 'phone', 'mobile', 'charger',
+      'keyboard', 'mouse', 'bottle', 'backpack', 'bag', 'jacket', 'pant', 'hoodie', 'perfume',
+      'sunglasses', 'camera', 'speaker', 'clothing', 'apparel', 'electronics'
+    ];
+    const isGeneral = generalKeywords.some(kw => normalized.includes(kw));
+    const cat = isGeneral ? 'general' : 'grocery';
+    
+    // Generate a stable base price using a simple hash of the name
+    let hash = 0;
+    for (let i = 0; i < normalized.length; i++) {
+      hash = normalized.charCodeAt(i) + ((hash << 5) - hash);
+    }
+    const basePrice = Math.abs(hash % 900) + 40; // Price between ₹40 and ₹940
+    
+    // Create mock prices for each app (with slight competitive variations)
+    const item = {
+      name: query.charAt(0).toUpperCase() + query.slice(1),
+      cat: cat
+    };
+    
+    if (cat === 'grocery') {
+      // Grocery compares across all 6 services
+      item.Blinkit = Math.round(basePrice * 1.04);
+      item.Zepto = Math.round(basePrice * 0.98);
+      item.Instamart = Math.round(basePrice * 1.02);
+      item.BigBasket = Math.round(basePrice * 0.95);
+      item.Amazon = Math.round(basePrice * 0.97);
+      item.Flipkart = Math.round(basePrice * 1.01);
+    } else {
+      // General merchandise compares Amazon and Flipkart
+      item.Amazon = Math.round(basePrice * 3.5);
+      item.Flipkart = Math.round(basePrice * 3.4);
+    }
+    
+    // Save to catalog
+    catalog[normalized] = item;
+    return item;
+  }
+
   // === Single Item Quick Search ===
   function triggerQuickSearch() {
-    const input = document.getElementById('quickSearchInput').value.trim().toLowerCase();
+    const input = document.getElementById('quickSearchInput').value.trim();
     const box = document.getElementById('quickSearchResults');
     if (!input) return;
 
-    // Search catalog
-    let matchedKey = null;
-    if (catalog[input]) {
-      matchedKey = input;
-    } else {
-      // Fuzzy key search
-      matchedKey = Object.keys(catalog).find(k => k.includes(input) || input.includes(k));
-    }
+    const item = getOrCreateCatalogItem(input);
+    const matchedKey = input.toLowerCase();
 
-    if (!matchedKey) {
-      alert("🔍 Item '" + input + "' not directly in our mock index.\nTry: 'Milk', 'Eggs', 'Jeans', 'Sneakers', 'Shampoo', 'Headphones', or 'Smartwatch'!");
-      box.style.display = 'none';
-      return;
-    }
-
-    const item = catalog[matchedKey];
     document.getElementById('searchResultTitle').textContent = item.name;
     
-    // Set category text
     const cat = item.cat;
     const catLabel = cat === 'grocery' ? 'Grocery & Essentials' : 'Apparel & General';
     document.getElementById('searchResultCategory').textContent = catLabel;
     
-    // Fill prices
     const config = categoryConfig[cat];
     const pricesDiv = document.getElementById('searchResultPrices');
     pricesDiv.innerHTML = '';
@@ -929,19 +865,21 @@
     let worstVal = -Infinity;
 
     config.apps.forEach(app => {
-      const price = item[app];
+      const price = item[app] || item['Amazon'] || 0;
       if (price < bestVal) { bestVal = price; bestApp = app; }
       if (price > worstVal) { worstVal = price; }
     });
 
     config.apps.forEach(app => {
-      const price = item[app];
+      const price = item[app] || item['Amazon'] || 0;
       const isBest = (app === bestApp);
       const row = document.createElement('div');
-      row.style.cssText = 'display:flex;justify-content:space-between;align-items:center;font-size:0.92rem;';
+      row.style.cssText = 'display:flex;justify-content:space-between;align-items:center;font-size:0.92rem;margin-bottom:0.4rem;';
+      
+      const priceColor = isBest ? 'color:var(--green);font-weight:800;' : 'color:var(--text-primary);font-weight:600;';
       row.innerHTML = `
         <span class="brand-pill ${config.classes[app]}">${app}</span>
-        <span style="font-weight:700;${isBest ? 'color:var(--green)' : ''}">${isBest ? '🏆 ₹' + price : '₹' + price}</span>
+        <span style="${priceColor}">${isBest ? '🏆 ₹' + price : '₹' + price}</span>
       `;
       pricesDiv.appendChild(row);
     });
@@ -949,12 +887,10 @@
     const savings = worstVal - bestVal;
     document.getElementById('searchResultSavings').textContent = savings > 0 ? `Savings: Save ₹${savings} on ${bestApp}! 🏆` : 'Prices are equal across apps.';
     
-    // Set Add to Checklist button click handler
     document.getElementById('addToCartBtn').onclick = function() {
       addItemToCart(matchedKey);
       document.getElementById('quickSearchInput').value = '';
       box.style.display = 'none';
-      // Scroll to optimizer
       document.getElementById('optimizer').scrollIntoView({ behavior: 'smooth' });
     };
 
@@ -998,11 +934,13 @@
     else { btn.style.opacity = '0'; btn.style.transform = 'translateY(20px)'; }
   });
 
-  // === Dark Mode Toggle ===
+  // === Dark Mode Toggle (Default Dark -> toggles body.light-mode) ===
   function toggleDarkMode() {
-    document.body.classList.toggle('dark-mode');
+    document.body.classList.toggle('light-mode');
     const btn = document.getElementById('darkModeBtn');
-    btn.textContent = document.body.classList.contains('dark-mode') ? '☀️' : '🌙';
+    const isLight = document.body.classList.contains('light-mode');
+    btn.textContent = isLight ? '🌙' : '☀️';
+    btn.title = isLight ? 'Toggle Dark Mode' : 'Toggle Light Mode';
   }
 
   // === Animated Stat Counters ===
@@ -1037,23 +975,11 @@
 
   function addItemFromInput() {
     const inputEl = document.getElementById('itemInput');
-    const name = inputEl.value.trim().toLowerCase();
+    const name = inputEl.value.trim();
     if (!name) return;
 
-    let matchedKey = null;
-    if (catalog[name]) {
-      matchedKey = name;
-    } else {
-      // Fuzzy key search
-      matchedKey = Object.keys(catalog).find(k => k.includes(name) || name.includes(k));
-    }
-
-    if (!matchedKey) {
-      alert("🔍 Item '" + name + "' not found in our catalog index.\nTry: 'milk', 'eggs', 'shampoo', 'tomato', 'jeans', 'sneakers', 'headphones'!");
-      return;
-    }
-
-    addItemToCart(matchedKey);
+    getOrCreateCatalogItem(name);
+    addItemToCart(name.toLowerCase());
     inputEl.value = '';
   }
 
@@ -1155,8 +1081,6 @@
     warning.style.display = 'none';
 
     if (currentOptTab === 'instant') {
-      // INSTANT DELIVERY APPS (Blinkit, Zepto, Swiggy Instamart, BigBasket)
-      // Filter out general items since they are not supported by instant delivery
       const instantItems = shoppingCart.filter(k => catalog[k].cat === 'grocery');
       const excludedItems = shoppingCart.filter(k => catalog[k].cat !== 'grocery');
 
@@ -1177,7 +1101,6 @@
       const classes = { Blinkit: 'brand-blinkit', Zepto: 'brand-zepto', Instamart: 'brand-instamart', BigBasket: 'brand-bigbasket' };
       const config = categoryConfig.grocery;
 
-      // Header Row
       const header = document.createElement('div');
       header.className = 'item-row header';
       header.innerHTML = `<div>INSTANT APPS</div>`;
@@ -1197,7 +1120,6 @@
         if (sub > worstTotal) { worstTotal = sub; }
       });
 
-      // Item Rows
       instantItems.forEach(key => {
         const item = catalog[key];
         const row = document.createElement('div');
@@ -1212,7 +1134,6 @@
         grid.appendChild(row);
       });
 
-      // Subtotals Row
       const totalRow = document.createElement('div');
       totalRow.className = 'item-row';
       totalRow.style.cssText = 'font-weight:700;border-top:1.5px solid var(--border-color);background:var(--bg-secondary);';
@@ -1224,7 +1145,6 @@
       });
       grid.appendChild(totalRow);
 
-      // Calculations for billing panel
       const fees = config.fees[bestApp];
       const subtotalVal = bestTotal;
       const taxVal = subtotalVal * fees.tax;
@@ -1246,8 +1166,6 @@
       document.getElementById('savingsRow').style.display = savingsVal > 0 ? 'flex' : 'none';
 
     } else if (currentOptTab === 'standard') {
-      // STANDARD MARKETPLACE (Amazon vs Flipkart)
-      // All items in the cart are compared since Amazon/Flipkart support everything
       const apps = ['Amazon', 'Flipkart'];
       const classes = { Amazon: 'brand-amazon', Flipkart: 'brand-flipkart' };
 
@@ -1265,7 +1183,6 @@
       apps.forEach(app => {
         let sub = 0;
         shoppingCart.forEach(k => {
-          // Fallback if price is not listed
           sub += catalog[k][app] || catalog[k]['Amazon'] || 0;
         });
         appSubtotals[app] = sub;
@@ -1298,12 +1215,10 @@
       });
       grid.appendChild(totalRow);
 
-      // Calculations for billing panel
-      // Determine tax depending on category configuration
       let overallSubtotal = bestTotal;
       let overallTax = 0;
       let overallHandling = 0;
-      let overallDelivery = 40; // Flat fee
+      let overallDelivery = 40;
 
       shoppingCart.forEach(k => {
         const item = catalog[k];
@@ -1332,13 +1247,12 @@
       document.getElementById('savingsRow').style.display = savingsVal > 0 ? 'flex' : 'none';
 
     } else {
-      // SPLIT-BASKET SAVER (Cheapest price overall from all 6 apps!)
       const header = document.createElement('div');
       header.className = 'item-row header';
       header.innerHTML = `<div>ITEM NAME</div><div style="text-align:right;">CHEAPEST VENDOR</div><div style="text-align:right;">BEST PRICE</div>`;
       grid.appendChild(header);
 
-      let appSplits = {}; // Map of app -> list of items
+      let appSplits = {};
       let overallSubtotal = 0;
       let overallTax = 0;
       let overallHandling = 0;
@@ -1371,14 +1285,11 @@
 
         overallSubtotal += cheapestPrice;
         
-        // Fee calculations
         const appFees = categoryConfig[cat].fees[cheapestApp];
         overallTax += cheapestPrice * appFees.tax;
       });
 
-      // Platform & Delivery fees applied once per split order
       Object.keys(appSplits).forEach(app => {
-        // Find which config includes this app
         let cat = 'grocery';
         if (!categoryConfig.grocery.apps.includes(app)) cat = 'general';
         const fees = categoryConfig[cat].fees[app];
@@ -1386,16 +1297,12 @@
         overallDelivery += fees.delivery;
       });
 
-      // Worst total calculation (buying everything from the worst single app overall)
       let overallWorstTotal = 0;
-      const allApps = ['Blinkit', 'Zepto', 'Instamart', 'BigBasket', 'Amazon', 'Flipkart'];
-      
-      // We calculate total for a simple fallback (like Amazon or Blinkit depending on items)
       let worstSub = 0;
       shoppingCart.forEach(k => {
         worstSub += catalog[k]['Amazon'] || catalog[k]['Blinkit'];
       });
-      overallWorstTotal = worstSub + (worstSub * 0.12) + 40; // simple baseline
+      overallWorstTotal = worstSub + (worstSub * 0.12) + 40;
 
       const totalVal = overallSubtotal + overallTax + overallHandling + overallDelivery;
       const savingsVal = overallWorstTotal - totalVal;
@@ -1414,7 +1321,6 @@
     const isChecked = document.getElementById('monthlyScheduleCheck').checked;
     document.getElementById('monthlySettings').style.display = isChecked ? 'block' : 'none';
     
-    // Set default date as 1st of next month
     if (isChecked) {
       const d = new Date();
       d.setMonth(d.getMonth() + 1);
@@ -1436,7 +1342,6 @@
     const subtitle = document.getElementById('modalSubtitle');
     const successBox = document.getElementById('modalSuccessState');
 
-    // Reset steps
     for (let i = 1; i <= 5; i++) {
       const step = document.getElementById('step' + i);
       step.className = 'modal-step';
@@ -1446,14 +1351,12 @@
     successBox.style.display = 'none';
     modal.classList.add('show');
 
-    // Calculate details for modal display text
     let targetText = '';
     if (currentOptTab === 'instant') {
-      targetText = "Populating items in cheapest instant delivery carts...";
+      targetText = "Populating items in cheapest instant delivery checkouts...";
     } else if (currentOptTab === 'standard') {
-      targetText = "Populating items in cheapest standard e-commerce carts...";
+      targetText = "Populating items in cheapest standard e-commerce checkouts...";
     } else {
-      // Find splits
       let appsUsed = [];
       shoppingCart.forEach(key => {
         const item = catalog[key];
@@ -1471,7 +1374,6 @@
     }
     document.getElementById('step2Text').textContent = targetText;
 
-    // Run progress steps
     let currentStep = 1;
     let width = 0;
     
@@ -1479,7 +1381,7 @@
     document.getElementById('step1').className = 'modal-step active';
 
     const interval = setInterval(() => {
-      width += 1.25; // speed rate
+      width += 1.25;
       progress.style.width = width + '%';
       pctLabel.textContent = Math.round(width) + '%';
 
@@ -1498,22 +1400,21 @@
       if (width >= 70 && currentStep === 3) {
         document.getElementById('step3').className = 'modal-step success';
         document.getElementById('step4').className = 'modal-step active';
-        subtitle.textContent = "Computing packaging, Platform and GST/Taxes...";
+        subtitle.textContent = "Computing packaging, platform charges, and GST...";
         currentStep = 4;
       }
       if (width >= 90 && currentStep === 4) {
         document.getElementById('step4').className = 'modal-step success';
         document.getElementById('step5').className = 'modal-step active';
-        subtitle.textContent = "Finalizing handshakes and ordering...";
+        subtitle.textContent = "Finalizing secure transactions...";
         currentStep = 5;
       }
 
       if (width >= 100) {
         clearInterval(interval);
         document.getElementById('step5').className = 'modal-step success';
-        subtitle.textContent = "Orders checked out successfully!";
+        subtitle.textContent = "Checkout completed successfully!";
         
-        // Show success detail
         const isScheduled = document.getElementById('monthlyScheduleCheck').checked;
         const totalStr = document.getElementById('summaryTotal').textContent;
         const savingsStr = document.getElementById('summarySavings').textContent;
@@ -1529,7 +1430,6 @@
         document.getElementById('modalSuccessDesc').innerHTML = successHtml;
         successBox.style.display = 'block';
 
-        // Trigger Confetti!
         launchConfetti();
       }
     }, 70);
@@ -1540,64 +1440,9 @@
     clearCart();
   }
 
-  // === Quiz Logic (Savings Style) ===
-  let quizAnswers = {};
-  function quizAnswer(qNum, val) {
-    quizAnswers[qNum] = val;
-    document.getElementById('q' + qNum).style.display = 'none';
-    if (qNum < 3) {
-      document.getElementById('q' + (qNum + 1)).style.display = 'block';
-      document.getElementById('prog' + (qNum + 1)).style.background = 'var(--green)';
-    } else {
-      showQuizResult();
-    }
-  }
-
-  function showQuizResult() {
-    const { 1: shopHabit, 2: concern, 3: spend } = quizAnswers;
-    let title, emoji, desc;
-
-    if (shopHabit === 'instant') {
-      title = 'Instant Shopping Enthusiast (Blinkit/Zepto Priority)';
-      emoji = '⚡';
-      desc = 'You prioritize rapid delivery and need products in 10 minutes. For your lifestyle, Prismo\'s instant delivery comparison ensures you pick the overall cheapest app (e.g. Zepto or Blinkit) in 2 seconds flat before checkout, saving up to ₹1,200 monthly in platform charges and surge fees!';
-    } else if (shopHabit === 'monthly' || concern === 'convenience') {
-      title = 'Auto-Replenish Master (Scheduled Saver)';
-      emoji = '📅';
-      desc = 'You are a meticulous planner who likes to set and forget. Prismo\'s Monthly Replenishment mode fits you perfectly! Save up to 18% automatically by letting our bot split and checkout your recurring pantry essentials on the 1st of every month.';
-    } else {
-      title = 'Smart Optimizer (Amazon/Flipkart Saver)';
-      emoji = '🏆';
-      desc = 'You hate overpaying and want the absolute best deals, and can wait a day for standard delivery. By comparing items across Amazon and Flipkart, you bypass instant delivery markups and platform surcharges, saving over ₹2,500 every single month!';
-    }
-
-    document.getElementById('resultEmoji').textContent = emoji;
-    document.getElementById('resultTitle').textContent = 'Profile: ' + title;
-    document.getElementById('resultDesc').textContent = desc;
-    document.getElementById('quizResult').style.display = 'block';
-
-    // 🎉 Confetti burst!
-    launchConfetti();
-  }
-
-  // === FAQ Toggle ===
-  function toggleFaq(btn) {
-    const item = btn.parentElement;
-    const wasOpen = item.classList.contains('open');
-    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
-    if (!wasOpen) item.classList.add('open');
-  }
-
-  function resetQuiz() {
-    quizAnswers = {};
-    document.getElementById('quizResult').style.display = 'none';
-    document.getElementById('q1').style.display = 'block';
-    ['prog2','prog3'].forEach(id => document.getElementById(id).style.background = '#e2e8f0');
-  }
-
   // === Confetti 🎉 ===
   function launchConfetti() {
-    const colors = ['#10b981','#7c3aed','#ec4899','#f97316','#3b82f6','#f59e0b','#f43f5e'];
+    const colors = ['#00ff66','#00f0ff','#ff007f','#bf55ec','#ffd700','#ff2a85'];
     for (let i = 0; i < 80; i++) {
       const confetti = document.createElement('div');
       confetti.style.cssText = `
@@ -1625,7 +1470,7 @@
   `;
   document.head.appendChild(confettiStyle);
 
-  // === Sparkle Cursor Trail ✨ ===
+  // === Sparkle cursor canvas ===
   const canvas = document.getElementById('sparkleCanvas');
   const ctx = canvas.getContext('2d');
   let sparkles = [];
@@ -1641,12 +1486,12 @@
   document.addEventListener('mousemove', (e) => {
     mouseX = e.clientX;
     mouseY = e.clientY;
-    if (Math.random() > 0.6) { // throttle sparkles
+    if (Math.random() > 0.6) {
       sparkles.push({
         x: mouseX, y: mouseY,
         size: Math.random() * 4 + 1,
         life: 1,
-        color: ['#10b981','#7c3aed','#ec4899','#f97316','#3b82f6','#f59e0b'][Math.floor(Math.random()*6)],
+        color: ['#00ff66','#00f0ff','#ff007f','#bf55ec','#ffd700','#ff2a85'][Math.floor(Math.random()*6)],
         vx: (Math.random() - 0.5) * 2,
         vy: (Math.random() - 0.5) * 2 - 1,
       });
@@ -1660,7 +1505,6 @@
       ctx.globalAlpha = s.life;
       ctx.fillStyle = s.color;
       ctx.beginPath();
-      // Draw star shape
       const spikes = 4;
       for (let i = 0; i < spikes * 2; i++) {
         const r = i % 2 === 0 ? s.size : s.size * 0.4;

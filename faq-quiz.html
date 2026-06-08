@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FAQ & Quiz — CompareKart</title>
+  <meta name="description" content="Take our interactive shopper savings quiz and explore frequently asked questions about CompareKart Shopping Optimizer." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .faq-quiz-page {
+      padding-top: 100px; padding-bottom: 4rem; min-height: 100vh;
+      background: linear-gradient(180deg, #090d16 0%, #030712 100%);
+      position: relative; overflow: hidden;
+    }
+    
+    .neon-orb {
+      position: fixed; border-radius: 50%; filter: blur(120px); pointer-events: none; z-index: 0; opacity: 0.6;
+    }
+    .orb-green { width: 450px; height: 450px; top: -100px; left: -100px; background: rgba(0, 255, 102, 0.15); animation: float 10s ease-in-out infinite; }
+    .orb-cyan { width: 400px; height: 400px; bottom: -80px; right: -80px; background: rgba(0, 240, 255, 0.15); animation: float 12s 2s ease-in-out infinite; }
+    
+    .page-header { text-align: center; max-width: 700px; margin: 0 auto 3.5rem; z-index: 1; position: relative; }
+    .page-title { font-family: 'Outfit', sans-serif; font-size: clamp(2.2rem, 5vw, 3.5rem); font-weight: 900; letter-spacing: -2px; line-height: 1.1; margin-bottom: 1.25rem; }
+    
+    .quiz-container { max-width: 680px; margin: 0 auto 5rem; z-index: 1; position: relative; }
+    .faq-container { max-width: 760px; margin: 0 auto; z-index: 1; position: relative; }
+  </style>
+</head>
+<body>
+
+<div class="neon-orb orb-green" aria-hidden="true"></div>
+<div class="neon-orb orb-cyan" aria-hidden="true"></div>
+
+<!-- NAVBAR -->
+<nav class="navbar scrolled">
+  <a href="index.html" class="nav-logo">
+    <div class="nav-logo-icon" style="background:linear-gradient(135deg, #00ff66, #00f0ff);box-shadow:0 0 15px rgba(0,255,102,0.3)">✦</div>
+    <span class="nav-logo-text" style="background:linear-gradient(135deg, #00ff66, #00f0ff);-webkit-background-clip:text;background-clip:text;">CompareKart</span>
+  </a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="faq-quiz.html" class="active">FAQ & Quiz</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="waitlist.html" class="nav-cta" style="background:linear-gradient(135deg,#00ff66,#00f0ff) !important;box-shadow:0 0 15px rgba(0,255,102,0.25);">Join Waitlist 🚀</a></li>
+  </ul>
+  <div class="hamburger" onclick="document.getElementById('navLinks').classList.toggle('open')"><span></span><span></span><span></span></div>
+</nav>
+
+<!-- MAIN CONTENT -->
+<main class="faq-quiz-page">
+  <div class="container">
+    
+    <header class="page-header">
+      <div class="section-badge" style="background:rgba(0,255,102,0.08);color:var(--green);border-color:rgba(0,255,102,0.25)">🎮 Interactive Help</div>
+      <h1 class="page-title">Answers & <span class="gradient-text">Shopping Profiler</span></h1>
+      <p style="color:var(--text-secondary);font-size:1.05rem;line-height:1.75;">Discover how much you could save using CompareKart's auto-checkout algorithms, and explore standard questions about our multi-app platform.</p>
+    </header>
+
+    <!-- QUIZ SECTION -->
+    <section class="quiz-container">
+      <div class="card" style="padding:2.5rem;box-shadow:0 10px 40px rgba(0, 240, 255, 0.08);border:2px solid rgba(0, 255, 102, 0.15);" id="quizCard">
+        <!-- Progress bar -->
+        <div style="display:flex;gap:6px;margin-bottom:2rem;" id="quizProgress">
+          <div style="flex:1;height:6px;border-radius:3px;background:var(--green);box-shadow:0 0 8px rgba(0,255,102,0.5);transition:all 0.4s ease;" id="prog1"></div>
+          <div style="flex:1;height:6px;border-radius:3px;background:#e2e8f0;transition:all 0.4s ease;" id="prog2"></div>
+          <div style="flex:1;height:6px;border-radius:3px;background:#e2e8f0;transition:all 0.4s ease;" id="prog3"></div>
+        </div>
+
+        <!-- Q1 -->
+        <div id="q1" class="quiz-step">
+          <h3 style="font-family:'Outfit',sans-serif;font-size:1.3rem;font-weight:800;margin-bottom:0.5rem;color:var(--text-primary);">1️⃣ How do you usually shop?</h3>
+          <p style="color:var(--text-secondary);font-size:0.9rem;margin-bottom:1.5rem;">Select your primary shopping habit.</p>
+          <div style="display:flex;flex-direction:column;gap:0.75rem;">
+            <button class="quiz-opt" onclick="quizAnswer(1,'instant')" style="border-color:rgba(0,240,255,0.2);">⚡ Impulse / Need groceries in 10 minutes</button>
+            <button class="quiz-opt" onclick="quizAnswer(1,'weekly')" style="border-color:rgba(0,255,102,0.2);">🥦 Weekly planned groceries & essentials</button>
+            <button class="quiz-opt" onclick="quizAnswer(1,'monthly')" style="border-color:rgba(157,78,221,0.2);">📦 Monthly bulk replenishment orders</button>
+          </div>
+        </div>
+
+        <!-- Q2 -->
+        <div id="q2" class="quiz-step" style="display:none;">
+          <h3 style="font-family:'Outfit',sans-serif;font-size:1.3rem;font-weight:800;margin-bottom:0.5rem;color:var(--text-primary);">2️⃣ What's your biggest shopping concern?</h3>
+          <p style="color:var(--text-secondary);font-size:0.9rem;margin-bottom:1.5rem;">Pick the factor that bugs you the most.</p>
+          <div style="display:flex;flex-direction:column;gap:0.75rem;">
+            <button class="quiz-opt" onclick="quizAnswer(2,'price')" style="border-color:rgba(0,255,102,0.2);">💸 Overpaying on item price disparities</button>
+            <button class="quiz-opt" onclick="quizAnswer(2,'fees')" style="border-color:rgba(255,94,0,0.2);">📦 Annoying shipping charges & surge pricing</button>
+            <button class="quiz-opt" onclick="quizAnswer(2,'convenience')" style="border-color:rgba(0,240,255,0.2);">⏳ Time wasted managing 5 different apps</button>
+          </div>
+        </div>
+
+        <!-- Q3 -->
+        <div id="q3" class="quiz-step" style="display:none;">
+          <h3 style="font-family:'Outfit',sans-serif;font-size:1.3rem;font-weight:800;margin-bottom:0.5rem;color:var(--text-primary);">3️⃣ What's your average monthly shopping spend?</h3>
+          <p style="color:var(--text-secondary);font-size:0.9rem;margin-bottom:1.5rem;">Includes grocery, apparel, and tech deliveries.</p>
+          <div style="display:flex;flex-direction:column;gap:0.75rem;">
+            <button class="quiz-opt" onclick="quizAnswer(3,'low')" style="border-color:rgba(157,78,221,0.2);">💳 Under ₹5,000 per month</button>
+            <button class="quiz-opt" onclick="quizAnswer(3,'moderate')" style="border-color:rgba(0,255,102,0.2);">💵 ₹5,000 to ₹15,000 per month</button>
+            <button class="quiz-opt" onclick="quizAnswer(3,'high')" style="border-color:rgba(0,240,255,0.2);">💎 Above ₹15,000 per month</button>
+          </div>
+        </div>
+
+        <!-- Result -->
+        <div id="quizResult" class="quiz-step" style="display:none;text-align:center;">
+          <div style="font-size:3.5rem;margin-bottom:1rem;" id="resultEmoji">🚀</div>
+          <h3 style="font-family:'Outfit',sans-serif;font-size:1.5rem;font-weight:800;margin-bottom:0.5rem;" id="resultTitle">Loading...</h3>
+          <p style="color:var(--text-secondary);font-size:0.95rem;line-height:1.7;margin-bottom:1.5rem;" id="resultDesc"></p>
+          <div style="display:flex;gap:0.75rem;justify-content:center;flex-wrap:wrap;">
+            <a href="waitlist.html" class="btn btn-primary" style="background:linear-gradient(135deg,#00ff66,#00f0ff);box-shadow:0 0 15px rgba(0,255,102,0.3)">Join the Waitlist 🚀</a>
+            <button class="btn btn-secondary" onclick="resetQuiz()">Retake Quiz 🔄</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ SECTION -->
+    <section class="faq-container">
+      <div style="text-align:center;margin-bottom:2.5rem;">
+        <h2 style="font-family:'Outfit',sans-serif;font-size:2rem;font-weight:800;letter-spacing:-1px;">Frequently Asked <span class="gradient-text">Questions</span></h2>
+      </div>
+
+      <div style="display:flex;flex-direction:column;gap:0.8rem;" id="faqList">
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            <span>What exactly is CompareKart?</span><span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a">CompareKart is a multi-app price comparison and auto-ordering platform. You input a list of groceries, household essentials, or general products. We route items to the cheapest apps (e.g. milk to Zepto, sneakers to Flipkart) and place your orders in a single click. 🚀</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            <span>Is there a fee to use CompareKart?</span><span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a">Our Starter plan is completely free! You can search items and compare manually. Our Pro plan costs ₹199/month and unlocks split-basket optimization, scheduled monthly replenishments, and 1-click auto checkout. 🌱</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            <span>How do you calculate platform fees and taxes?</span><span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a">We query live price engines and calculate itemized rates, packaging charges, delivery costs, rain/surge fees, and GST depending on the app. The totals you see are the final amounts you pay. 🧠</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            <span>How does the Auto-Ordering feature work?</span><span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a">CompareKart connects directly with retail delivery checkouts through secure, local client-side API calls. Our system logs in, populates your carts with the cheapest products, enters promo codes, and processes checkouts. 🔒</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            <span>Can I schedule recurring orders?</span><span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a">Yes! Check the "Enable Monthly Auto-Order" box on your checklist dashboard, select a date, and CompareKart will automatically compute the cheapest rates on that morning and complete the checkout. 📅</div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+    <a href="index.html" class="nav-logo">
+      <div class="nav-logo-icon" style="width:28px;height:28px;font-size:12px;border-radius:8px;background:linear-gradient(135deg,#00ff66,#00f0ff)">✦</div>
+      <span class="nav-logo-text" style="font-size:1.1rem;background:linear-gradient(135deg,#00ff66,#00f0ff);-webkit-background-clip:text;background-clip:text;">CompareKart</span>
+    </a>
+    <span class="footer-copy">© 2026 CompareKart Technologies Pvt. Ltd. All rights reserved.</span>
+    <div class="footer-links"><a href="index.html">Home</a><a href="faq-quiz.html">FAQ & Quiz</a><a href="contact.html">Contact</a><a href="waitlist.html">Waitlist</a></div>
+  </div>
+</footer>
+
+<script>
+  // === Quiz Logic (Savings Style) ===
+  let quizAnswers = {};
+  function quizAnswer(qNum, val) {
+    quizAnswers[qNum] = val;
+    document.getElementById('q' + qNum).style.display = 'none';
+    if (qNum < 3) {
+      document.getElementById('q' + (qNum + 1)).style.display = 'block';
+      document.getElementById('prog' + (qNum + 1)).style.background = 'var(--green)';
+      document.getElementById('prog' + (qNum + 1)).style.boxShadow = '0 0 8px rgba(0,255,102,0.5)';
+    } else {
+      showQuizResult();
+    }
+  }
+
+  function showQuizResult() {
+    const { 1: shopHabit, 2: concern, 3: spend } = quizAnswers;
+    let title, emoji, desc;
+
+    if (shopHabit === 'instant') {
+      title = 'Instant Shopping Enthusiast (Blinkit/Zepto Priority)';
+      emoji = '⚡';
+      desc = 'You prioritize rapid delivery and need products in 10 minutes. For your lifestyle, CompareKart\'s instant delivery comparison ensures you pick the overall cheapest app (e.g. Zepto or Blinkit) in 2 seconds flat before checkout, saving up to ₹1,200 monthly in platform charges and surge fees!';
+    } else if (shopHabit === 'monthly' || concern === 'convenience') {
+      title = 'Auto-Replenish Master (Scheduled Saver)';
+      emoji = '📅';
+      desc = 'You are a meticulous planner who likes to set and forget. CompareKart\'s Monthly Replenishment mode fits you perfectly! Save up to 18% automatically by letting our bot split and checkout your recurring pantry essentials on the 1st of every month.';
+    } else {
+      title = 'Smart Optimizer (Amazon/Flipkart Saver)';
+      emoji = '🏆';
+      desc = 'You hate overpaying and want the absolute best deals, and can wait a day for standard delivery. By comparing items across Amazon and Flipkart, you bypass instant delivery markups and platform surcharges, saving over ₹2,500 every single month!';
+    }
+
+    document.getElementById('resultEmoji').textContent = emoji;
+    document.getElementById('resultTitle').textContent = 'Profile: ' + title;
+    document.getElementById('resultDesc').textContent = desc;
+    document.getElementById('quizResult').style.display = 'block';
+
+    // 🎉 Confetti burst!
+    launchConfetti();
+  }
+
+  function resetQuiz() {
+    quizAnswers = {};
+    document.getElementById('quizResult').style.display = 'none';
+    document.getElementById('q1').style.display = 'block';
+    ['prog2','prog3'].forEach(id => {
+      document.getElementById(id).style.background = '#e2e8f0';
+      document.getElementById(id).style.boxShadow = 'none';
+    });
+  }
+
+  // === FAQ Toggle ===
+  function toggleFaq(btn) {
+    const item = btn.parentElement;
+    const wasOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!wasOpen) item.classList.add('open');
+  }
+
+  // === Confetti 🎉 ===
+  function launchConfetti() {
+    const colors = ['#00ff66','#00f0ff','#ff007f','#ff5e00','#9d4edd','#ffea00','#3b82f6'];
+    for (let i = 0; i < 80; i++) {
+      const confetti = document.createElement('div');
+      confetti.style.cssText = `
+        position:fixed; z-index:10000;
+        width:${6+Math.random()*8}px; height:${6+Math.random()*8}px;
+        background:${colors[Math.floor(Math.random()*colors.length)]};
+        border-radius:${Math.random()>0.5?'50%':'2px'};
+        left:${Math.random()*100}vw; top:-10px;
+        pointer-events:none;
+        animation:confettiFall ${1.5+Math.random()*2}s ease forwards;
+        animation-delay:${Math.random()*0.5}s;
+      `;
+      document.body.appendChild(confetti);
+      setTimeout(() => confetti.remove(), 4000);
+    }
+  }
+
+  // Add confetti keyframes
+  const confettiStyle = document.createElement('style');
+  confettiStyle.textContent = `
+    @keyframes confettiFall {
+      0% { transform: translateY(0) rotate(0deg) scale(1); opacity:1; }
+      100% { transform: translateY(100vh) rotate(${360+Math.random()*720}deg) scale(0.3); opacity:0; }
+    }
+  `;
+  document.head.appendChild(confettiStyle);
+</script>
+</body>
+</html>
