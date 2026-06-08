@@ -222,6 +222,16 @@
       .steps-container { flex-direction: column; }
       .steps-container::before { display: none; }
     }
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.75rem 1.5rem;
+    }
+    @media (max-width: 640px) {
+      .benefits-grid {
+        grid-template-columns: 1fr;
+      }
+    }
   </style>
 </head>
 <body>
@@ -266,6 +276,37 @@
     <p class="hero-subtitle">
       Upload your list and check live prices across Blinkit, Zepto, Swiggy Instamart, BigBasket, Amazon, and Flipkart. Find the best split deal and checkout in one click.
     </p>
+
+    <!-- Benefits Grid Box -->
+    <div class="hero-benefits-box" style="background:var(--bg-glass);backdrop-filter:blur(10px);border:1.5px solid var(--border-color);border-left:4.5px solid var(--green);border-radius:var(--radius-md);padding:1.5rem;margin:1.5rem auto 2rem;max-width:760px;text-align:left;box-shadow:var(--shadow-sm);animation:fadeUp 0.8s 0.2s ease both;">
+      <h3 style="font-family:'Outfit',sans-serif;font-size:1.05rem;font-weight:800;margin-bottom:0.75rem;color:var(--text-primary);display:flex;align-items:center;gap:6px;">🚀 How CompareKart Works</h3>
+      <div class="benefits-grid">
+        <div style="font-size:0.88rem;color:var(--text-secondary);display:flex;align-items:flex-start;gap:8px;">
+          <span style="color:var(--green);font-weight:bold;">1.</span>
+          <span><strong>Upload Shopping Lists</strong>: Upload or type your shopping list in seconds.</span>
+        </div>
+        <div style="font-size:0.88rem;color:var(--text-secondary);display:flex;align-items:flex-start;gap:8px;">
+          <span style="color:var(--cyan);font-weight:bold;">2.</span>
+          <span><strong>Real-Time Comparisons</strong>: Compare live prices & availability across quick-commerce apps in under 60 seconds.</span>
+        </div>
+        <div style="font-size:0.88rem;color:var(--text-secondary);display:flex;align-items:flex-start;gap:8px;">
+          <span style="color:var(--purple);font-weight:bold;">3.</span>
+          <span><strong>Smart Pack Sizing</strong>: Get recommendations for the best pack sizes to achieve the lowest cost per item.</span>
+        </div>
+        <div style="font-size:0.88rem;color:var(--text-secondary);display:flex;align-items:flex-start;gap:8px;">
+          <span style="color:var(--pink);font-weight:bold;">4.</span>
+          <span><strong>Maximize Savings</strong>: Save up to 15% with price-optimized split carts across multiple apps.</span>
+        </div>
+        <div style="font-size:0.88rem;color:var(--text-secondary);display:flex;align-items:flex-start;gap:8px;">
+          <span style="color:var(--green);font-weight:bold;">5.</span>
+          <span><strong>1-Click Checkout</strong>: Auto-order your entire list with a single click.</span>
+        </div>
+        <div style="font-size:0.88rem;color:var(--text-secondary);display:flex;align-items:flex-start;gap:8px;">
+          <span style="color:var(--cyan);font-weight:bold;">6.</span>
+          <span><strong>Automated Routines</strong>: Set up an auto-order routine every week or month.</span>
+        </div>
+      </div>
+    </div>
 
     <!-- Interactive Search Bar -->
     <div class="hero-search-container">
