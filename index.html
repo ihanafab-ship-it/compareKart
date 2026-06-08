@@ -36,17 +36,16 @@
     .hero-content { position: relative; z-index: 2; max-width: 850px; margin: 0 auto; }
 
     .hero-eyebrow {
+      position: absolute;
+      top: 12%; right: 4%; z-index: 3;
       display: flex; align-items: center; gap: 8px;
-      width: max-content;
-      margin-left: auto; margin-right: 0;
       padding: 0.45rem 1.1rem;
       background: #ffff00;
       border: 2.5px solid #ffff00;
       border-radius: 100px;
       font-size: 0.82rem; font-weight: 800; color: #000000;
-      margin-bottom: 1.75rem;
-      animation: fadeUp 0.6s ease both;
       box-shadow: 0 0 20px rgba(255, 255, 0, 0.7);
+      animation: fadeUp 0.6s ease both;
     }
     .live-dot { width: 8px; height: 8px; border-radius: 50%; background: #ff007f; animation: pulseGlowPink 2s ease infinite; }
     @keyframes pulseGlowPink {
@@ -116,7 +115,7 @@
       display: flex; align-items: center; gap: 8px; color: var(--text-primary);
       transition: all var(--transition-fast);
     }
-    .float-1 { top: 22%; left: 4%; animation: float 6s ease-in-out infinite; }
+    .float-1 { top: 12%; left: 4%; animation: float 6s ease-in-out infinite; }
     .float-2 { top: 35%; right: 4%; animation: float 7s 1s ease-in-out infinite; }
     .float-3 { bottom: 28%; left: 6%; animation: float 5.5s 0.5s ease-in-out infinite; }
 
@@ -204,6 +203,10 @@
 
     @media (max-width: 1150px) {
       .float-badge { display: none; }
+      .hero-eyebrow {
+        position: static;
+        margin: 0 auto 1.75rem;
+      }
     }
 
     @media (max-width: 640px) {
@@ -245,8 +248,9 @@
   <div class="float-badge float-2" aria-hidden="true" style="border-color:rgba(40,116,240,0.3)">🔵 Flipkart: ₹1,999 <span style="color:var(--text-muted);font-weight:400">vs</span> Amazon: ₹2,099</div>
   <div class="float-badge float-3" aria-hidden="true" style="border-color:rgba(16,185,129,0.3)">🌱 Saved ₹534 on this list</div>
 
+  <div class="hero-eyebrow"><span class="live-dot"></span> Smart Shopping Assistant</div>
+
   <div class="hero-content">
-    <div class="hero-eyebrow"><span class="live-dot"></span> Smart Shopping Assistant</div>
     <h1 class="hero-title">
       Stop Overpaying.<br/><span class="highlight">Compare & Auto-Order.</span>
     </h1>
