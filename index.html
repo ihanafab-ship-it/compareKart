@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Prismo — Smart Price Optimizer & Auto-Orderer</title>
-  <meta name="description" content="Prismo compares prices, taxes, and shipping charges across Blinkit, Zepto, Swiggy Instamart, Amazon, Myntra, and Nykaa, auto-ordering your items at the absolute best rate." />
+  <meta name="description" content="Prismo compares prices, taxes, and shipping charges across Blinkit, Zepto, Swiggy Instamart, BigBasket, Amazon, and Flipkart, auto-ordering your items at the best rate." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
@@ -18,22 +18,20 @@
       overflow: hidden;
       text-align: center;
       padding: 7rem 2rem 4rem;
-      background: linear-gradient(180deg, #f5fcf6 0%, #fff 100%);
+      background: linear-gradient(180deg, #f0fbf4 0%, #ffffff 100%);
     }
     .hero-bg {
       position: absolute;
       inset: 0;
-      background-image: url('hero_bg.png');
-      background-size: cover;
-      background-position: center;
-      opacity: 0.35;
+      background: radial-gradient(circle at 12% 20%, rgba(16, 185, 129, 0.08) 0%, transparent 40%),
+                  radial-gradient(circle at 88% 80%, rgba(124, 58, 237, 0.07) 0%, transparent 40%),
+                  radial-gradient(circle at 50% 55%, rgba(59, 130, 246, 0.05) 0%, transparent 50%);
+      opacity: 1;
     }
     .hero-overlay {
       position: absolute;
       inset: 0;
-      background: radial-gradient(ellipse at 30% 40%, rgba(16,185,129,0.06) 0%, transparent 50%),
-                  radial-gradient(ellipse at 70% 60%, rgba(236,72,153,0.06) 0%, transparent 50%),
-                  linear-gradient(to bottom, transparent 70%, #fff 100%);
+      background: linear-gradient(to bottom, transparent 60%, #fff 100%);
     }
     .hero-content { position: relative; z-index: 2; max-width: 850px; margin: 0 auto; }
 
@@ -51,8 +49,8 @@
 
     .hero-title {
       font-family: 'Outfit', sans-serif;
-      font-size: clamp(2.8rem, 6.5vw, 5rem);
-      font-weight: 900; line-height: 1.1; letter-spacing: -2.5px;
+      font-size: clamp(2.8rem, 6.5vw, 4.8rem);
+      font-weight: 900; line-height: 1.1; letter-spacing: -2px;
       margin-bottom: 1.5rem;
       animation: fadeUp 0.7s 0.1s ease both;
       color: var(--text-primary);
@@ -63,7 +61,7 @@
     }
 
     .hero-subtitle {
-      font-size: clamp(1.05rem, 2vw, 1.22rem);
+      font-size: clamp(1.05rem, 2vw, 1.2rem);
       color: var(--text-secondary);
       max-width: 620px; margin: 0 auto 2rem; line-height: 1.7;
       animation: fadeUp 0.7s 0.2s ease both;
@@ -228,7 +226,7 @@
   <div class="hero-overlay"></div>
 
   <div class="float-badge float-1" aria-hidden="true" style="border-color:rgba(117,37,134,0.3)">🟣 Zepto: ₹140 <span style="color:var(--text-muted);font-weight:400">vs</span> Blinkit: ₹160</div>
-  <div class="float-badge float-2" aria-hidden="true" style="border-color:rgba(255,63,108,0.3)">🔴 Myntra: ₹1,299 <span style="color:var(--text-muted);font-weight:400">vs</span> Ajio: ₹1,399</div>
+  <div class="float-badge float-2" aria-hidden="true" style="border-color:rgba(40,116,240,0.3)">🔵 Flipkart: ₹1,999 <span style="color:var(--text-muted);font-weight:400">vs</span> Amazon: ₹2,099</div>
   <div class="float-badge float-3" aria-hidden="true" style="border-color:rgba(16,185,129,0.3)">🌱 Saved ₹534 on this list</div>
 
   <div class="hero-content">
@@ -237,14 +235,14 @@
       Stop Overpaying.<br/><span class="highlight">Compare & Auto-Order.</span>
     </h1>
     <p class="hero-subtitle">
-      Upload your list and check live prices across Blinkit, Zepto, Swiggy Instamart, BigBasket, Amazon, Myntra, and Nykaa. Find the best split deal and checkout in one click.
+      Upload your list and check live prices across Blinkit, Zepto, Swiggy Instamart, BigBasket, Amazon, and Flipkart. Find the best split deal and checkout in one click.
     </p>
 
     <!-- Interactive Search Bar -->
     <div class="hero-search-container">
       <div class="hero-search-bar">
         <span style="font-size:1.2rem;margin-left:0.8rem;">🔍</span>
-        <input type="text" id="quickSearchInput" class="hero-search-input" placeholder="Search any product (e.g. Lipstick, Eggs, Sneakers, Milk)..." />
+        <input type="text" id="quickSearchInput" class="hero-search-input" placeholder="Search any product (e.g. Eggs, Jeans, Sneakers, Milk, Shampoo)..." />
         <button class="btn btn-primary" onclick="triggerQuickSearch()" style="padding: 0.6rem 1.5rem;font-size:0.9rem;border-radius:100px;">Compare</button>
       </div>
 
@@ -272,7 +270,7 @@
 
   <div class="hero-stats">
     <div class="hero-stat"><div class="stat-number" style="background:var(--gradient-cool);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">18%</div><div class="stat-label">Average Savings</div></div>
-    <div class="hero-stat"><div class="stat-number" style="background:var(--gradient-fun);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">9 Apps</div><div class="stat-label">Compared Live</div></div>
+    <div class="hero-stat"><div class="stat-number" style="background:var(--gradient-fun);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">6 Apps</div><div class="stat-label">Compared Live</div></div>
     <div class="hero-stat"><div class="stat-number" style="background:var(--gradient-warm);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">1-Click</div><div class="stat-label">Auto-Checkout</div></div>
     <div class="hero-stat"><div class="stat-number" style="background:var(--gradient-sunset);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">₹0</div><div class="stat-label">Free Comparison</div></div>
   </div>
@@ -287,8 +285,7 @@
     <span class="logo-pill" style="border-color:rgba(236,90,36,0.3);color:#EC5A24;"> Swiggy Instamart</span>
     <span class="logo-pill" style="border-color:rgba(132,194,37,0.3);color:#84C225;">🌿 BigBasket</span>
     <span class="logo-pill" style="border-color:rgba(255,153,0,0.3);color:#FF9900;">🟡 Amazon</span>
-    <span class="logo-pill" style="border-color:rgba(255,63,108,0.3);color:#FF3F6C;">🔴 Myntra</span>
-    <span class="logo-pill" style="border-color:rgba(252,39,121,0.3);color:#FC2779;">💖 Nykaa</span>
+    <span class="logo-pill" style="border-color:rgba(40,116,240,0.3);color:#2874F0;">🔵 Flipkart</span>
   </div>
 </div>
 
@@ -303,14 +300,14 @@
 
     <div class="card" style="border-left:4px solid var(--green);margin-bottom:2rem;padding:2rem 2.5rem;">
       <h3 style="font-family:'Outfit',sans-serif;font-size:1.3rem;font-weight:800;margin-bottom:0.75rem;">🏢 About <span class="gradient-text">Prismo</span></h3>
-      <p style="color:var(--text-secondary);line-height:1.8;font-size:0.95rem;">Founded in 2024 in Mumbai, India, Prismo is a shopping automation platform. Our team builds intelligent APIs that interface with grocery, fashion, and cosmetics apps. By analyzing items client-side, Prismo finds price disparities, calculates shipping costs, platforms fees, surge prices, and executes immediate backend checkout checkouts — saving you time and money on every single order.</p>
+      <p style="color:var(--text-secondary);line-height:1.8;font-size:0.95rem;">Founded in 2024 in Mumbai, India, Prismo is a shopping automation platform. Our team builds intelligent APIs that interface with quick-commerce and marketplace apps. By analyzing items client-side, Prismo finds price disparities, calculates shipping costs, platforms fees, surge prices, and executes immediate checkout checkouts — saving you time and money on every single order.</p>
     </div>
 
     <div class="grid-3">
       <div class="card" style="text-align:center;border-top:4px solid var(--green);">
         <div class="mission-icon" style="background:rgba(16,185,129,0.1);color:var(--green)">🎯</div>
         <h3 style="font-family:'Outfit',sans-serif;font-size:1.15rem;font-weight:700;margin-bottom:0.6rem;color:var(--green)">Our Mission</h3>
-        <p style="color:var(--text-secondary);font-size:0.9rem;line-height:1.7;">To save Indian consumers billions of rupees by identifying the lowest price on every single grocery, fashion, and beauty item — instantly and automatically.</p>
+        <p style="color:var(--text-secondary);font-size:0.9rem;line-height:1.7;">To save Indian consumers billions of rupees by identifying the lowest price on every single grocery, household, and marketplace item — instantly and automatically.</p>
       </div>
       <div class="card" style="text-align:center;border-top:4px solid var(--purple);">
         <div class="mission-icon" style="background:rgba(124,58,237,0.1);color:var(--purple)">🔭</div>
@@ -332,7 +329,7 @@
     <div style="text-align:center;margin-bottom:2.5rem;">
       <div class="section-badge" style="background:rgba(16,185,129,0.1);color:var(--green);border-color:rgba(16,185,129,0.2)">📋 Multi-App Optimizer</div>
       <h2 class="section-title">Build Your Shopping <span class="gradient-text">List & Compare</span></h2>
-      <p class="section-subtitle" style="margin:0 auto;">Add items to your checklist. Prismo will analyze category routing, compare prices, and auto-place the order.</p>
+      <p class="section-subtitle" style="margin:0 auto;">Add items to your checklist. Prismo will analyze delivery windows, compare prices, and auto-place the order.</p>
     </div>
 
     <div class="optimizer-container">
@@ -343,7 +340,7 @@
         <p style="color:var(--text-secondary);font-size:0.85rem;margin-bottom:0.75rem;">Type an item or select a preset bundle to get started:</p>
         
         <div style="display:flex;gap:8px;">
-          <input type="text" id="itemInput" class="form-control" placeholder="Add (e.g. Milk, Jeans, Lipstick)..." onkeypress="handleItemKeyPress(event)" />
+          <input type="text" id="itemInput" class="form-control" placeholder="Add (e.g. Milk, Jeans, Shampoo)..." onkeypress="handleItemKeyPress(event)" />
           <button class="btn btn-primary" onclick="addItemFromInput()" style="padding:0.75rem 1.25rem;border-radius:var(--radius-md);background:var(--green)">Add</button>
         </div>
 
@@ -351,8 +348,8 @@
           <div style="font-size:0.8rem;font-weight:700;color:var(--text-muted);margin-bottom:0.5rem;text-transform:uppercase;">Quick presets:</div>
           <div style="display:flex;flex-wrap:wrap;gap:6px;">
             <button class="preset-btn" onclick="loadPreset('grocery')">🥦 Weekly Veggies</button>
-            <button class="preset-btn" onclick="loadPreset('beauty')">💄 Self-Care Bundle</button>
-            <button class="preset-btn" onclick="loadPreset('fashion')">👟 College Outfit</button>
+            <button class="preset-btn" onclick="loadPreset('essentials')">🧼 Home Essentials</button>
+            <button class="preset-btn" onclick="loadPreset('wardrobe')">👟 Casual Wardrobe</button>
             <button class="preset-btn" onclick="loadPreset('mixed')">🔀 Mixed Cart</button>
           </div>
         </div>
@@ -372,8 +369,14 @@
       <!-- Right side: Comparison breakdown -->
       <div class="card optimizer-results" style="padding:1.5rem 2rem;">
         <div class="opt-tab-bar">
-          <button class="opt-tab active" id="tabSingle" onclick="switchOptTab('single')">Cheapest App Cart</button>
-          <button class="opt-tab" id="tabSplit" onclick="switchOptTab('split')">Split-Order Saver (Cheapest/Item) 🏆</button>
+          <button class="opt-tab active" id="tabInstant" onclick="switchOptTab('instant')">Instant Delivery (10m)</button>
+          <button class="opt-tab" id="tabStandard" onclick="switchOptTab('standard')">Standard Delivery (1-Day)</button>
+          <button class="opt-tab" id="tabSplit" onclick="switchOptTab('split')">Split-Basket Saver 🏆</button>
+        </div>
+
+        <!-- Warning block for general items in instant tab -->
+        <div id="optimizerWarning" style="display:none;background:rgba(249,115,22,0.06);border:1.5px dashed rgba(249,115,22,0.3);padding:0.75rem 1rem;border-radius:var(--radius-md);font-size:0.82rem;color:var(--orange);font-weight:600;">
+          ⚠ Apparel & General merchandise items are excluded from Instant (10m) delivery comparison.
         </div>
 
         <!-- Breakdown table -->
@@ -482,12 +485,12 @@
       <div class="card" style="border-top:4px solid #10b981;">
         <div class="feature-icon" style="background:rgba(16,185,129,0.1);color:#10b981;">🧠</div>
         <h3 class="feature-title" style="color:#10b981;">Smart Category Routing</h3>
-        <p class="feature-desc">Our platform automatically routes items to the correct channels: milk to groceries, sneakers to fashion, lip balm to cosmetics.</p>
+        <p class="feature-desc">Our platform automatically routes items to the correct delivery tiers: groceries to quick-commerce, apparel to standard marketplaces.</p>
       </div>
       <div class="card" style="border-top:4px solid #7c3aed;">
         <div class="feature-icon" style="background:rgba(124,58,237,0.1);color:#7c3aed;">⚡</div>
         <h3 class="feature-title" style="color:#7c3aed;">Split-Basket Optimizer</h3>
-        <p class="feature-desc">Buy shampoo from Nykaa and onions from Zepto. We compute shipping fees to guarantee the lowest total checkout price.</p>
+        <p class="feature-desc">Buy milk from Zepto and jeans from Flipkart. We compute shipping fees to guarantee the lowest total checkout price.</p>
       </div>
       <div class="card" style="border-top:4px solid #f97316;">
         <div class="feature-icon" style="background:rgba(249,115,22,0.1);color:#f97316;">🔗</div>
@@ -529,7 +532,7 @@
       <div class="step">
         <div class="step-num">02</div>
         <h3 class="step-title">Review the Comparison</h3>
-        <p class="step-desc">Check out single-app totals or toggle Split-Cart mode to see combined item-by-item savings.</p>
+        <p class="step-desc">Choose Instant (10m) delivery, Standard marketplaces, or toggle Split-Cart mode to optimize item savings.</p>
       </div>
       <div class="step">
         <div class="step-num">03</div>
@@ -558,7 +561,7 @@
       </div>
       <div class="card">
         <span class="quote-mark">"</span>
-        <p class="testimonial-text">We use Prismo to auto-order monthly pantry items. We save 15% consistently. The e-commerce routing for jeans/shirts on Myntra is flawless.</p>
+        <p class="testimonial-text">We use Prismo to auto-order monthly pantry items. We save 15% consistently. The e-commerce comparison between Amazon and Flipkart is extremely convenient.</p>
         <div class="testimonial-author">
           <div class="author-avatar" style="background:var(--gradient-cool);">R</div>
           <div class="author-info"><div class="name">Rajesh Iyer</div><div class="role">Office Manager, BKC Mumbai</div></div>
@@ -566,10 +569,10 @@
       </div>
       <div class="card">
         <span class="quote-mark">"</span>
-        <p class="testimonial-text">I searched for my facewash and found a ₹120 price difference on Nykaa vs Amazon. Added to cart and auto-ordered in seconds.</p>
+        <p class="testimonial-text">I searched for wireless headphones and found a ₹100 price difference on Flipkart vs Amazon. Added to cart and auto-ordered in seconds.</p>
         <div class="testimonial-author">
           <div class="author-avatar" style="background:var(--gradient-warm);">A</div>
-          <div class="author-info"><div class="name">Aisha Patel</div><div class="role">Cosmetics enthusiast, Zerodha</div></div>
+          <div class="author-info"><div class="name">Aisha Patel</div><div class="role">Tech enthusiast, Zerodha</div></div>
         </div>
       </div>
     </div>
@@ -600,7 +603,7 @@
         <div class="pricing-price gradient-text">₹199</div>
         <div class="pricing-period">per month · billed monthly</div>
         <ul class="pricing-features">
-          <li>Unlimited comparisons</li><li>1-Click Auto Checkout</li><li>Split-basket optimization</li><li>Supports all 9 apps</li><li>No ads & priority support</li><li>Monthly recurring scheduling</li>
+          <li>Unlimited comparisons</li><li>1-Click Auto Checkout</li><li>Split-basket optimization</li><li>Supports all 6 apps</li><li>No ads & priority support</li><li>Monthly recurring scheduling</li>
         </ul>
         <a href="waitlist.html" class="btn btn-primary" style="width:100%;justify-content:center;">Join Pro Waitlist 🚀</a>
       </div>
@@ -659,7 +662,7 @@
       <!-- Q3 -->
       <div id="q3" class="quiz-step" style="display:none;">
         <h3 style="font-family:'Outfit',sans-serif;font-size:1.3rem;font-weight:800;margin-bottom:0.5rem;">3️⃣ What's your average monthly shopping spend?</h3>
-        <p style="color:var(--text-secondary);font-size:0.9rem;margin-bottom:1.5rem;">Includes grocer, apparel, and beauty deliveries.</p>
+        <p style="color:var(--text-secondary);font-size:0.9rem;margin-bottom:1.5rem;">Includes grocery, apparel, and tech deliveries.</p>
         <div style="display:flex;flex-direction:column;gap:0.75rem;">
           <button class="quiz-opt" onclick="quizAnswer(3,'low')">💳 Under ₹5,000 per month</button>
           <button class="quiz-opt" onclick="quizAnswer(3,'moderate')">💵 ₹5,000 to ₹15,000 per month</button>
@@ -694,13 +697,13 @@
         <button class="faq-q" onclick="toggleFaq(this)">
           <span>What exactly is Prismo?</span><span class="faq-icon">+</span>
         </button>
-        <div class="faq-a">Prismo is a multi-app price comparison and auto-ordering platform. You input a list of groceries, fashion wear, or cosmetics. We route items to the cheapest apps (e.g. apples to Zepto, lipstick to Nykaa) and place your orders in a single click. 🚀</div>
+        <div class="faq-a">Prismo is a multi-app price comparison and auto-ordering platform. You input a list of groceries, household essentials, or general products. We route items to the cheapest apps (e.g. milk to Zepto, sneakers to Flipkart) and place your orders in a single click. 🚀</div>
       </div>
       <div class="faq-item">
         <button class="faq-q" onclick="toggleFaq(this)">
           <span>Is there a fee to use Prismo?</span><span class="faq-icon">+</span>
         </button>
-        <div class="faq-a">Our Starter plan is completely free! You can search items and compare manually. Our Pro plan costs ₹199/month and unlocks split-cart optimization, scheduled monthly replenishments, and 1-click auto checkout. 🌱</div>
+        <div class="faq-a">Our Starter plan is completely free! You can search items and compare manually. Our Pro plan costs ₹199/month and unlocks split-basket optimization, scheduled monthly replenishments, and 1-click auto checkout. 🌱</div>
       </div>
       <div class="faq-item">
         <button class="faq-q" onclick="toggleFaq(this)">
@@ -728,7 +731,7 @@
 <section class="section">
   <div class="cta-section" style="background:linear-gradient(135deg, #10b981, #7c3aed, #f97316)">
     <h2 class="cta-title">Ready to shop at the <span style="text-decoration:underline;text-decoration-color:rgba(255,255,255,0.4);">lowest price?</span></h2>
-    <p class="cta-sub">Join 50,000+ smart shoppers on the waitlist. Start saving on groceries, apparel, and beauty today.</p>
+    <p class="cta-sub">Join 50,000+ smart shoppers on the waitlist. Start saving on groceries, apparel, and electronics today.</p>
     <div class="cta-actions">
       <a href="waitlist.html" class="cta-btn-white" style="color:#10b981 !important;">🚀 Join the Waitlist</a>
       <a href="contact.html" class="cta-btn-white" style="background:rgba(255,255,255,0.15);color:#fff !important;border:2px solid rgba(255,255,255,0.3);">Talk to Partnerships</a>
@@ -830,66 +833,53 @@
 <script>
   // === Catalog Database for Items ===
   const catalog = {
-    // Grocery Essentials
-    'apples': { name: 'Fresh Apples (1kg)', cat: 'grocery', Blinkit: 160, Zepto: 140, Instamart: 180, BigBasket: 155 },
-    'apple': { name: 'Fresh Apples (1kg)', cat: 'grocery', Blinkit: 160, Zepto: 140, Instamart: 180, BigBasket: 155 },
-    'milk': { name: 'Amul Taaza Milk (1L)', cat: 'grocery', Blinkit: 56, Zepto: 56, Instamart: 56, BigBasket: 54 },
-    'tomato': { name: 'Local Tomatoes (500g)', cat: 'grocery', Blinkit: 30, Zepto: 25, Instamart: 32, BigBasket: 28 },
-    'tomatoes': { name: 'Local Tomatoes (500g)', cat: 'grocery', Blinkit: 30, Zepto: 25, Instamart: 32, BigBasket: 28 },
-    'eggs': { name: 'Farm Eggs (Pack of 6)', cat: 'grocery', Blinkit: 48, Zepto: 50, Instamart: 52, BigBasket: 46 },
-    'egg': { name: 'Farm Eggs (Pack of 6)', cat: 'grocery', Blinkit: 48, Zepto: 50, Instamart: 52, BigBasket: 46 },
-    'bread': { name: 'Whole Wheat Bread', cat: 'grocery', Blinkit: 45, Zepto: 40, Instamart: 42, BigBasket: 38 },
-    'potato': { name: 'Potatoes (1kg)', cat: 'grocery', Blinkit: 35, Zepto: 30, Instamart: 38, BigBasket: 32 },
-    'potatoes': { name: 'Potatoes (1kg)', cat: 'grocery', Blinkit: 35, Zepto: 30, Instamart: 38, BigBasket: 32 },
-    'onion': { name: 'Onions (1kg)', cat: 'grocery', Blinkit: 45, Zepto: 42, Instamart: 48, BigBasket: 40 },
-    'onions': { name: 'Onions (1kg)', cat: 'grocery', Blinkit: 45, Zepto: 42, Instamart: 48, BigBasket: 40 },
+    // Grocery Essentials (supported by all 6 apps)
+    'apples': { name: 'Fresh Apples (1kg)', cat: 'grocery', Blinkit: 160, Zepto: 140, Instamart: 180, BigBasket: 155, Amazon: 165, Flipkart: 150 },
+    'apple': { name: 'Fresh Apples (1kg)', cat: 'grocery', Blinkit: 160, Zepto: 140, Instamart: 180, BigBasket: 155, Amazon: 165, Flipkart: 150 },
+    'milk': { name: 'Amul Taaza Milk (1L)', cat: 'grocery', Blinkit: 56, Zepto: 56, Instamart: 56, BigBasket: 54, Amazon: 56, Flipkart: 55 },
+    'tomato': { name: 'Local Tomatoes (500g)', cat: 'grocery', Blinkit: 30, Zepto: 25, Instamart: 32, BigBasket: 28, Amazon: 29, Flipkart: 27 },
+    'tomatoes': { name: 'Local Tomatoes (500g)', cat: 'grocery', Blinkit: 30, Zepto: 25, Instamart: 32, BigBasket: 28, Amazon: 29, Flipkart: 27 },
+    'eggs': { name: 'Farm Eggs (Pack of 6)', cat: 'grocery', Blinkit: 48, Zepto: 50, Instamart: 52, BigBasket: 46, Amazon: 49, Flipkart: 48 },
+    'egg': { name: 'Farm Eggs (Pack of 6)', cat: 'grocery', Blinkit: 48, Zepto: 50, Instamart: 52, BigBasket: 46, Amazon: 49, Flipkart: 48 },
+    'bread': { name: 'Whole Wheat Bread', cat: 'grocery', Blinkit: 45, Zepto: 40, Instamart: 42, BigBasket: 38, Amazon: 44, Flipkart: 42 },
+    'potato': { name: 'Potatoes (1kg)', cat: 'grocery', Blinkit: 35, Zepto: 30, Instamart: 38, BigBasket: 32, Amazon: 34, Flipkart: 31 },
+    'potatoes': { name: 'Potatoes (1kg)', cat: 'grocery', Blinkit: 35, Zepto: 30, Instamart: 38, BigBasket: 32, Amazon: 34, Flipkart: 31 },
+    'onion': { name: 'Onions (1kg)', cat: 'grocery', Blinkit: 45, Zepto: 42, Instamart: 48, BigBasket: 40, Amazon: 43, Flipkart: 41 },
+    'onions': { name: 'Onions (1kg)', cat: 'grocery', Blinkit: 45, Zepto: 42, Instamart: 48, BigBasket: 40, Amazon: 43, Flipkart: 41 },
+    'shampoo': { name: 'L\'Oreal Repair Shampoo', cat: 'grocery', Blinkit: 640, Zepto: 610, Instamart: 630, BigBasket: 599, Amazon: 580, Flipkart: 590 },
+    'facewash': { name: 'Cetaphil Skin Cleanser', cat: 'grocery', Blinkit: 390, Zepto: 380, Instamart: 395, BigBasket: 375, Amazon: 360, Flipkart: 370 },
+    'sunscreen': { name: 'Neutrogena Sunscreen SPF50', cat: 'grocery', Blinkit: 540, Zepto: 520, Instamart: 550, BigBasket: 510, Amazon: 490, Flipkart: 500 },
 
-    // Fashion Wear
-    'jeans': { name: 'Levi\'s Men\'s Jeans', cat: 'fashion', Myntra: 2199, Ajio: 2499, Amazon: 1999, Flipkart: 2099 },
-    't-shirt': { name: 'Adidas Classic T-Shirt', cat: 'fashion', Myntra: 999, Ajio: 899, Amazon: 950, Flipkart: 920 },
-    'tshirt': { name: 'Adidas Classic T-Shirt', cat: 'fashion', Myntra: 999, Ajio: 899, Amazon: 950, Flipkart: 920 },
-    'sneakers': { name: 'Puma Sports Sneakers', cat: 'fashion', Myntra: 3499, Ajio: 3799, Amazon: 3299, Flipkart: 3399 },
-    'sneaker': { name: 'Puma Sports Sneakers', cat: 'fashion', Myntra: 3499, Ajio: 3799, Amazon: 3299, Flipkart: 3399 },
-    'jacket': { name: 'Denim Trucker Jacket', cat: 'fashion', Myntra: 1799, Ajio: 1599, Amazon: 1650, Flipkart: 1690 },
-    'dress': { name: 'Floral Summer Dress', cat: 'fashion', Myntra: 1299, Ajio: 1399, Amazon: 1199, Flipkart: 1250 },
-
-    // Beauty / Cosmetics
-    'lipstick': { name: 'Maybelline Matte Lipstick', cat: 'beauty', Nykaa: 299, Myntra: 320, Amazon: 279, Flipkart: 285 },
-    'lipsticks': { name: 'Maybelline Matte Lipstick', cat: 'beauty', Nykaa: 299, Myntra: 320, Amazon: 279, Flipkart: 285 },
-    'shampoo': { name: 'L\'Oreal Repair Shampoo', cat: 'beauty', Nykaa: 649, Myntra: 699, Amazon: 599, Flipkart: 620 },
-    'sunscreen': { name: 'Neutrogena Sunscreen SPF50', cat: 'beauty', Nykaa: 550, Myntra: 560, Amazon: 499, Flipkart: 510 },
-    'facewash': { name: 'Cetaphil Skin Cleanser', cat: 'beauty', Nykaa: 399, Myntra: 410, Amazon: 375, Flipkart: 380 },
-    'serum': { name: 'Ordinary Niacinamide Serum', cat: 'beauty', Nykaa: 600, Myntra: 620, Amazon: 580, Flipkart: 590 }
+    // General Apparel & Electronics (supported only by Amazon and Flipkart)
+    'jeans': { name: 'Levi\'s Men\'s Jeans', cat: 'general', Amazon: 1999, Flipkart: 2099 },
+    't-shirt': { name: 'Adidas Classic T-Shirt', cat: 'general', Amazon: 950, Flipkart: 920 },
+    'tshirt': { name: 'Adidas Classic T-Shirt', cat: 'general', Amazon: 950, Flipkart: 920 },
+    'sneakers': { name: 'Puma Sports Sneakers', cat: 'general', Amazon: 3299, Flipkart: 3399 },
+    'sneaker': { name: 'Puma Sports Sneakers', cat: 'general', Amazon: 3299, Flipkart: 3399 },
+    'headphones': { name: 'boAt Wireless Headphones', cat: 'general', Amazon: 1499, Flipkart: 1399 },
+    'headphone': { name: 'boAt Wireless Headphones', cat: 'general', Amazon: 1499, Flipkart: 1399 },
+    'smartwatch': { name: 'Noise Fit Smartwatch', cat: 'general', Amazon: 2499, Flipkart: 2399 },
+    'waterbottle': { name: 'Milton Thermosteel Bottle', cat: 'general', Amazon: 350, Flipkart: 320 }
   };
 
   // Category Configuration
   const categoryConfig = {
     grocery: {
-      apps: ['Blinkit', 'Zepto', 'Instamart', 'BigBasket'],
-      classes: { Blinkit: 'brand-blinkit', Zepto: 'brand-zepto', Instamart: 'brand-instamart', BigBasket: 'brand-bigbasket' },
+      apps: ['Blinkit', 'Zepto', 'Instamart', 'BigBasket', 'Amazon', 'Flipkart'],
+      classes: { Blinkit: 'brand-blinkit', Zepto: 'brand-zepto', Instamart: 'brand-instamart', BigBasket: 'brand-bigbasket', Amazon: 'brand-amazon', Flipkart: 'brand-flipkart' },
       fees: {
         Blinkit: { delivery: 29, handling: 4, surge: 10, tax: 0.05 },
         Zepto: { delivery: 19, handling: 3, surge: 0, tax: 0.05 },
         Instamart: { delivery: 35, handling: 4, surge: 5, tax: 0.05 },
-        BigBasket: { delivery: 30, handling: 0, surge: 0, tax: 0.05 }
+        BigBasket: { delivery: 30, handling: 0, surge: 0, tax: 0.05 },
+        Amazon: { delivery: 40, handling: 0, surge: 0, tax: 0.05 },
+        Flipkart: { delivery: 40, handling: 0, surge: 0, tax: 0.05 }
       }
     },
-    fashion: {
-      apps: ['Myntra', 'Ajio', 'Amazon', 'Flipkart'],
-      classes: { Myntra: 'brand-myntra', Ajio: 'brand-ajio', Amazon: 'brand-amazon', Flipkart: 'brand-flipkart' },
+    general: {
+      apps: ['Amazon', 'Flipkart'],
+      classes: { Amazon: 'brand-amazon', Flipkart: 'brand-flipkart' },
       fees: {
-        Myntra: { delivery: 99, handling: 10, surge: 0, tax: 0.12 },
-        Ajio: { delivery: 79, handling: 9, surge: 0, tax: 0.12 },
-        Amazon: { delivery: 40, handling: 0, surge: 0, tax: 0.12 },
-        Flipkart: { delivery: 40, handling: 0, surge: 0, tax: 0.12 }
-      }
-    },
-    beauty: {
-      apps: ['Nykaa', 'Myntra', 'Amazon', 'Flipkart'],
-      classes: { Nykaa: 'brand-nykaa', Myntra: 'brand-myntra', Amazon: 'brand-amazon', Flipkart: 'brand-flipkart' },
-      fees: {
-        Nykaa: { delivery: 50, handling: 5, surge: 0, tax: 0.18 },
-        Myntra: { delivery: 99, handling: 10, surge: 0, tax: 0.18 },
         Amazon: { delivery: 40, handling: 0, surge: 0, tax: 0.18 },
         Flipkart: { delivery: 40, handling: 0, surge: 0, tax: 0.18 }
       }
@@ -898,7 +888,7 @@
 
   // State
   let shoppingCart = [];
-  let currentOptTab = 'single'; // 'single' or 'split'
+  let currentOptTab = 'instant'; // 'instant', 'standard', or 'split'
 
   // === Single Item Quick Search ===
   function triggerQuickSearch() {
@@ -916,7 +906,7 @@
     }
 
     if (!matchedKey) {
-      alert("🔍 Item '" + input + "' not directly in our mock index.\nTry: 'Milk', 'Eggs', 'Jeans', 'Lipstick', 'Sneakers', or 'Shampoo'!");
+      alert("🔍 Item '" + input + "' not directly in our mock index.\nTry: 'Milk', 'Eggs', 'Jeans', 'Sneakers', 'Shampoo', 'Headphones', or 'Smartwatch'!");
       box.style.display = 'none';
       return;
     }
@@ -926,7 +916,7 @@
     
     // Set category text
     const cat = item.cat;
-    const catLabel = cat.charAt(0).toUpperCase() + cat.slice(1);
+    const catLabel = cat === 'grocery' ? 'Grocery & Essentials' : 'Apparel & General';
     document.getElementById('searchResultCategory').textContent = catLabel;
     
     // Fill prices
@@ -1032,7 +1022,7 @@
         entry.target.dataset.animated = 'true';
         const text = entry.target.textContent;
         if (text.includes('18%')) animateCounter(entry.target, 18, '%');
-        else if (text.includes('9')) animateCounter(entry.target, 9, ' Apps');
+        else if (text.includes('6')) animateCounter(entry.target, 6, ' Apps');
       }
     });
   }, { threshold: 0.5 });
@@ -1059,7 +1049,7 @@
     }
 
     if (!matchedKey) {
-      alert("🔍 Item '" + name + "' not found in our mock catalog database.\nTry adding: 'milk', 'eggs', 'shampoo', 'lipstick', 'jeans', 'sneakers', 'tomato'!");
+      alert("🔍 Item '" + name + "' not found in our catalog index.\nTry: 'milk', 'eggs', 'shampoo', 'tomato', 'jeans', 'sneakers', 'headphones'!");
       return;
     }
 
@@ -1090,12 +1080,12 @@
     clearCart();
     if (presetName === 'grocery') {
       shoppingCart = ['milk', 'eggs', 'tomato', 'potato', 'onion'];
-    } else if (presetName === 'beauty') {
-      shoppingCart = ['lipstick', 'shampoo', 'sunscreen', 'facewash'];
-    } else if (presetName === 'fashion') {
-      shoppingCart = ['jeans', 't-shirt', 'sneakers'];
+    } else if (presetName === 'essentials') {
+      shoppingCart = ['milk', 'eggs', 'shampoo', 'sunscreen', 'facewash'];
+    } else if (presetName === 'wardrobe') {
+      shoppingCart = ['jeans', 't-shirt', 'sneakers', 'headphones'];
     } else if (presetName === 'mixed') {
-      shoppingCart = ['milk', 'eggs', 'lipstick', 'shampoo', 'jeans', 'sneakers'];
+      shoppingCart = ['milk', 'eggs', 'shampoo', 'jeans', 'sneakers', 'smartwatch'];
     }
     updateCartUI();
   }
@@ -1142,11 +1132,13 @@
     document.getElementById('summaryDelivery').textContent = '₹0.00';
     document.getElementById('summaryTotal').textContent = '₹0.00';
     document.getElementById('summarySavings').textContent = '₹0.00';
+    document.getElementById('optimizerWarning').style.display = 'none';
   }
 
   function switchOptTab(tab) {
     currentOptTab = tab;
-    document.getElementById('tabSingle').classList.toggle('active', tab === 'single');
+    document.getElementById('tabInstant').classList.toggle('active', tab === 'instant');
+    document.getElementById('tabStandard').classList.toggle('active', tab === 'standard');
     document.getElementById('tabSplit').classList.toggle('active', tab === 'split');
     calculateComparison();
   }
@@ -1158,170 +1150,200 @@
     }
 
     const grid = document.getElementById('comparisonGrid');
+    const warning = document.getElementById('optimizerWarning');
     grid.innerHTML = '';
+    warning.style.display = 'none';
 
-    // Group cart items by category
-    const categories = [...new Set(shoppingCart.map(key => catalog[key].cat))];
+    if (currentOptTab === 'instant') {
+      // INSTANT DELIVERY APPS (Blinkit, Zepto, Swiggy Instamart, BigBasket)
+      // Filter out general items since they are not supported by instant delivery
+      const instantItems = shoppingCart.filter(k => catalog[k].cat === 'grocery');
+      const excludedItems = shoppingCart.filter(k => catalog[k].cat !== 'grocery');
 
-    if (currentOptTab === 'single') {
-      // CHEAPEST SINGLE APP PER CATEGORY
-      // We analyze each category separately since we cannot buy groceries from Myntra or jeans from Blinkit
-      categories.forEach(cat => {
-        const catItems = shoppingCart.filter(k => catalog[k].cat === cat);
-        const config = categoryConfig[cat];
-        
-        // Header Row for category
-        const header = document.createElement('div');
-        header.className = 'item-row header';
-        const labelText = cat.toUpperCase() + ' APPS';
-        header.innerHTML = `<div>${labelText} (${catItems.length} items)</div>`;
-        
-        // Find best app for this category
-        let bestApp = '';
-        let bestTotal = Infinity;
-        let worstTotal = -Infinity;
-        let appSubtotals = {};
-        
-        config.apps.forEach(app => {
-          let subtotal = 0;
-          catItems.forEach(k => { subtotal += catalog[k][app] || 0; });
-          appSubtotals[app] = subtotal;
-          
-          if (subtotal < bestTotal) { bestTotal = subtotal; bestApp = app; }
-          if (subtotal > worstTotal) { worstTotal = subtotal; }
-        });
+      if (excludedItems.length > 0) {
+        warning.style.display = 'block';
+      }
 
-        config.apps.forEach(app => {
-          header.innerHTML += `<div style="text-align:right;">${app}</div>`;
-        });
-        grid.appendChild(header);
+      if (instantItems.length === 0) {
+        grid.innerHTML = `
+          <div style="text-align:center;padding:3rem 1rem;color:var(--text-muted);font-style:italic;">
+            No instant-delivery items in your cart. Add groceries to compare.
+          </div>
+        `;
+        return;
+      }
 
-        // Item Rows
-        catItems.forEach(key => {
-          const item = catalog[key];
-          const row = document.createElement('div');
-          row.className = 'item-row';
-          row.innerHTML = `<div>${item.name}</div>`;
-          
-          config.apps.forEach(app => {
-            const price = item[app];
-            // Highlight cheap price in single mode? It shows where it's cheapest for that specific row.
-            // Let's find which app has cheapest price for this single item
-            let cheapestPrice = Math.min(...config.apps.map(a => item[a]));
-            const isCheapest = (price === cheapestPrice);
-            
-            row.innerHTML += `
-              <div style="text-align:right;${isCheapest ? 'color:var(--green);font-weight:700;' : 'color:var(--text-secondary);'}">
-                ₹${price}
-              </div>
-            `;
-          });
-          grid.appendChild(row);
-        });
+      const apps = ['Blinkit', 'Zepto', 'Instamart', 'BigBasket'];
+      const classes = { Blinkit: 'brand-blinkit', Zepto: 'brand-zepto', Instamart: 'brand-instamart', BigBasket: 'brand-bigbasket' };
+      const config = categoryConfig.grocery;
 
-        // App total comparisons in grid
-        const totalCompareRow = document.createElement('div');
-        totalCompareRow.className = 'item-row';
-        totalCompareRow.style.cssText = 'font-weight:700;border-top:1.5px solid var(--border-color);background:var(--bg-secondary);';
-        totalCompareRow.innerHTML = `<div>Cart Subtotal</div>`;
-        config.apps.forEach(app => {
-          const sub = appSubtotals[app];
-          const isBest = (app === bestApp);
-          totalCompareRow.innerHTML += `
-            <div style="text-align:right;${isBest ? 'color:var(--green);' : ''}">
-              ${isBest ? '🏆 ₹' + sub : '₹' + sub}
-            </div>
-          `;
-        });
-        grid.appendChild(totalCompareRow);
+      // Header Row
+      const header = document.createElement('div');
+      header.className = 'item-row header';
+      header.innerHTML = `<div>INSTANT APPS</div>`;
+      apps.forEach(app => { header.innerHTML += `<div style="text-align:right;">${app}</div>`; });
+      grid.appendChild(header);
+
+      let bestApp = '';
+      let bestTotal = Infinity;
+      let worstTotal = -Infinity;
+      let appSubtotals = {};
+
+      apps.forEach(app => {
+        let sub = 0;
+        instantItems.forEach(k => { sub += catalog[k][app] || 0; });
+        appSubtotals[app] = sub;
+        if (sub < bestTotal) { bestTotal = sub; bestApp = app; }
+        if (sub > worstTotal) { worstTotal = sub; }
       });
 
-      // Calculate overall totals for billing panel (using best single app per category)
-      let overallSubtotal = 0;
+      // Item Rows
+      instantItems.forEach(key => {
+        const item = catalog[key];
+        const row = document.createElement('div');
+        row.className = 'item-row';
+        row.innerHTML = `<div>${item.name}</div>`;
+        apps.forEach(app => {
+          const price = item[app];
+          const cheapest = Math.min(...apps.map(a => item[a]));
+          const isCheap = (price === cheapest);
+          row.innerHTML += `<div style="text-align:right;${isCheap ? 'color:var(--green);font-weight:700;' : 'color:var(--text-secondary);'}">₹${price}</div>`;
+        });
+        grid.appendChild(row);
+      });
+
+      // Subtotals Row
+      const totalRow = document.createElement('div');
+      totalRow.className = 'item-row';
+      totalRow.style.cssText = 'font-weight:700;border-top:1.5px solid var(--border-color);background:var(--bg-secondary);';
+      totalRow.innerHTML = `<div>Cart Subtotal</div>`;
+      apps.forEach(app => {
+        const sub = appSubtotals[app];
+        const isBest = (app === bestApp);
+        totalRow.innerHTML += `<div style="text-align:right;${isBest ? 'color:var(--green);' : ''}">${isBest ? '🏆 ₹' + sub : '₹' + sub}</div>`;
+      });
+      grid.appendChild(totalRow);
+
+      // Calculations for billing panel
+      const fees = config.fees[bestApp];
+      const subtotalVal = bestTotal;
+      const taxVal = subtotalVal * fees.tax;
+      const handlingVal = fees.handling;
+      const deliveryVal = fees.delivery;
+      const totalVal = subtotalVal + taxVal + handlingVal + deliveryVal;
+
+      let worstApp = apps.find(a => appSubtotals[a] === worstTotal) || apps[0];
+      const wFees = config.fees[worstApp];
+      const worstTotalVal = worstTotal + (worstTotal * wFees.tax) + wFees.handling + wFees.delivery;
+      const savingsVal = worstTotalVal - totalVal;
+
+      document.getElementById('summarySubtotal').textContent = '₹' + Math.round(subtotalVal);
+      document.getElementById('summaryTax').textContent = '₹' + Math.round(taxVal);
+      document.getElementById('summaryHandling').textContent = '₹' + Math.round(handlingVal);
+      document.getElementById('summaryDelivery').textContent = '₹' + Math.round(deliveryVal);
+      document.getElementById('summaryTotal').textContent = '₹' + Math.round(totalVal);
+      document.getElementById('summarySavings').textContent = savingsVal > 0 ? '₹' + Math.round(savingsVal) : '₹0';
+      document.getElementById('savingsRow').style.display = savingsVal > 0 ? 'flex' : 'none';
+
+    } else if (currentOptTab === 'standard') {
+      // STANDARD MARKETPLACE (Amazon vs Flipkart)
+      // All items in the cart are compared since Amazon/Flipkart support everything
+      const apps = ['Amazon', 'Flipkart'];
+      const classes = { Amazon: 'brand-amazon', Flipkart: 'brand-flipkart' };
+
+      const header = document.createElement('div');
+      header.className = 'item-row header';
+      header.innerHTML = `<div>STANDARD MARKETPLACE</div>`;
+      apps.forEach(app => { header.innerHTML += `<div style="text-align:right;">${app}</div>`; });
+      grid.appendChild(header);
+
+      let bestApp = '';
+      let bestTotal = Infinity;
+      let worstTotal = -Infinity;
+      let appSubtotals = {};
+
+      apps.forEach(app => {
+        let sub = 0;
+        shoppingCart.forEach(k => {
+          // Fallback if price is not listed
+          sub += catalog[k][app] || catalog[k]['Amazon'] || 0;
+        });
+        appSubtotals[app] = sub;
+        if (sub < bestTotal) { bestTotal = sub; bestApp = app; }
+        if (sub > worstTotal) { worstTotal = sub; }
+      });
+
+      shoppingCart.forEach(key => {
+        const item = catalog[key];
+        const row = document.createElement('div');
+        row.className = 'item-row';
+        row.innerHTML = `<div>${item.name}</div>`;
+        apps.forEach(app => {
+          const price = item[app] || item['Amazon'];
+          const cheapest = Math.min(...apps.map(a => item[a] || item['Amazon']));
+          const isCheap = (price === cheapest);
+          row.innerHTML += `<div style="text-align:right;${isCheap ? 'color:var(--green);font-weight:700;' : 'color:var(--text-secondary);'}">₹${price}</div>`;
+        });
+        grid.appendChild(row);
+      });
+
+      const totalRow = document.createElement('div');
+      totalRow.className = 'item-row';
+      totalRow.style.cssText = 'font-weight:700;border-top:1.5px solid var(--border-color);background:var(--bg-secondary);';
+      totalRow.innerHTML = `<div>Cart Subtotal</div>`;
+      apps.forEach(app => {
+        const sub = appSubtotals[app];
+        const isBest = (app === bestApp);
+        totalRow.innerHTML += `<div style="text-align:right;${isBest ? 'color:var(--green);' : ''}">${isBest ? '🏆 ₹' + sub : '₹' + sub}</div>`;
+      });
+      grid.appendChild(totalRow);
+
+      // Calculations for billing panel
+      // Determine tax depending on category configuration
+      let overallSubtotal = bestTotal;
       let overallTax = 0;
       let overallHandling = 0;
-      let overallDelivery = 0;
-      let overallWorstTotal = 0; // for savings
+      let overallDelivery = 40; // Flat fee
 
-      categories.forEach(cat => {
-        const catItems = shoppingCart.filter(k => catalog[k].cat === cat);
-        const config = categoryConfig[cat];
-        
-        let bestApp = '';
-        let bestSub = Infinity;
-        let worstSub = -Infinity;
-        
-        config.apps.forEach(app => {
-          let sub = 0;
-          catItems.forEach(k => { sub += catalog[k][app] || 0; });
-          if (sub < bestSub) { bestSub = sub; bestApp = app; }
-          if (sub > worstSub) { worstSub = sub; }
-        });
-
-        // Add fee rules
-        const fees = config.fees[bestApp];
-        overallSubtotal += bestSub;
-        overallTax += bestSub * fees.tax;
-        overallHandling += fees.handling;
-        overallDelivery += fees.delivery;
-
-        // Worst app calculations for comparison
-        let worstApp = config.apps.find(a => {
-          let s = 0;
-          catItems.forEach(k => { s += catalog[k][a] || 0; });
-          return s === worstSub;
-        }) || config.apps[0];
-        const wFees = config.fees[worstApp];
-        overallWorstTotal += worstSub + (worstSub * wFees.tax) + wFees.handling + wFees.delivery;
+      shoppingCart.forEach(k => {
+        const item = catalog[k];
+        const feesConfig = categoryConfig[item.cat].fees[bestApp];
+        overallTax += (item[bestApp] || item['Amazon']) * feesConfig.tax;
       });
 
-      const overallTotal = overallSubtotal + overallTax + overallHandling + overallDelivery;
-      const overallSavings = overallWorstTotal - overallTotal;
+      const totalVal = overallSubtotal + overallTax + overallHandling + overallDelivery;
+      
+      let worstApp = apps.find(a => appSubtotals[a] === worstTotal) || apps[0];
+      let worstTax = 0;
+      shoppingCart.forEach(k => {
+        const item = catalog[k];
+        const feesConfig = categoryConfig[item.cat].fees[worstApp];
+        worstTax += (item[worstApp] || item['Amazon']) * feesConfig.tax;
+      });
+      const worstTotalVal = worstTotal + worstTax + 40;
+      const savingsVal = worstTotalVal - totalVal;
 
       document.getElementById('summarySubtotal').textContent = '₹' + Math.round(overallSubtotal);
       document.getElementById('summaryTax').textContent = '₹' + Math.round(overallTax);
       document.getElementById('summaryHandling').textContent = '₹' + Math.round(overallHandling);
       document.getElementById('summaryDelivery').textContent = '₹' + Math.round(overallDelivery);
-      document.getElementById('summaryTotal').textContent = '₹' + Math.round(overallTotal);
-      document.getElementById('summarySavings').textContent = overallSavings > 0 ? '₹' + Math.round(overallSavings) : '₹0';
-      document.getElementById('savingsRow').style.display = overallSavings > 0 ? 'flex' : 'none';
+      document.getElementById('summaryTotal').textContent = '₹' + Math.round(totalVal);
+      document.getElementById('summarySavings').textContent = savingsVal > 0 ? '₹' + Math.round(savingsVal) : '₹0';
+      document.getElementById('savingsRow').style.display = savingsVal > 0 ? 'flex' : 'none';
 
     } else {
-      // SPLIT CHECKOUT SAVINGS (cheapest item-by-item)
-      categories.forEach(cat => {
-        const catItems = shoppingCart.filter(k => catalog[k].cat === cat);
-        const config = categoryConfig[cat];
-        
-        // Header
-        const header = document.createElement('div');
-        header.className = 'item-row header';
-        header.innerHTML = `<div>${cat.toUpperCase()} (SPLIT COST)</div><div style="text-align:right;">App Checked</div><div style="text-align:right;">Best Price</div>`;
-        grid.appendChild(header);
+      // SPLIT-BASKET SAVER (Cheapest price overall from all 6 apps!)
+      const header = document.createElement('div');
+      header.className = 'item-row header';
+      header.innerHTML = `<div>ITEM NAME</div><div style="text-align:right;">CHEAPEST VENDOR</div><div style="text-align:right;">BEST PRICE</div>`;
+      grid.appendChild(header);
 
-        catItems.forEach(key => {
-          const item = catalog[key];
-          let cheapestApp = '';
-          let cheapestPrice = Infinity;
+      let appSplits = {}; // Map of app -> list of items
+      let overallSubtotal = 0;
+      let overallTax = 0;
+      let overallHandling = 0;
+      let overallDelivery = 0;
 
-          config.apps.forEach(app => {
-            const price = item[app];
-            if (price < cheapestPrice) { cheapestPrice = price; cheapestApp = app; }
-          });
-
-          const row = document.createElement('div');
-          row.className = 'item-row';
-          row.innerHTML = `
-            <div>${item.name}</div>
-            <div style="text-align:right;"><span class="brand-pill ${config.classes[cheapestApp]}" style="font-size:0.75rem;padding:0.2rem 0.5rem;">${cheapestApp}</span></div>
-            <div style="text-align:right;color:var(--green);font-weight:700;">₹${cheapestPrice}</div>
-          `;
-          grid.appendChild(row);
-        });
-      });
-
-      // Split order calculations
-      // Determine what items go to what app
-      let appSplits = {}; // Map of app -> list of item keys
       shoppingCart.forEach(key => {
         const item = catalog[key];
         const cat = item.cat;
@@ -1329,64 +1351,62 @@
         
         let cheapestApp = '';
         let cheapestPrice = Infinity;
+        
         config.apps.forEach(app => {
-          if (item[app] < cheapestPrice) { cheapestPrice = item[app]; cheapestApp = app; }
+          const price = item[app] || item['Amazon'] || Infinity;
+          if (price < cheapestPrice) { cheapestPrice = price; cheapestApp = app; }
         });
 
         if (!appSplits[cheapestApp]) appSplits[cheapestApp] = [];
         appSplits[cheapestApp].push(key);
+
+        const row = document.createElement('div');
+        row.className = 'item-row';
+        row.innerHTML = `
+          <div>${item.name}</div>
+          <div style="text-align:right;"><span class="brand-pill ${categoryConfig[cat].classes[cheapestApp] || 'brand-amazon'}" style="font-size:0.75rem;padding:0.2rem 0.5rem;">${cheapestApp}</span></div>
+          <div style="text-align:right;color:var(--green);font-weight:700;">₹${cheapestPrice}</div>
+        `;
+        grid.appendChild(row);
+
+        overallSubtotal += cheapestPrice;
+        
+        // Fee calculations
+        const appFees = categoryConfig[cat].fees[cheapestApp];
+        overallTax += cheapestPrice * appFees.tax;
       });
 
-      let overallSubtotal = 0;
-      let overallTax = 0;
-      let overallHandling = 0;
-      let overallDelivery = 0;
-      
-      // Calculate fees for each app that has split items
+      // Platform & Delivery fees applied once per split order
       Object.keys(appSplits).forEach(app => {
-        // Find which category this app belongs to
+        // Find which config includes this app
         let cat = 'grocery';
-        if (categoryConfig.fashion.apps.includes(app)) cat = 'fashion';
-        else if (categoryConfig.beauty.apps.includes(app)) cat = 'beauty';
-
-        const config = categoryConfig[cat];
-        const fees = config.fees[app];
-        const items = appSplits[app];
-
-        let sub = 0;
-        items.forEach(k => { sub += catalog[k][app]; });
-
-        overallSubtotal += sub;
-        overallTax += sub * fees.tax;
+        if (!categoryConfig.grocery.apps.includes(app)) cat = 'general';
+        const fees = categoryConfig[cat].fees[app];
         overallHandling += fees.handling;
-        overallDelivery += fees.delivery; // Split shopping pays delivery on multiple if orders are small
+        overallDelivery += fees.delivery;
       });
 
-      // For worst comparison (worst single app total overall)
+      // Worst total calculation (buying everything from the worst single app overall)
       let overallWorstTotal = 0;
-      categories.forEach(cat => {
-        const catItems = shoppingCart.filter(k => catalog[k].cat === cat);
-        const config = categoryConfig[cat];
-        let worstSub = -Infinity;
-        config.apps.forEach(app => {
-          let s = 0; catItems.forEach(k => { s += catalog[k][app] || 0; });
-          if (s > worstSub) worstSub = s;
-        });
-        let worstApp = config.apps[0]; // simple fallback
-        const wFees = config.fees[worstApp];
-        overallWorstTotal += worstSub + (worstSub * wFees.tax) + wFees.handling + wFees.delivery;
+      const allApps = ['Blinkit', 'Zepto', 'Instamart', 'BigBasket', 'Amazon', 'Flipkart'];
+      
+      // We calculate total for a simple fallback (like Amazon or Blinkit depending on items)
+      let worstSub = 0;
+      shoppingCart.forEach(k => {
+        worstSub += catalog[k]['Amazon'] || catalog[k]['Blinkit'];
       });
+      overallWorstTotal = worstSub + (worstSub * 0.12) + 40; // simple baseline
 
-      const overallTotal = overallSubtotal + overallTax + overallHandling + overallDelivery;
-      const overallSavings = overallWorstTotal - overallTotal;
+      const totalVal = overallSubtotal + overallTax + overallHandling + overallDelivery;
+      const savingsVal = overallWorstTotal - totalVal;
 
       document.getElementById('summarySubtotal').textContent = '₹' + Math.round(overallSubtotal);
       document.getElementById('summaryTax').textContent = '₹' + Math.round(overallTax);
       document.getElementById('summaryHandling').textContent = '₹' + Math.round(overallHandling);
       document.getElementById('summaryDelivery').textContent = '₹' + Math.round(overallDelivery);
-      document.getElementById('summaryTotal').textContent = '₹' + Math.round(overallTotal);
-      document.getElementById('summarySavings').textContent = overallSavings > 0 ? '₹' + Math.round(overallSavings) : '₹0';
-      document.getElementById('savingsRow').style.display = overallSavings > 0 ? 'flex' : 'none';
+      document.getElementById('summaryTotal').textContent = '₹' + Math.round(totalVal);
+      document.getElementById('summarySavings').textContent = savingsVal > 0 ? '₹' + Math.round(savingsVal) : '₹0';
+      document.getElementById('savingsRow').style.display = savingsVal > 0 ? 'flex' : 'none';
     }
   }
 
@@ -1428,8 +1448,10 @@
 
     // Calculate details for modal display text
     let targetText = '';
-    if (currentOptTab === 'single') {
-      targetText = "Populating items in cheapest vendor carts...";
+    if (currentOptTab === 'instant') {
+      targetText = "Populating items in cheapest instant delivery carts...";
+    } else if (currentOptTab === 'standard') {
+      targetText = "Populating items in cheapest standard e-commerce carts...";
     } else {
       // Find splits
       let appsUsed = [];
@@ -1439,7 +1461,8 @@
         let cheapestApp = '';
         let cheapestPrice = Infinity;
         config.apps.forEach(app => {
-          if (item[app] < cheapestPrice) { cheapestPrice = item[app]; cheapestApp = app; }
+          const price = item[app] || item['Amazon'] || Infinity;
+          if (price < cheapestPrice) { cheapestPrice = price; cheapestApp = app; }
         });
         appsUsed.push(cheapestApp);
       });
@@ -1475,7 +1498,7 @@
       if (width >= 70 && currentStep === 3) {
         document.getElementById('step3').className = 'modal-step success';
         document.getElementById('step4').className = 'modal-step active';
-        subtitle.textContent = "Computing packing, Platform and GST/Taxes...";
+        subtitle.textContent = "Computing packaging, Platform and GST/Taxes...";
         currentStep = 4;
       }
       if (width >= 90 && currentStep === 4) {
@@ -1535,17 +1558,17 @@
     let title, emoji, desc;
 
     if (shopHabit === 'instant') {
-      title = 'Speed-First Shopper (Blinkit/Zepto Priority)';
+      title = 'Instant Shopping Enthusiast (Blinkit/Zepto Priority)';
       emoji = '⚡';
-      desc = 'You prioritize rapid delivery and need products in 10 minutes. For your lifestyle, Prismo\'s single-cart comparison ensures you pick the overall cheapest app (e.g. Zepto or Blinkit) in 2 seconds flat before checkout, saving up to ₹1,200 monthly in surge fees!';
+      desc = 'You prioritize rapid delivery and need products in 10 minutes. For your lifestyle, Prismo\'s instant delivery comparison ensures you pick the overall cheapest app (e.g. Zepto or Blinkit) in 2 seconds flat before checkout, saving up to ₹1,200 monthly in platform charges and surge fees!';
     } else if (shopHabit === 'monthly' || concern === 'convenience') {
       title = 'Auto-Replenish Master (Scheduled Saver)';
       emoji = '📅';
       desc = 'You are a meticulous planner who likes to set and forget. Prismo\'s Monthly Replenishment mode fits you perfectly! Save up to 18% automatically by letting our bot split and checkout your recurring pantry essentials on the 1st of every month.';
     } else {
-      title = 'Split-Basket Saver (Maximum Optimizer)';
+      title = 'Smart Optimizer (Amazon/Flipkart Saver)';
       emoji = '🏆';
-      desc = 'You hate overpaying and want the absolute best deals. By using Prismo\'s Split-Basket Optimizer, you save the maximum amount by routing clothes to Myntra, toiletries to Nykaa, and veggies to Zepto, saving over ₹2,500 every single month!';
+      desc = 'You hate overpaying and want the absolute best deals, and can wait a day for standard delivery. By comparing items across Amazon and Flipkart, you bypass instant delivery markups and platform surcharges, saving over ₹2,500 every single month!';
     }
 
     document.getElementById('resultEmoji').textContent = emoji;
@@ -1557,19 +1580,19 @@
     launchConfetti();
   }
 
-  function resetQuiz() {
-    quizAnswers = {};
-    document.getElementById('quizResult').style.display = 'none';
-    document.getElementById('q1').style.display = 'block';
-    ['prog2','prog3'].forEach(id => document.getElementById(id).style.background = '#e2e8f0');
-  }
-
   // === FAQ Toggle ===
   function toggleFaq(btn) {
     const item = btn.parentElement;
     const wasOpen = item.classList.contains('open');
     document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
     if (!wasOpen) item.classList.add('open');
+  }
+
+  function resetQuiz() {
+    quizAnswers = {};
+    document.getElementById('quizResult').style.display = 'none';
+    document.getElementById('q1').style.display = 'block';
+    ['prog2','prog3'].forEach(id => document.getElementById(id).style.background = '#e2e8f0');
   }
 
   // === Confetti 🎉 ===
