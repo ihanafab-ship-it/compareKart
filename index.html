@@ -33,7 +33,13 @@
       inset: 0;
       background: linear-gradient(to bottom, transparent 60%, var(--bg-primary) 100%);
     }
-    .hero-content { position: relative; z-index: 2; max-width: 850px; margin: 0 auto; }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 850px;
+      margin: 0 auto;
+      padding-top: 3.5rem;
+    }
 
     .hero-eyebrow {
       position: absolute;
@@ -206,6 +212,9 @@
       .hero-eyebrow {
         position: static;
         margin: 0 auto 1.75rem;
+      }
+      .hero-content {
+        padding-top: 0;
       }
     }
 
