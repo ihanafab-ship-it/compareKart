@@ -271,6 +271,59 @@
         gap: 0.75rem 1.5rem;
       }
     }
+
+    /* Bullet icon keyframe animations */
+    @keyframes pulseGlowGreen {
+      0%, 100% { transform: scale(1); box-shadow: 0 2px 8px rgba(0, 255, 102, 0.15); }
+      50% { transform: scale(1.05); box-shadow: 0 2px 14px rgba(0, 255, 102, 0.3); }
+    }
+    @keyframes rotateTimer {
+      0%, 100% { transform: rotate(0deg); }
+      50% { transform: rotate(15deg); }
+    }
+    @keyframes floatBox {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-3px); }
+    }
+    @keyframes tiltMoney {
+      0%, 100% { transform: rotate(0deg); }
+      50% { transform: rotate(8deg) scale(1.03); }
+    }
+    @keyframes launchRocket {
+      0%, 100% { transform: translateY(0) translateX(0); }
+      50% { transform: translateY(-3px) translateX(1px); }
+    }
+    @keyframes flipCalendar {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.03) rotate(-3deg); }
+    }
+
+    /* Animation class assignments */
+    .icon-upload { animation: pulseGlowGreen 3s infinite ease-in-out; }
+    .icon-compare { animation: rotateTimer 4s infinite ease-in-out; }
+    .icon-sizing { animation: floatBox 2.5s infinite ease-in-out; }
+    .icon-savings { animation: tiltMoney 3.5s infinite ease-in-out; }
+    .icon-checkout { animation: launchRocket 2s infinite ease-in-out; }
+    .icon-routine { animation: flipCalendar 3.8s infinite ease-in-out; }
+
+    /* Hover animations for bullet items */
+    .benefits-grid > div {
+      transition: transform var(--transition-fast), background var(--transition-fast);
+      border-radius: var(--radius-sm);
+      padding: 0.25rem 0.5rem;
+      margin: -0.25rem -0.5rem;
+    }
+    .benefits-grid > div:hover {
+      background: rgba(255, 255, 255, 0.35);
+      transform: translateX(4px);
+    }
+    body.dark-mode .benefits-grid > div:hover {
+      background: rgba(255, 255, 255, 0.03);
+    }
+    .benefits-grid > div:hover span:first-child {
+      transform: scale(1.1) !important;
+      box-shadow: 0 4px 12px rgba(191, 85, 236, 0.2) !important;
+    }
   </style>
 </head>
 <body>
@@ -365,27 +418,27 @@
       <h3 style="font-family:'Outfit',sans-serif;font-size:1rem;font-weight:800;margin-bottom:0.75rem;color:var(--text-primary);display:flex;align-items:center;gap:6px;">🚀 How CompareKart Works</h3>
       <div class="benefits-grid">
         <div style="font-size:0.85rem;color:var(--text-secondary);display:flex;align-items:center;gap:12px;line-height:1.4;">
-          <span style="background:rgba(0,255,102,0.1); color:var(--green); border-radius:10px; width:34px; height:34px; display:inline-flex; align-items:center; justify-content:center; font-size:1.15rem; flex-shrink:0; box-shadow:0 2px 8px rgba(0,255,102,0.15);">📋</span>
+          <span class="icon-upload" style="background:rgba(0,255,102,0.1); color:var(--green); border-radius:10px; width:34px; height:34px; display:inline-flex; align-items:center; justify-content:center; font-size:1.15rem; flex-shrink:0; box-shadow:0 2px 8px rgba(0,255,102,0.15); transition:all 0.2s ease;">📋</span>
           <span><strong>Upload Lists</strong>: Type or upload lists instantly.</span>
         </div>
         <div style="font-size:0.85rem;color:var(--text-secondary);display:flex;align-items:center;gap:12px;line-height:1.4;">
-          <span style="background:rgba(0,240,255,0.1); color:var(--cyan); border-radius:10px; width:34px; height:34px; display:inline-flex; align-items:center; justify-content:center; font-size:1.15rem; flex-shrink:0; box-shadow:0 2px 8px rgba(0,240,255,0.15);">⏱️</span>
+          <span class="icon-compare" style="background:rgba(0,240,255,0.1); color:var(--cyan); border-radius:10px; width:34px; height:34px; display:inline-flex; align-items:center; justify-content:center; font-size:1.15rem; flex-shrink:0; box-shadow:0 2px 8px rgba(0,240,255,0.15); transition:all 0.2s ease;">⏱️</span>
           <span><strong>Live Compare</strong>: Compare 6+ apps in &lt;60s.</span>
         </div>
         <div style="font-size:0.85rem;color:var(--text-secondary);display:flex;align-items:center;gap:12px;line-height:1.4;">
-          <span style="background:rgba(191,85,236,0.1); color:var(--purple); border-radius:10px; width:34px; height:34px; display:inline-flex; align-items:center; justify-content:center; font-size:1.15rem; flex-shrink:0; box-shadow:0 2px 8px rgba(191,85,236,0.15);">📦</span>
+          <span class="icon-sizing" style="background:rgba(191,85,236,0.1); color:var(--purple); border-radius:10px; width:34px; height:34px; display:inline-flex; align-items:center; justify-content:center; font-size:1.15rem; flex-shrink:0; box-shadow:0 2px 8px rgba(191,85,236,0.15); transition:all 0.2s ease;">📦</span>
           <span><strong>Smart Sizing</strong>: Lowest unit cost per pack.</span>
         </div>
         <div style="font-size:0.85rem;color:var(--text-secondary);display:flex;align-items:center;gap:12px;line-height:1.4;">
-          <span style="background:rgba(255,215,0,0.1); color:var(--amber); border-radius:10px; width:34px; height:34px; display:inline-flex; align-items:center; justify-content:center; font-size:1.15rem; flex-shrink:0; box-shadow:0 2px 8px rgba(255,215,0,0.15);">💰</span>
+          <span class="icon-savings" style="background:rgba(255,215,0,0.1); color:var(--amber); border-radius:10px; width:34px; height:34px; display:inline-flex; align-items:center; justify-content:center; font-size:1.15rem; flex-shrink:0; box-shadow:0 2px 8px rgba(255,215,0,0.15); transition:all 0.2s ease;">💰</span>
           <span><strong>Split Savings</strong>: Save up to 15% via split carts.</span>
         </div>
         <div style="font-size:0.85rem;color:var(--text-secondary);display:flex;align-items:center;gap:12px;line-height:1.4;">
-          <span style="background:rgba(255,0,127,0.1); color:var(--pink); border-radius:10px; width:34px; height:34px; display:inline-flex; align-items:center; justify-content:center; font-size:1.15rem; flex-shrink:0; box-shadow:0 2px 8px rgba(255,0,127,0.15);">🚀</span>
+          <span class="icon-checkout" style="background:rgba(255,0,127,0.1); color:var(--pink); border-radius:10px; width:34px; height:34px; display:inline-flex; align-items:center; justify-content:center; font-size:1.15rem; flex-shrink:0; box-shadow:0 2px 8px rgba(255,0,127,0.15); transition:all 0.2s ease;">🚀</span>
           <span><strong>1-Click Checkout</strong>: Auto-orders items immediately.</span>
         </div>
         <div style="font-size:0.85rem;color:var(--text-secondary);display:flex;align-items:center;gap:12px;line-height:1.4;">
-          <span style="background:rgba(0,210,255,0.1); color:var(--blue); border-radius:10px; width:34px; height:34px; display:inline-flex; align-items:center; justify-content:center; font-size:1.15rem; flex-shrink:0; box-shadow:0 2px 8px rgba(0,210,255,0.15);">📅</span>
+          <span class="icon-routine" style="background:rgba(0,210,255,0.1); color:var(--blue); border-radius:10px; width:34px; height:34px; display:inline-flex; align-items:center; justify-content:center; font-size:1.15rem; flex-shrink:0; box-shadow:0 2px 8px rgba(0,210,255,0.15); transition:all 0.2s ease;">📅</span>
           <span><strong>Auto Routine</strong>: Schedule weekly or monthly orders.</span>
         </div>
       </div>
