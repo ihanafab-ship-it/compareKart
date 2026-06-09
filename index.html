@@ -314,9 +314,20 @@
       <h1 class="hero-title">
         Stop Overpaying.<br/><span class="highlight">Compare & Auto-Order.</span>
       </h1>
-      <p class="hero-subtitle" style="margin: 0 0 2rem 0;">
+      <p class="hero-subtitle" style="margin: 0 0 1.5rem 0;">
         Upload your list and check live prices across Blinkit, Zepto, Swiggy Instamart, BigBasket, Amazon, and Flipkart. Find the best split deal and checkout in one click.
       </p>
+
+      <!-- Coupon Badge for First-Time Users -->
+      <div class="promo-coupon-badge" style="display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap; background:var(--bg-glass); backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px); border:1.5px dashed var(--purple); border-radius:12px; padding:0.6rem 1rem; margin-bottom:1.5rem; width:100%; box-shadow:0 0 15px rgba(191,85,236,0.15); animation:fadeUp 0.8s 0.25s ease both;">
+        <div style="display:flex; align-items:center; gap:8px; flex:1; min-width:200px;">
+          <span style="font-size:1.2rem; flex-shrink:0;">🏷️</span>
+          <span style="font-size:0.85rem; color:var(--text-secondary); line-height:1.4; text-align:left;">
+            First time? Use code <strong style="color:var(--pink); font-family:'Outfit',sans-serif; letter-spacing:0.5px;">WELCOME15</strong> for an extra <strong>15% cashback</strong> on checkout!
+          </span>
+        </div>
+        <button onclick="copyCouponCode('WELCOME15', this)" class="btn btn-secondary" style="padding:0.35rem 0.85rem; font-size:0.75rem; border-radius:8px; border:1px solid var(--border-color); white-space:nowrap; background:#fff; font-weight:700; transition:all 0.2s ease; cursor:pointer; font-family:'DM Sans', sans-serif;">Copy Code</button>
+      </div>
 
       <!-- Interactive Search Widget -->
       <div class="hero-search-container" style="margin-left:0;max-width:100%;width:100%;">
@@ -1056,6 +1067,22 @@
       btn.textContent = isDark ? '☀️' : '🌙';
       btn.title = isDark ? 'Toggle Light Mode' : 'Toggle Dark Mode';
     }
+  }
+
+  function copyCouponCode(code, btn) {
+    navigator.clipboard.writeText(code).then(() => {
+      const originalText = btn.textContent;
+      btn.textContent = 'Copied! 🎉';
+      btn.style.borderColor = 'var(--green)';
+      btn.style.color = 'var(--green)';
+      setTimeout(() => {
+        btn.textContent = originalText;
+        btn.style.borderColor = '';
+        btn.style.color = '';
+      }, 2000);
+    }).catch(err => {
+      console.error('Could not copy text: ', err);
+    });
   }
 
   document.addEventListener('DOMContentLoaded', () => {
