@@ -24,13 +24,14 @@
 
     .counter-row { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 2rem; z-index: 1; }
     .avatar-stack { display: flex; }
-    .avatar-stack span {
+    .avatar-stack span, .avatar-stack img {
       width: 36px; height: 36px; border-radius: 50%; border: 3px solid var(--bg-card);
       display: flex; align-items: center; justify-content: center;
       font-size: 0.85rem; font-weight: 800; color: #fff; margin-left: -10px;
       box-shadow: var(--shadow-sm);
+      object-fit: cover;
     }
-    .avatar-stack span:first-child { margin-left: 0; }
+    .avatar-stack span:first-child, .avatar-stack img:first-child { margin-left: 0; }
     .counter-text { font-size: 0.9rem; color: var(--text-secondary); }
     .counter-text strong { color: var(--text-primary); }
 
@@ -114,7 +115,7 @@
   </a>
   <ul class="nav-links" id="navLinks">
     <li><a href="index.html">Home</a></li>
-    <li><a href="faq-quiz.html">FAQ & Quiz</a></li>
+    <li><a href="faq-quiz.html">FAQ, Quiz & Packages</a></li>
     <li><a href="contact.html">Contact</a></li>
     <li><a href="waitlist.html" class="active nav-cta" style="background:linear-gradient(135deg,#00ff66,#00f0ff) !important;box-shadow:0 0 15px rgba(0,255,102,0.25)">Join Waitlist 🚀</a></li>
   </ul>
@@ -126,10 +127,10 @@
 
   <div class="counter-row">
     <div class="avatar-stack" aria-hidden="true">
-      <span style="background:var(--gradient-cool);">S</span>
-      <span style="background:var(--gradient-main);">R</span>
-      <span style="background:var(--gradient-warm);">A</span>
-      <span style="background:var(--gradient-fun);">J</span>
+      <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&auto=format&fit=crop&q=80" alt="Sarah Kim" />
+      <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&auto=format&fit=crop&q=80" alt="Rajesh Iyer" />
+      <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&auto=format&fit=crop&q=80" alt="Aisha Patel" />
+      <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&auto=format&fit=crop&q=80" alt="John Shopper" />
       <span style="background:var(--gradient-sunset);">+</span>
     </div>
     <span class="counter-text"><strong>50,247 shoppers</strong> already on the waitlist</span>
@@ -210,7 +211,7 @@
       <span class="nav-logo-text" style="font-size:1.1rem;background:linear-gradient(135deg,#00ff66,#00f0ff);-webkit-background-clip:text;background-clip:text;">CompareKart</span>
     </a>
     <span class="footer-copy">© 2026 CompareKart Technologies Pvt. Ltd.</span>
-    <div class="footer-links"><a href="index.html">Home</a><a href="faq-quiz.html">FAQ & Quiz</a><a href="contact.html">Contact</a><a href="waitlist.html">Waitlist</a></div>
+    <div class="footer-links"><a href="index.html">Home</a><a href="faq-quiz.html">FAQ, Quiz & Packages</a><a href="contact.html">Contact</a><a href="waitlist.html">Waitlist</a></div>
   </div>
 </footer>
 
